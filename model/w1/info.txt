@@ -1,6 +1,6 @@
 Dos:Tractions:4:10:0:
-Pecs:Dips lestés:4:10:15:
+Pecs:Dips lestés:4:10:20:
 Bras:Curl haltères:4:10:12:
-Epaules:Butterfly:4:10:60:
-Jambes:Leg press:4:10:180:
-Autre:Mollets à la barre:4:15:0:
+Epaules:Butterfly:4:10:+59:
+Jambes:Leg press:4:10:190:
+Autre:Lombaire machine:4:10:0:

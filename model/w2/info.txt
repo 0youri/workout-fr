@@ -1,6 +1,6 @@
-dos:Tractions:4:10:0:
-pecs:Dips lestés:4:10:15:
-bras:Curl haltères:3:10:10:
-epaules:Développé militaire:3:10:18:
-jambes:Leg press:4:10:190:
-autre:Mollets leg press:4:15:0:
+Pecs:Développées couché:4:10:24:
+Dos:Tirage horizontal:4:10:+59:
+Bras:Extension poulie:4:10:+54:
+Epaules:Rowing vertical:4:10:45:
+Jambes:Leg curl assis:4:10:56.5:
+Autre:Lever de genoux:4:10:0:
