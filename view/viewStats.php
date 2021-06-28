@@ -36,8 +36,8 @@
                 <td>'.$date.'</td>
                 <td>'.$exercice.'</td>
                 <td>'.$nbseries.' x '.$nbrep.'</td>
-                <td>'.$statsnbrep.'</td>
-                <td>'.$statspoids.'<br>'.$statsnbreptext.'</td>
+                <td>'.$statsnbrep.'<br>('.$statsnbreptext.')</td>
+                <td>'.$statspoids.'</td>
                 <td>'.$mark.'</td>
                 </tr>';
             }
