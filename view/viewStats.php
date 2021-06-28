@@ -24,7 +24,7 @@
                 $date = $explorestats[0];
                 $statspoids = $explorestats[1];
                 $statsnbrep = $explorestats[2] + $explorestats[3] + $explorestats[4] + $explorestats[5];
-                $statsnbrep1 = $explorestats[2].":".$explorestats[3].":".$explorestats[4].":".$explorestats[5];
+                $statsnbreptext = $explorestats[2].":".$explorestats[3].":".$explorestats[4].":".$explorestats[5];
                 if ( $statsnbrep < 24)
                     $mark = '<i class="bi text-danger bi-exclamation-triangle-fill"></i>';
                 else if ( $statsnbrep >= 24 && $statsnbrep < 32)
@@ -37,7 +37,7 @@
                 <td>'.$exercice.'</td>
                 <td>'.$nbseries.' x '.$nbrep.'</td>
                 <td>'.$statsnbrep.'</td>
-                <td>'.$statspoids.'</td>
+                <td>'.$statspoids.'<br>'.$statsnbreptext.'</td>
                 <td>'.$mark.'</td>
                 </tr>';
             }
