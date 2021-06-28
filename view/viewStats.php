@@ -13,11 +13,10 @@
             $poids = $exploreinfo[4];
 
             $stats = file("model/w".$nbW."/stats/".strtolower($muscle).".txt");
-            echo '<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercice.'</div>
+            echo '<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercice.' - '.$nbseries.'x'.$nbrep.'</div>
             <div class="table-responsive">    
             <table class="table table-bordered">
-                <th>Date</th><th>Nb séries x Nb répétitions</th>
-                <th>Nb répétitions effectuées</th><th>Poids (en kg)</th><th>Niveau</th>';
+                <th>Date</th><th>Nb reps</th><th>Poids</th><th>Niveau</th>';
             for ( $j = 0; $j < count($stats); $j++ )
             {
                 $explorestats = explode(":",$stats[$j]);
@@ -34,9 +33,8 @@
                 else $mark = '<i class="bi text-success bi-check-circle-fill"></i>';
                 echo '<tr>
                 <td>'.$date.'</td>
-                <td>'.$nbseries.' x '.$nbrep.'</td>
                 <td>'.$statsnbrep.'<br>('.$statsnbreptext.')</td>
-                <td>'.$statspoids.'</td>
+                <td>'.$statspoids.'kg</td>
                 <td>'.$mark.'</td>
                 </tr>';
             }

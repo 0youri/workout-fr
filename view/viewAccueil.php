@@ -31,14 +31,14 @@
                             <p><strong>Exercices:</strong>
                             <div class="table-responsive">
                             <table class="table table-bordered">
-                            <th>Muscle</th><th>Exercice</th><th>Nb séries</th><th>Nb répétitions</th><th>Poids (en kg)</th>
+                            <th>Muscle</th><th>Exercice</th><th>Nb séries</th><th>Nb répétitions</th><th>Poids</th>
                             ';
             $info = file("model/w".$explore[0]."/info.txt");
             for ($j = 0; $j < count($info); $j++)
             {
                 $exploreinfo = explode(":",$info[$j]);
                 echo "<tr><td>".$exploreinfo[0]."</td><td>".$exploreinfo[1]."</td><td>".$exploreinfo[2]."</td>
-                <td>".$exploreinfo[3]."</td><td>".$exploreinfo[4]."</td>";
+                <td>".$exploreinfo[3]."</td><td>".$exploreinfo[4]."kg</td>";
             }
           
             echo '</table></div></p></div></div></div>';
