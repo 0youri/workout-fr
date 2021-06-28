@@ -12,6 +12,7 @@
         
     <body>
         <?php 
+            require('inc/routes.php');
             include('view/viewMenu.php');
 
             if(isset($_GET['page'])) // Choix de la page

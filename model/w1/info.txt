@@ -1,6 +1,6 @@
-Dos:Tractions:4:10:0
-Pecs:Dips lestés:4:10:15
-Bras:Curl haltères:3:10:10
-Epaules:Développé militaire:3:10:18
-Jambes:Leg press:4:10:190
-Autre:Mollets leg press:4:15:0
+Dos:Tractions:4:10:0:
+Pecs:Dips lestés:4:10:15:
+Bras:Curl haltères:4:10:12:
+Epaules:Butterfly:4:10:60:
+Jambes:Leg press:4:10:180:
+Autre:Mollets à la barre:4:15:0:

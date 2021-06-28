@@ -14,9 +14,11 @@
                             <span class="position-absolute end-0">
                                 <button class="btn btn-dark bi bi-info-circle-fill" type="button" id="infow'.$explore[0].'" 
                                 onclick="AfficherCollapse(`collapsew'.$explore[0].'`);"></button>
-                                <button class="btn btn-dark bi bi-bar-chart-fill" type="button" id="statsw'.$explore[0].'" ></button>
+                                <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$explore[0].'" 
+                                href="index.php?page=stats&w='.$explore[0].'"></a>
                                 <button class="btn btn-dark bi bi-gear-fill" type="button" id="modifw'.$explore[0].'" ></button>
-                                <button class="btn btn-dark bi bi-plus-circle-fill" type="button" id="addw'.$explore[0].'" ></button>
+                                <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$explore[0].'" 
+                                href="index.php?page=add&w='.$explore[0].'&etat=-1"></a>
 
                             </span>
                         </div>
