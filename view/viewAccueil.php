@@ -31,7 +31,7 @@
                             <p><strong>Exercices:</strong>
                             <div class="table-responsive">
                             <table class="table table-bordered">
-                            <th>Muscles</th><th>Exercice</th><th>Nb séries</th><th>Nb répétitions</th><th>Poids (en kg)</th>
+                            <th>Muscle</th><th>Exercice</th><th>Nb séries</th><th>Nb répétitions</th><th>Poids (en kg)</th>
                             ';
             $info = file("model/w".$explore[0]."/info.txt");
             for ($j = 0; $j < count($info); $j++)
