@@ -29,13 +29,13 @@
                 else
                 {
                     include('view/viewAccueil.php');
-                    include('controller/controllerAccueil.php');
+                    //include('controller/controllerAccueil.php');
                 }
             }
             else
             {
                 include('view/viewAccueil.php');
-                include('controller/controllerAccueil.php');
+                //include('controller/controllerAccueil.php');
             }
         ?>
     </body>
