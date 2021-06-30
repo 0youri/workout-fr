@@ -59,7 +59,7 @@
       
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
-            <h5 class="card-title">['.$muscle.'] '.$exercice.' - '.$nbseries.'x'.$nbrep.' - '.$poids.'kg</h5>';
+            <h5 class="card-title">['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | '.$poids.'kg</h5>';
         $textCard = '<p class="card-text"><div class="row">';
         for ($i = 0; $i < $nbseries; $i++)
         {
