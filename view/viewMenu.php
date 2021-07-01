@@ -22,6 +22,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?page=food">Food</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php?page=test">Test</a>
+                            </li>
                             <!--
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Ajouter un workout</a>

@@ -11,8 +11,10 @@
     </head>
         
     <body>
-        <?php 
-            require('inc/routes.php');
+        <?php
+            require('model/constantes.php');
+            require('model/includes.php');
+            require('model/routes.php');
             include('view/viewMenu.php');
 
             if(isset($_GET['page'])) // Choix de la page
