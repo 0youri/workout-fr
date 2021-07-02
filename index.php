@@ -16,8 +16,8 @@
             require('model/includes.php');
             require('model/routes.php');
 
-            require('model/onload.php');
-            
+            //require('model/onload.php');
+
             include('view/viewMenu.php');
 
             if(isset($_GET['page'])) // Choix de la page
