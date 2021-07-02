@@ -1,6 +1,6 @@
 <div class="container" id="blockworkout">
     <?php
-        echo "d";
+        echo $data;
         /*
         $allworkout = file("model/allworkout.txt");
 
