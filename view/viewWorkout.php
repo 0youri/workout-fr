@@ -1,7 +1,7 @@
 <div class="container" id="blockworkout">
     <?php
-        echo $data;
-        /*
+        echo "First call to pg_get_result(): <br>$allData";
+    /*
         $allworkout = file("model/allworkout.txt");
 
         for ($i = 0; $i < count($allworkout); $i++)
