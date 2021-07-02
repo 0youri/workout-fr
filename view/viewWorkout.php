@@ -4,21 +4,11 @@
         $connect = pg_connect($connectStr);
         $request = "SELECT * FROM public.allworkout;";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
+        $allData = pg_get_result($connect);
         //require('model/onload.php');
-
-        $res1 = pg_get_result($connect);
-        echo "First call to pg_get_result(): $res1\n";
-        $rows1 = pg_num_rows($res1);
-        echo "$res1 has $rows1 records\n\n";
+        echo "First call to pg_get_result(): <br>".$allData[0];
         
-        $res2 = pg_get_result($connect);
-        echo "Second call to pg_get_result(): $res2\n";
-        $rows2 = pg_num_rows($res2);
-        echo "$res2 has $rows2 records\n";    
-        
-        
-        
-        /*
+    /*
         $allworkout = file("model/allworkout.txt");
 
         for ($i = 0; $i < count($allworkout); $i++)
