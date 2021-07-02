@@ -18,6 +18,8 @@
 
             include('model/onload.php');
 
+            $connectStr = "host=".$HOST." port=".$PORT." dbname=".$DBNAME." user=".$USER." password=".$PASSWORD."";
+	        $connect = pg_connect($connectStr);
             include('view/viewMenu.php');
 
             if(isset($_GET['page'])) // Choix de la page
