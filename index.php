@@ -16,7 +16,6 @@
             require('model/includes.php');
             require('model/routes.php');
 
-            require('model/onload.php');
 
             include('view/viewMenu.php');
 

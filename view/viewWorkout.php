@@ -1,5 +1,6 @@
 <div class="container" id="blockworkout">
     <?php
+        require('model/onload.php');
         echo "First call to pg_get_result(): <br>$allData";
     /*
         $allworkout = file("model/allworkout.txt");
