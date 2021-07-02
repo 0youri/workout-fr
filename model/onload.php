@@ -1,5 +1,5 @@
 <?php
-    $connect = connectDB();
+    //$connect = connectDB();
     /*
     $request = "SELECT * FROM public.allworkout";
     $allData = pg_query($connect,$request);
