@@ -1,6 +1,7 @@
 <div class="container" id="blockworkout">
     <?php
         echo $data;
+        /*
         $allworkout = file("model/allworkout.txt");
 
         for ($i = 0; $i < count($allworkout); $i++)
@@ -44,6 +45,7 @@
           
             echo '</table></div></p></div></div></div>';
         }
+        */
     ?>
     <br>
 </div>
