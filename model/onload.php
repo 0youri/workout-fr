@@ -1,5 +1,6 @@
 <?php
     $connect = connectDB();
+    /*
     $request = "SELECT * FROM public.allworkout";
     $allData = pg_query($connect,$request);
     if ( !$allData ) printf("Error model/onload.php > pg_query(...)");
