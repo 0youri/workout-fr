@@ -6,7 +6,13 @@
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $allData = pg_get_result($connect);
         //require('model/onload.php');
-        echo "First call to pg_get_result(): <br>".$allData[0];
+        while ( $row = pg_fetch_assoc($allData) )
+        {
+            echo "id: ".$row['id'];
+            echo "<br>";
+            echo "name: ".$row['namew'];
+            echo "<br>";
+        }
         
     /*
         $allworkout = file("model/allworkout.txt");
