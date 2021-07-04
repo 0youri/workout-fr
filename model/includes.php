@@ -26,6 +26,7 @@ function recoverTableDataDB($nametable,$connect)
 
 function addTableDataDB($numberW,$muscle,$values,$connect)
 {
+        echo "here";
         $id = "SELECT * FROM public.w".$numberW." WHERE muscle = '".$muscle."';";
         $request = "INSERT INTO public.stats".$numberW." (id, date, serie1,serie2,serie3,serie4,poids)
         VALUES (".$id.",".$values.");";
