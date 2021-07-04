@@ -3,32 +3,31 @@
     $viewCard = $titleCard = $textCard = $boutonCard = $lien = "";
     $tab = array();
 
-    $allworkout = file("model/allworkout.txt");
-    for ($i = 0; $i < count($allworkout); $i++)
+    // Recover data from table allworkout
+    $allworkoutSQL = recoverTableDataDB("allworkout",$connect);
+    // Searching from $allworkoutSQL id and type of workout 
+    while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
-        $explore = explode(":",$allworkout[$i]);
-        if ($explore[0] == $_GET['w'])
+        if ($data['id'] == $_GET['w'])
         {
-            $nbW = $explore[0];
-            $typeW = $explore[1];
+            $nbW = $data['id'];
+            $typeW = $data['type'];
+            break;
         }
     }
 
+    // Add workout on DB
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if ( !empty($_GET['muscle']) )
         {
             $today = date("d/m/y");                       
-            $series = $today.":".$_GET['poids'].":";
-            for ($i = 0; $i < $_GET['nbseries']; $i++)
-            {
-                $series = $series.$_POST['serie'.($i+1)].':';
-            }
-            $fp = fopen("model/w".$_GET['w']."/stats/".( strtolower($_GET['muscle']) ).".txt", "a");
-            $savestring = $series."\n";
-            fwrite($fp, $savestring);
-            fclose($fp);
-            //$succes = "ajout";
+            $values = "'".$today."',".
+            $_POST['serie1'].",".$_POST['serie2'].",".$_POST['serie3'].",".$_POST['serie4']
+            .",'".$_GET['poids']."'";
+            addTableDataDB($_GET['w'],)
+
+            echo "    '04/07/2021',10,10,10,10,'0'    ";
         }
     }
     

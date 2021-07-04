@@ -24,4 +24,14 @@ function recoverTableDataDB($nametable,$connect)
         return $tableSQL;
 }
 
+function addTableDataDB($numberW,$muscle,$values,$connect)
+{
+        $id = "SELECT * FROM public.w".$numberW." WHERE muscle = '".$muscle."';"
+        $request = "INSERT INTO public.stats".$numberW." (id, date, serie1,serie2,serie3,serie4,poids)
+        VALUES (".$id.",".$values.");
+        
+        ";
+        if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request)
+}
+
 ?>

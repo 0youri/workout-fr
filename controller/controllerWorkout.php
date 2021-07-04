@@ -9,7 +9,7 @@
             <div class="card-body border rounded ">
                 <div class="position-relative">
                     <div class="text-black fs-5">
-                        <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['name'].'</strong>
+                        <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'</strong>
                         <span class="position-absolute end-0">
                             <button class="btn btn-dark bi bi-info-circle-fill" type="button" id="infow'.$dataAllWorkout['id'].'" 
                             onclick="AfficherCollapse(`collapsew'.$dataAllWorkout['id'].'`);"></button>
@@ -26,7 +26,7 @@
             <div id="collapsew'.$dataAllWorkout['id'].'" style="display:none;">
                     <br>
                     <div class="card card-body">
-                        <p><strong>Type:</strong> '.$dataAllWorkout['name'].'</p>
+                        <p><strong>Type:</strong> '.$dataAllWorkout['type'].'</p>
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
                         <table class="table table-bordered">
