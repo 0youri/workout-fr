@@ -72,7 +72,7 @@
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
+        $request = "SELECT * FROM public.w".$nbW." WHERE id=".($nbEx+1).";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $infoSQL = pg_get_result($connect);
         if ( !$infoSQL ) printf('Error $exSQL');
