@@ -72,13 +72,16 @@
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        $infoSQL = recoverTableDataDB("w".$nbW,$connect);
-        $exploreinfo = explode(":",$info[$nbEx]);
-        $tab[0] = $exploreinfo[0];
-        $tab[1] = $exploreinfo[1];
-        $tab[2] = $exploreinfo[2];
-        $tab[3] = $exploreinfo[3];
-        $tab[4] = $exploreinfo[4];
+        $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
+        if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
+        $infoSQL = pg_get_result($connect);
+        if ( !$infoSQL ) printf('Error $exSQL');
+        $infoSQL = pg_fetch_assoc($exSQL);
+        $tab[0] = $infoSQL['muscle'];
+        $tab[1] = $infoSQL['exerice'];
+        $tab[2] = $infoSQL['series'];
+        $tab[3] = $infoSQL['repetitions'];
+        $tab[4] = $infoSQL['poids'];
         return $tab;
     }
 
