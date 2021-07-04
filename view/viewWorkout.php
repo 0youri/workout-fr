@@ -3,7 +3,9 @@
         //$connectStr = "host=".$HOST." port=".$PORT." dbname=".$DBNAME." user=".$USER." password=".$PASSWORD."";
         //$connect = pg_connect($connectStr);
         //require('model/onload.php');
+        echo "here 1<br>";
         $connect = connectDB();
+        echo "here 2<br>";
         $request = "SELECT * FROM public.allworkout;";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $allData = pg_get_result($connect);
