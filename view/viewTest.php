@@ -1,6 +1,4 @@
 <?php
-    echo '<br> $connect';
-    $connect = connectDB();
     echo '<br> $request';
     $request = "SELECT id FROM public.w1 WHERE muscle = 'Jambes';"
     echo '<br> if';
