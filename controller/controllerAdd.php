@@ -26,7 +26,6 @@
             $_POST['serie1'].",".$_POST['serie2'].",".$_POST['serie3'].",".$_POST['serie4']
             .",'".$_GET['poids']."'";
             addTableDataDB($_GET['w'],$_GET['muscle'],$values,$connect);
-
         }
     }
     
