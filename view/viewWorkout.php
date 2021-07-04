@@ -1,16 +1,17 @@
 <div class="container" id="blockworkout">
     <?php
-        $connectStr = "host=".$HOST." port=".$PORT." dbname=".$DBNAME." user=".$USER." password=".$PASSWORD."";
-        $connect = pg_connect($connectStr);
+        //$connectStr = "host=".$HOST." port=".$PORT." dbname=".$DBNAME." user=".$USER." password=".$PASSWORD."";
+        //$connect = pg_connect($connectStr);
+        //require('model/onload.php');
+        $connect = connectDB();
         $request = "SELECT * FROM public.allworkout;";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $allData = pg_get_result($connect);
-        //require('model/onload.php');
         while ( $row = pg_fetch_assoc($allData) )
         {
             echo "id: ".$row['id'];
             echo "<br>";
-            echo "name: ".$row['namew'];
+            echo "name: ".$row['name'];
             echo "<br>";
         }
         
