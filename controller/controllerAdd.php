@@ -76,14 +76,12 @@
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $infoSQL = pg_get_result($connect);
         if ( !$infoSQL ) printf('Error $exSQL');
-        /*
-        $infoSQL = pg_fetch_assoc($exSQL);
+        $infoSQL = pg_fetch_assoc($infoSQL);
         $tab[0] = $infoSQL['muscle'];
         $tab[1] = $infoSQL['exerice'];
         $tab[2] = $infoSQL['series'];
         $tab[3] = $infoSQL['repetitions'];
         $tab[4] = $infoSQL['poids'];
-        */
         return $tab;
     }
 
