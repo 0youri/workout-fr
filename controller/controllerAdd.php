@@ -82,7 +82,7 @@
         $tab[2] = $infoSQL['series'];
         $tab[3] = $infoSQL['repetitions'];
         $tab[4] = $infoSQL['poids'];
-        echo "here";
+        echo $infoSQL['muscle'];
         return $tab;
     }
 
