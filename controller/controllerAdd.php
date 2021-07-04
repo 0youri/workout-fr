@@ -32,13 +32,13 @@
 
 
     
-    if ($_GET['etat'] == -1)
+    if ($_GET['etat'] == 0)
     {
         $viewCard = '
-                <a href="index.php?page=add&w='.$nbW.'&etat=0&muscle" 
+                <a href="index.php?page=add&w='.$nbW.'&etat=1&muscle" 
                 class="btn btn-primary">Commencer entrainement</a>';
     }
-    else if ( $_GET['etat'] == 6)
+    else if ( $_GET['etat'] == 7)
     {
         $viewCard = '<h5 class="card-title">Entrainement terminé</h5>
         <a href="index.php?page=accueil" 
@@ -52,7 +52,7 @@
         $nbseries = $tab[2];
         $nbrep = $tab[3];
         $poids = $tab[4];
-        $lien = 'index.php?page=add&w='.$nbW.'&etat='.($_GET['etat']+1).'&muscle='.$muscle.'&nbseries='.$nbseries.'&poids='.$poids;
+        $lien = 'index.php?page=add&w='.$nbW.'&etat='.($_GET['etat']+1).'&muscle='.$muscle.'&poids='.$poids;
       
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
@@ -72,7 +72,8 @@
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        $request = "SELECT * FROM public.w".$nbW." WHERE id=".($nbEx+1).";";
+        echo $nbEx;
+        $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $infoSQL = pg_get_result($connect);
         if ( !$infoSQL ) printf('Error $exSQL');

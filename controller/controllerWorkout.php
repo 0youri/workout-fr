@@ -17,7 +17,7 @@
                             href="index.php?page=stats&w='.$dataAllWorkout['id'].'"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" id="modifw'.$dataAllWorkout['id'].'" ></button>
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$dataAllWorkout['id'].'" 
-                            href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=-1"></a>
+                            href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=0"></a>
 
                         </span>
                     </div>
