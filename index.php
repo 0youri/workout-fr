@@ -15,7 +15,8 @@
             require('model/constantes.php');
             require('model/includes.php');
             require('model/routes.php');
-            require('model/onload.php');
+            
+            $connect = connectDB();
             
             include('view/viewMenu.php');
 
