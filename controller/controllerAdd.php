@@ -8,10 +8,10 @@
     // Searching from $allworkoutSQL id and type of workout 
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
-        if ($data['id'] == $_GET['w'])
+        if ($dataAllWorkout['id'] == $_GET['w'])
         {
-            $nbW = $data['id'];
-            $typeW = $data['type'];
+            $nbW = $dataAllWorkout['id'];
+            $typeW = $dataAllWorkout['type'];
             break;
         }
     }
