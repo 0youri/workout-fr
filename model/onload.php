@@ -1,13 +1,15 @@
 <?php
-/*
     $connect = connectDB();
+
+    function recoverTableDataDB($nametable)
+    {
+        $request = "SELECT * FROM public.".$nametable.";";
+        if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
+        $tableSQL = pg_get_result($connect);
+        if ( !$tableSQL ) printf("Error model/onload.php > pg_get_result(...)");
+        return $tableSQL;
+    }
     
-    $request = "SELECT * FROM public.allworkout;";
-    if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
-    $allData = pg_get_result($connect);
-    //if ( !$allData ) printf("Error model/onload.php > pg_query(...)");
-    /*
-    $data = pg_fetch_assoc($allData);
-    if ( !$data ) printf("Error model/onload.php > pg_fetch_assoc(...)");
-    */
+
+
 ?>
