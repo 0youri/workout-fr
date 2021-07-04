@@ -1,5 +1,5 @@
 <?php
     $infoSQL = recoverTableDataDB("w1",$connect);
-    //$row = pg_fetch_assoc();
-    echo '$row : '.$infoSQL[3];
+    $row = pg_fetch_all($infoSQL);
+    echo '$row : '.$row[3]['id'];
 ?>
