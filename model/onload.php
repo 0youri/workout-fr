@@ -2,7 +2,7 @@
     echo 'here before $connect';
     $connect = connectDB();
     echo "here before function";
-    function recoverTableDataDB($nametable)
+    function recoverTableDataDB($nametable,$connect)
     {
         $request = "SELECT * FROM public.".$nametable.";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);

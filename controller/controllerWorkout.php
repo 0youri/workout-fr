@@ -1,7 +1,7 @@
 <?php
     $workoutHTML = "";
     echo "here before launch fonction";
-    $allworkoutSQL = recoverTableDataDB("allworkout");
+    $allworkoutSQL = recoverTableDataDB("allworkout",$connect);
     
     while ( $data = pg_fetch_assoc($allworkoutSQL) )
     {
