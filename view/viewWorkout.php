@@ -14,7 +14,7 @@
             echo "name: ".$row['name'];
             echo "<br>";
         }
-        
+        echo "hello";
     /*
         $allworkout = file("model/allworkout.txt");
 
