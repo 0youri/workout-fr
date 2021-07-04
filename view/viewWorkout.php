@@ -4,7 +4,7 @@
         $connect = pg_connect($connectStr);
         //require('model/onload.php');
         $connectF = connectDB();
-        echo '$connect : '.$connect;
+        echo '<br>$connect : '.$connect;
         echo '<br> $connectF : '.$connectF;
         /*
         $request = "SELECT * FROM public.allworkout;";
