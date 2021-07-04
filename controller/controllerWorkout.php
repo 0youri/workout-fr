@@ -1,9 +1,11 @@
 <?php
     $workoutHTML = "";
+    echo "here before launch fonction";
     $allworkoutSQL = recoverTableDataDB("allworkout");
     
     while ( $data = pg_fetch_assoc($allworkoutSQL) )
     {
+        echo "here while";
         echo "<br>id : ".$data['id'];
         echo " - name : ".$data['name'];
         /*

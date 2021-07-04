@@ -1,6 +1,7 @@
 <?php
+    echo 'here before $connect';
     $connect = connectDB();
-
+    echo "here before function";
     function recoverTableDataDB($nametable)
     {
         $request = "SELECT * FROM public.".$nametable.";";
