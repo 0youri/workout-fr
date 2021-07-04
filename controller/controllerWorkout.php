@@ -1,8 +1,8 @@
 <?php
     $workoutHTML = "";
-    echo "here before launch fonction";
+    echo '<br> $connect in out  : '.$connect;
     $allworkoutSQL = recoverTableDataDB("allworkout",$connect);
-    
+    echo '<br> $allworkoutSQL : '.$allworkoutSQL;
     while ( $data = pg_fetch_assoc($allworkoutSQL) )
     {
         echo "here while";
