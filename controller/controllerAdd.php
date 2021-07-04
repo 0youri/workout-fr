@@ -46,7 +46,7 @@
     }
     else
     {   
-        $tab = getExercice($nbW,$_GET['etat']);
+        $tab = getExercice($nbW,$_GET['etat'],$connect);
         $muscle = $tab[0];
         $exercice = $tab[1];
         $nbseries = $tab[2];
@@ -69,10 +69,10 @@
  
     }
 
-    function getExercice($nbW,$nbEx)
+    function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        $info = file("model/w".$nbW."/info.txt");
+        $infoSQL = recoverTableDataDB("w".$nbW,$connect);
         $exploreinfo = explode(":",$info[$nbEx]);
         $tab[0] = $exploreinfo[0];
         $tab[1] = $exploreinfo[1];
