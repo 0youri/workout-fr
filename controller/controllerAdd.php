@@ -72,12 +72,12 @@
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        echo $nbEx;
         $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         $infoSQL = pg_get_result($connect);
         if ( !$infoSQL ) printf('Error $exSQL');
         $infoSQL = pg_fetch_assoc($infoSQL);
+        echo $infoSQL['muscle'];
         $tab[0] = $infoSQL['muscle'];
         $tab[1] = $infoSQL['exerice'];
         $tab[2] = $infoSQL['series'];
