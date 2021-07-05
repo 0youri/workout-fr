@@ -1,6 +1,7 @@
 <?php
     $workoutHTML = "";
-    $allworkoutSQL = recoverTableDataDB("allworkout",$connect);
+    $request = "SELECT * FROM public.allworkout;";
+    $allworkoutSQL = recoverTableDataDB($request,$connect);
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
         
@@ -32,7 +33,8 @@
                         <table class="table table-bordered">
                         <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids</th>
         ';
-        $infoSQL = recoverTableDataDB("workout WHERE id=".$dataAllWorkout['id'],$connect);
+        $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id'].";";
+        $infoSQL = recoverTableDataDB($request,$connect);
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $workoutHTML = $workoutHTML."<tr><td>".$dataInfo['muscle']."</td><td>".$dataInfo['exercice']."</td>

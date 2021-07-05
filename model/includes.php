@@ -15,9 +15,8 @@ function deconnectBB($connexion)
 }
 
 // search table data on DB
-function recoverTableDataDB($values,$connect)
+function recoverTableDataDB($request,$connect)
 {
-        $request = "SELECT * FROM public.".$values.";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         else echo 'Error model/includes.php -> pg_connection_busy(...)';
         $tableSQL = pg_get_result($connect);
