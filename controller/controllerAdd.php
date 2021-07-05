@@ -47,8 +47,7 @@
     else if ( $_GET['etat'] == 6)
     {
         $viewCard = '<h5 class="card-title">Entrainement terminé</h5>
-        <a href="index.php?page=accueil" 
-                class="btn btn-danger">Terminer</a>';
+        <a href="index.php?page=workout" class="btn btn-danger">Terminer</a>';
     }
     else
     {   
