@@ -21,7 +21,7 @@
     {
         if ( !empty($_GET['muscle']) )
         {
-            $today = date("d/m/y");                       
+            $today = date("d/m/Y");                       
             $values = "'".$today."',".
             $_POST['serie1'].",".$_POST['serie2'].",".$_POST['serie3'].",".$_POST['serie4']
             .",'".$_GET['poids']."'";
