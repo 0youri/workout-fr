@@ -75,8 +75,9 @@
         $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
         echo '<br>$request : '.$request;
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
+        else echo "Error pg_connection_busy(...)";
         $infoSQL = pg_get_result($connect);
-        if ( !$infoSQL ) printf('Error $exSQL');
+        if ( !$infoSQL ) echo 'Error $exSQL';
         $infoSQL = pg_fetch_assoc($infoSQL);
         echo '<br>$infoSQL["muscle"] : '.$infoSQL['muscle'];
         $tab[0] = $infoSQL['muscle'];
