@@ -38,13 +38,13 @@
 
 
     
-    if ($_GET['etat'] == 0)
+    if ($_GET['etat'] == -1)
     {
         $viewCard = '
                 <a href="index.php?page=add&w='.$nbW.'&etat=1&muscle" 
                 class="btn btn-primary">Commencer entrainement</a>';
     }
-    else if ( $_GET['etat'] == 7)
+    else if ( $_GET['etat'] == 6)
     {
         $viewCard = '<h5 class="card-title">Entrainement terminé</h5>
         <a href="index.php?page=accueil" 
