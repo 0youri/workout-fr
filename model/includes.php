@@ -36,7 +36,7 @@ function addTableDataDB($numberW,$muscle,$values,$connect)
         $request = "INSERT INTO public.stats".$numberW." (id, date, serie1,serie2,serie3,serie4,poids)
         VALUES (".$id.",".$values.");";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
-        return pg_get_result($connect);
+        return pg_fetch_assoc(pg_get_result($connect));
 }
 
 ?>
