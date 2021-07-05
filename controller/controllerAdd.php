@@ -25,7 +25,7 @@
             $values = "'".$today."',".
             $_POST['serie1'].",".$_POST['serie2'].",".$_POST['serie3'].",".$_POST['serie4']
             .",'".$_GET['poids']."'";
-            echo addTableDataDB($_GET['w'],$_GET['muscle'],$values,$connect);
+            addTableDataDB($_GET['w'],$_GET['muscle'],$values,$connect);
         }
     }
     
@@ -73,13 +73,13 @@
     {
         $tab = array();
         $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
-        echo '<br>$request : '.$request;
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
-        else echo "Error pg_connection_busy(...)";
+        else echo "Error controller/controllerAdd.php -> pg_connection_busy(...)";
+
         $infoSQL = pg_get_result($connect);
-        if ( !$infoSQL ) echo 'Error $exSQL';
+        if ( !$infoSQL ) echo 'Error controller/controllerAdd.php -> pg_get_result(...)';
         $infoSQL = pg_fetch_assoc($infoSQL);
-        echo '<br>$infoSQL["muscle"] : '.$infoSQL['muscle'];
+
         $tab[0] = $infoSQL['muscle'];
         $tab[1] = $infoSQL['exerice'];
         $tab[2] = $infoSQL['series'];
