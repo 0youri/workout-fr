@@ -32,7 +32,7 @@
                         <table class="table table-bordered">
                         <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids</th>
         ';
-        $infoSQL = recoverTableDataDB("w".$dataAllWorkout['id'],$connect);
+        $infoSQL = recoverTableDataDB("workout WHERE id=".$dataAllWorkout['id'],$connect);
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $workoutHTML = $workoutHTML."<tr><td>".$dataInfo['muscle']."</td><td>".$dataInfo['exercice']."</td>

@@ -15,9 +15,9 @@ function deconnectBB($connexion)
 }
 
 // search table data on DB
-function recoverTableDataDB($nametable,$connect)
+function recoverTableDataDB($values,$connect)
 {
-        $request = "SELECT * FROM public.".$nametable.";";
+        $request = "SELECT * FROM public.".$values.";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         else echo 'Error model/includes.php -> pg_connection_busy(...)';
         $tableSQL = pg_get_result($connect);
@@ -30,7 +30,7 @@ function addTableDataDB($numberW,$muscle,$values,$connect)
         $id = "SELECT * FROM public.w1 WHERE muscle = 'Dos';";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$id);
         else echo 'Error model/includes.php -> pg_connection_busy(...)';
-        
+
         $id = pg_get_result($connect);
         if ( !$id ) echo 'Error model/includes.php -> pg_get_result(...)';
         $id = pg_fetch_assoc($id);
