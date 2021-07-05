@@ -32,10 +32,11 @@ function addTableDataDB($numberW,$muscle,$values,$connect)
         if ( !$id ) printf('Error pg_get_result(...)');
         $id = pg_fetch_assoc($id);
         $id = $id['id'];
-        
+
         $request = "INSERT INTO public.stats".$numberW." (id, date, serie1,serie2,serie3,serie4,poids)
         VALUES (".$id.",".$values.");";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
+        return pg_get_result($connect);
 }
 
 ?>
