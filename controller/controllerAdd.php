@@ -30,8 +30,8 @@
             $serie3 = $_POST['serie3'];
             $serie4 = $_POST['serie4'];                    
             $poids = $_GET['poids'];
-            $values = "'".$today."',".$serie1.",".$serie2.",".$serie3.",".$serie4.",'".$poids."'";
-            addTableDataDB($id,$muscle,$values,$connect);
+            $values = "'".$today."',".$serie1.",".$serie2.",".$serie3.",".$serie4.",'".$poids."','".$muscle."'";
+            addTableDataDB($id,$values,$connect);
         }
     }
     
