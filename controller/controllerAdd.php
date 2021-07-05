@@ -4,7 +4,8 @@
     $tab = array();
 
     // Recover data from table allworkout
-    $allworkoutSQL = recoverTableDataDB("allworkout",$connect);
+    $request = "SELECT * FROM public.allworkout";
+    $allworkoutSQL = requestDB($request,$connect);
     // Searching from $allworkoutSQL id and type of workout 
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
@@ -21,11 +22,16 @@
     {
         if ( !empty($_GET['muscle']) )
         {
-            $today = date("d/m/Y");                       
-            $values = "'".$today."',".
-            $_POST['serie1'].",".$_POST['serie2'].",".$_POST['serie3'].",".$_POST['serie4']
-            .",'".$_GET['poids']."'";
-            addTableDataDB($_GET['w'],$_GET['muscle'],$values,$connect);
+            $id = $_GET['w'];
+            $muscle = $_GET['muscle'];
+            $today = date("d/m/Y");   
+            $serie1 = $_POST['serie1'];
+            $serie2 = $_POST['serie2'];
+            $serie3 = $_POST['serie3'];
+            $serie4 = $_POST['serie4'];                    
+            $poids = $_GET['poids'];
+            $values = "'".$today."',".$serie1.",".$serie2.",".$serie3.",".$serie4.",'".$poids."'";
+            addTableDataDB($id,$muscle,$values,$connect);
         }
     }
     
@@ -72,13 +78,13 @@
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        $request = "SELECT * FROM public.w".$nbW." WHERE id=".$nbEx.";";
+        $request = "SELECT * FROM public.workout WHERE id=".$nbW.";";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         else echo "Error controller/controllerAdd.php -> pg_connection_busy(...)";
 
         $infoSQL = pg_get_result($connect);
         if ( !$infoSQL ) echo 'Error controller/controllerAdd.php -> pg_get_result(...)';
-        $infoSQL = pg_fetch_assoc($infoSQL);
+        $infoSQL = pg_fetch_assoc($infoSQL,$nbEx);
 
         $tab[0] = $infoSQL['muscle'];
         $tab[1] = $infoSQL['exercice'];
