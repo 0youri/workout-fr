@@ -50,7 +50,6 @@
     
         $workoutHTML = $workoutHTML.'</table></div></p></div></div></div>';
     }
-    /*
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -63,5 +62,4 @@
             requestDB($request,$connect);
         }
     }
-    */
 ?>
