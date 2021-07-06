@@ -51,7 +51,7 @@
             <td>".$dataInfo['muscle']."</td>
             <td>".$dataInfo['exercice']."</td>
             <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
-            <td id='td-poids-".$dataAllWorkout['id'].$dataInfo['rank']."' 
+            <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
             name='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
