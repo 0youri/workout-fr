@@ -59,12 +59,12 @@ function editWorkout(id, muscle)
     td_poids.innerHTML = 
     `
         <form method="POST" id="formEdit" action="index.php?page=workout&w=${id}&muscle=${muscle}">
-        <input name="editP" class="form-control" size="3" id="editP" width="10px" class="border border-dark" value="${value}">
+        <input name="editP" class="form-control" size="4" id="editP" width="10px" class="border border-dark" value="${value}">
         </form>
     `;
     td_poids_boutons.innerHTML = `
     <button type="button" class="btn btn-success bi bi-check-circle-fill" onclick="sumbitForm('formEdit');"></bouton>
-    <br>
+    <br><br>
     <button type="button" class="btn btn-danger bi bi-x-circle-fill" onclick="resetForm('${id}','${muscle}');"></bouton>
     `;
 }
