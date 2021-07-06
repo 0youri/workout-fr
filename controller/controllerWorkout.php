@@ -58,6 +58,6 @@
         $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
         requestDB($request,$connect);
         //header("Refresh:0.1;url=index.php?page=workout");
-        echo "<script>AfficherCollapse(`collapsew".$id."`);</script>";
+        echo "<script>AfficherCollapse(`collapsew".$id."`)</script>";
     }
 ?>
