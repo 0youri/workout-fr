@@ -42,10 +42,7 @@
             <td>".$dataInfo['exercice']."</td>
             <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id']."' name='td-poids".$dataAllWorkout['id']."'>
-                <span id='poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</span>g
-                <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editWorkout('td-poids".$dataAllWorkout['id']."',
-                'poids$dataAllWorkout['id']','".$dataInfo['muscle']."');'></button>
+                
             </td>";
         }
     
