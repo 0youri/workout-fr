@@ -46,7 +46,7 @@
             </td>
             <td id='td-poids-boutons".$dataAllWorkout['id']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editWorkout(`".$dataAllWorkout['id']."`,'".$dataInfo['muscle']."');'></button>
+                onclick='editWorkout(`".$dataAllWorkout['id']."`,`".$dataInfo['muscle']."`);'></button>
             </td>";
         }
     
