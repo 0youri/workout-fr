@@ -1,5 +1,14 @@
 <?php
     $workoutHTML = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+        $editP = $_POST['editP'];
+        $id = $_GET['w'];
+        $muscle = $_GET['muscle'];
+        $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
+        requestDB($request,$connect);
+        header("Refresh:0.1;url=index.php?page=workout");
     $request = "SELECT * FROM public.allworkout;";
     $allworkoutSQL = requestDB($request,$connect);
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
@@ -49,16 +58,7 @@
     
         $workoutHTML = $workoutHTML.'</table></div></p></div></div></div>';
     }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-        $editP = $_POST['editP'];
-        $id = $_GET['w'];
-        $muscle = $_GET['muscle'];
-        $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
-        requestDB($request,$connect);
-        //header("Refresh:0.1;url=index.php?page=workout");
-        sleep(2);
-        echo "<script>AfficherCollapse(`collapsew".$id."`);</script>";
-    }
+    echo "<script>AfficherCollapse(`collapsew".$id."`);</script>";
+}
+    
 ?>
