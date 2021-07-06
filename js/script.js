@@ -59,7 +59,7 @@ function editWorkout(id, muscle)
     td_poids.innerHTML = 
     `
         <form method="POST" id="formEdit" action="index.php?page=workout&w=${id}&muscle=${muscle}">
-        <input name="editP" class="form-control" size="5" id="editP" width="10px" class="border border-dark" value="${value}">
+        <input name="editP" class="form-control" size="10" id="editP" width="10px" class="border border-dark" value="${value}">
         </form>
     `;
     td_poids_boutons.innerHTML = `
