@@ -63,8 +63,7 @@ function editWorkout(id, muscle)
         </form>
     `;
     td_poids_boutons.innerHTML = `
-    <button type="button" class="btn btn-success bi bi-check-circle-fill" onclick="sumbitForm('formEdit');"></button>
-    <br><br>
-    <button type="button" class="btn btn-danger bi bi-x-circle-fill" onclick="resetForm('${id}','${muscle}');"></button>
+    <div><button type="button" class="btn btn-success bi bi-check-circle-fill" onclick="sumbitForm('formEdit');"></button></div>
+    <div><button type="button" class="btn btn-danger bi bi-x-circle-fill" onclick="resetForm('${id}','${muscle}');"></button></div>
     `;
 }
