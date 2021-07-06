@@ -51,10 +51,11 @@
             <td>".$dataInfo['muscle']."</td>
             <td>".$dataInfo['exercice']."</td>
             <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
-            <td id='td-poids".$dataAllWorkout['id']."' name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
-            <td id='td-poids-boutons".$dataAllWorkout['id']."'>
+            <td id='td-poids-".$dataAllWorkout['id'].$dataInfo['rank']."' 
+            name='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."'>".$dataInfo['poids']."</td>
+            <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editWorkout(`".$dataAllWorkout['id']."`,`".$dataInfo['muscle']."`);'></button>
+                onclick='editWorkout(`".$dataAllWorkout['id'].$dataInfo['rank']."`,`".$dataInfo['muscle']."`);'></button>
             </td>";
         }
     
