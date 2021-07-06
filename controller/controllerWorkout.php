@@ -53,14 +53,11 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        if ( !empty($_POST['editP']) && !empty($_GET['w']) && !empty($_GET['muscle']) )
-        {
-            $editP = $_POST['editP'];
-            $id = $_GET['w'];
-            $muscle = $_GET['muscle'];
-            $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
-            requestDB($request,$connect);
-            header("Refresh:0.2;url=index.php?page=workout");
-        }
+        $editP = $_POST['editP'];
+        $id = $_GET['w'];
+        $muscle = $_GET['muscle'];
+        $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
+        requestDB($request,$connect);
+        header("Refresh:0.1;url=index.php?page=workout");
     }
 ?>
