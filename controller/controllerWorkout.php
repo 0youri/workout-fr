@@ -31,7 +31,7 @@
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
                         <table class="table table-bordered">
-                        <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids</th>
+                        <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids (en kg)</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id'].";";
         $infoSQL = requestDB($request,$connect);
@@ -42,10 +42,11 @@
             <td>".$dataInfo['exercice']."</td>
             <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id']."' name='td-poids".$dataAllWorkout['id']."'>
-                <span id='poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</span>kg
+                ".$dataInfo['poids']."
+            </td>
+            <td id='td-poids-boutons".$dataAllWorkout['id']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editWorkout('td-poids".$dataAllWorkout['id']."',
-                'poids".$dataAllWorkout['id']."','".$dataInfo['muscle']."');'></button>
+                onclick='editWorkout(`".$dataAllWorkout['id']."`,'".$dataInfo['muscle']."');'></button>
             </td>";
         }
     

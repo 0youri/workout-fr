@@ -37,23 +37,32 @@ function sumbitForm(id)
     document.getElementById(id).submit();
 }
 
-function resetForm(element)
+function resetForm(id,muscle)
 {
+    let td_poids = document.getElementById(`td-poids${id}`);
+    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}`); 
+
     const value = document.getElementById(`editP`).value;
-    document.getElementById(element).innerHTML = 
-    `${value}kg<button class='btn btn-dark bi bi-gear-fill' type='button' 
-    onclick='editWorkout('${element}');'></button>`;
+
+    td_poids.innerHTML = `${value}`;
+    td_poids_boutons.innerHTML = `
+    <button class='btn btn-dark bi bi-gear-fill' type='button' 
+    onclick='editWorkout('${id}',${muscle});'></button>
+    `;
 }
 
-function editWorkout(td, poids, muscle)
+function editWorkout(id, muscle)
 {
-    const value = document.getElementById(poids).innerHTML;
-    document.getElementById(td).innerHTML = 
+    let td_poids = document.getElementById(`td-poids${id}`);
+    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}`);
+    const value = td_poids.innerHTML;
+    td_poids.innerHTML = 
     `
-        <form method="POST" id="formEdit" action="index.php?page=workout&w=${nbW}&muscle=${muscle}">
+        <form method="POST" id="formEdit" action="index.php?page=workout&w=${id}&muscle=${muscle}">
         <input name="editP" id="editP" class="border border-dark" value="${value}">
-        <button type="button" class="btn btn-success bi bi-check-circle-fill" onclick="sumbitForm('formEdit');"></bouton>
-        <button type="button" class="btn btn-danger bi bi-x-circle-fill" onclick="resetForm('${td}');"></bouton>
         </form>
     `;
+    td_poids_boutons.innerHTML = `
+    <button type="button" class="btn btn-success bi bi-check-circle-fill" onclick="sumbitForm('formEdit');"></bouton>
+    <button type="button" class="btn btn-danger bi bi-x-circle-fill" onclick="resetForm('${id}','${muscle}');"></bouton>`;
 }
