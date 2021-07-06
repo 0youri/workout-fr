@@ -1,7 +1,7 @@
 <?php
     $idW = $_GET['w'];
     $statsHTML = "";
-    $request = "SELECT * FROM public.workout WHERE id=".$idW.";";
+    $request = "SELECT * FROM public.workout WHERE id=".$idW." ORDER BY rank;";
     $workoutSQL = requestDB($request,$connect);
     while ( $dataWorkout = pg_fetch_assoc($workoutSQL) )
     {

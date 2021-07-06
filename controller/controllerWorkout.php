@@ -33,7 +33,7 @@
                         <table class="table table-bordered">
                         <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids (en kg)</th>
         ';
-        $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id'].";";
+        $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id']." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {

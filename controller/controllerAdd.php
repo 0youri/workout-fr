@@ -79,7 +79,7 @@
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();
-        $request = "SELECT * FROM public.workout WHERE id=".$nbW.";";
+        $request = "SELECT * FROM public.workout WHERE id=".$nbW." ORDER BY rank;";
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         else echo "Error controller/controllerAdd.php -> pg_connection_busy(...)";
 
