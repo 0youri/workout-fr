@@ -37,18 +37,20 @@
     
 
 
-    
+    // Beging workout
     if ($_GET['etat'] == -1)
     {
         $viewCard = '
                 <a href="index.php?page=add&w='.$nbW.'&etat=0&muscle" 
                 class="btn btn-primary">Commencer entrainement</a>';
     }
+    // Finish workout
     else if ( $_GET['etat'] == 6)
     {
         $viewCard = '<h5 class="card-title">Entrainement terminé</h5>
         <a href="index.php?page=workout" class="btn btn-danger">Terminer</a>';
     }
+    // During workout
     else
     {   
         $tab = getExercice($nbW,$_GET['etat'],$connect);
@@ -58,7 +60,6 @@
         $nbrep = $tab[3];
         $poids = $tab[4];
         $lien = 'index.php?page=add&w='.$nbW.'&etat='.($_GET['etat']+1).'&muscle='.$muscle.'&poids='.$poids;
-      
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
             <h5 class="card-title">['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | '.$poids.'kg</h5>';
@@ -69,11 +70,12 @@
             <input class="border border-dark container" name="serie'.($i+1).'" id="serie'.($i+1).'"></div>';
         }
         $textCard = $textCard.'</div></p>';
-        $boutonCard = '<button type="button" class="btn btn-dark" onclick="sumbitForm();">Valider</bouton></form>';
+        $boutonCard = '<button type="button" class="btn btn-dark" onclick="sumbitFormAdd();">Valider</bouton></form>';
         $viewCard = $titleCard.$textCard.$boutonCard;
  
     }
 
+    // Tab with data of exercise
     function getExercice($nbW,$nbEx,$connect)
     {
         $tab = array();

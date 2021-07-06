@@ -37,11 +37,31 @@
         $infoSQL = requestDB($request,$connect);
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
-            $workoutHTML = $workoutHTML."<tr><td>".$dataInfo['muscle']."</td><td>".$dataInfo['exercice']."</td>
-            <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td><td>".$dataInfo['poids']."kg</td>";
+            $workoutHTML = $workoutHTML."<tr>
+            <td>".$dataInfo['muscle']."</td>
+            <td>".$dataInfo['exercice']."</td>
+            <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
+            <td id='td-poids".$dataAllWorkout['id']."' name='td-poids".$dataAllWorkout['id']."'>
+                <span id='poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</span>g
+                <button class='btn btn-dark bi bi-gear-fill' type='button' 
+                onclick='editWorkout('td-poids".$dataAllWorkout['id']."',
+                'poids$dataAllWorkout['id']','".$dataInfo['muscle']."');'></button>
+            </td>";
         }
     
         $workoutHTML = $workoutHTML.'</table></div></p></div></div></div>';
     }
 
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        if ( !empty($_POST['editP']) && !empty($_GET['w']) && !empty($_GET['muscle']) )
+        {
+            $editP = $_POST['editP'];
+            $id = $_GET['w'];
+            $muscle = $_GET['muscle'];
+            $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
+            requestDB($request,$connect);
+        }
+    }
 ?>

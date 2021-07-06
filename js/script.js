@@ -5,7 +5,7 @@ function AfficherCollapse(element)
     else document.getElementById(`${element}`).style.display = "none";
 }
 
-function sumbitForm()
+function sumbitFormAdd()
 {
     let nbSeries;
     if ( document.getElementById(`serie4`) ) nbSeries = 4;
@@ -28,6 +28,32 @@ function sumbitForm()
         }
     }
 
-    if ( compteur === 0 ) document.getElementById("formAdd").submit();
+    if ( compteur === 0 ) sumbitForm("formAdd");
 
+}
+
+function sumbitForm(id)
+{
+    document.getElementById(id).submit();
+}
+
+function resetForm(element)
+{
+    const value = document.getElementById(`editP`).value;
+    document.getElementById(element).innerHTML = 
+    `${value}kg<button class='btn btn-dark bi bi-gear-fill' type='button' 
+    onclick='editWorkout('${element}');'></button>`;
+}
+
+function editWorkout(td, poids, muscle)
+{
+    const value = document.getElementById(poids).innerHTML;
+    document.getElementById(td).innerHTML = 
+    `
+        <form method="POST" id="formEdit" action="index.php?page=workout&w=${nbW}&muscle=${muscle}">
+        <input name="editP" id="editP" class="border border-dark" value="${value}">
+        <button type="button" class="btn btn-success bi bi-check-circle-fill" onclick="sumbitForm('formEdit');"></bouton>
+        <button type="button" class="btn btn-danger bi bi-x-circle-fill" onclick="resetForm('${td}');"></bouton>
+        </form>
+    `;
 }
