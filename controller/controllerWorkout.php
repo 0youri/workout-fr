@@ -60,6 +60,7 @@
             $muscle = $_GET['muscle'];
             $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
             requestDB($request,$connect);
+            header("Refresh:1;url=index.php?page=workout");
         }
     }
 ?>
