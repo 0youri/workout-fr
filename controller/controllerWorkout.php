@@ -10,7 +10,7 @@
         requestDB($request,$connect);
         header("Refresh:0.1;url=index.php?page=workout");
     }
-    
+
     $request = "SELECT * FROM public.allworkout;";
     $allworkoutSQL = requestDB($request,$connect);
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
@@ -60,5 +60,4 @@
     
         $workoutHTML = $workoutHTML.'</table></div></p></div></div></div>';
     }
-    echo "<script>AfficherCollapse(`collapsew".$id."`);</script>";
 ?>
