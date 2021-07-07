@@ -75,18 +75,14 @@ function editWorkout(id, muscle)
 document.addEventListener('DOMContentLoaded', () => 
 {
     const url = document.location.href;
-    alert(url);
+    if ( url === "https://workout-fr.herokuapp.com/index.php?page=workout" )
+    {
+        document.getElementById('nav-workout').classList.add('active');
+        document.getElementById('nav-food').classList.remove('active');
+    }
+    else if ( url === "https://workout-fr.herokuapp.com/index.php?page=food" )
+    {
+        document.getElementById('nav-food').classList.add('active');
+        document.getElementById('nav-workout').classList.remove('active');
+    }
 }); 
-/*
-document.add('nav-workout').onclick() = () => 
-{
-    document.getElementById('nav-workout').classList.add('active');
-    document.getElementById('nav-food').classList.remove('active');
-};
-
-document.getElementById('nav-food').onclick() = () => 
-{
-    document.getElementById('nav-food').classList.add('active');
-    document.getElementById('nav-workout').classList.remove('active');
-};
-*/
