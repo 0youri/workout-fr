@@ -62,7 +62,8 @@
         $lien = 'index.php?page=add&w='.$nbW.'&etat='.($_GET['etat']+1).'&muscle='.$muscle.'&poids='.$poids;
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
-            <h5 class="card-title">['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | <span name="poids">'.$poids.'</span>kg</h5>';
+            <input style="display:none;" name="poids" value="'.$poids.'">
+            <h5 class="card-title">['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | '.$poids.'kg</h5>';
         $textCard = '<p class="card-text"><div class="row">';
         for ($i = 0; $i < $nbseries; $i++)
         {
