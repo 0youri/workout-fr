@@ -62,8 +62,10 @@
     $dinnerHTML = $dinnerHTML.
     "<tr class='table-light'>
         <td><strong>Total dinner</strong></td>
-        <td>".($kcalAll-$lunchKcal)."</td><td>".($lipidesAll-$lunchLipides)."</td>
-        <td>".($glucidesAll-$lunchGlucides)."</td><td>".($protAll-$lunchProt)."</td>
+        <td><strong>".($kcalAll-$lunchKcal)."</strong></td>
+        <td><strong>".($lipidesAll-$lunchLipides)."</strong></td>
+        <td><strong>".($glucidesAll-$lunchGlucides)."</strong></td>
+        <td><strong>".($protAll-$lunchProt)."</strong></td>
     </tr>";
 
     $totalHTML = "<tr> <td>~".$kcalAll."</td> <td>~".$lipidesAll."</td>
