@@ -57,7 +57,7 @@
         $protAll = $protAll + $prot;
     }
     $dinnerHTML = $dinnerHTML.
-    "<tr class='table-dark'>
+    "<tr class='table-light'>
         <td><strong>Total dinner</strong></td>
         <td>".($kcalAll-$lunchKcal)."</td><td>".($lipidesAll-$lunchLipides)."</td>
         <td>".($glucidesAll-$lunchGlucides)."</td><td>".($protAll-$lunchProt)."</td>
