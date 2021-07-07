@@ -71,3 +71,15 @@ function editWorkout(id, muscle)
     </div>
     `;
 }
+
+document.getElementById('nav-workout').onclick() = () => 
+{
+    document.getElementById('nav-workout').classList.add('active');
+    document.getElementById('nav-food').classList.remove('active');
+};
+
+document.getElementById('nav-food').onclick() = () => 
+{
+    document.getElementById('nav-food').classList.add('active');
+    document.getElementById('nav-workout').classList.remove('active');
+};
