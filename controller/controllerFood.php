@@ -32,7 +32,10 @@
     $lunchHTML = $lunchHTML.
     "<tr class='table-light'>
         <td><strong>Total lunch</strong></td>
-        <td>".$lunchKcal."</td><td>".$lunchLipides."</td><td>".$lunchGlucides."</td><td>".$lunchProt."</td>
+        <td><strong>".$lunchKcal."</strong></td>
+        <td><strong>".$lunchLipides."</strong></td>
+        <td><strong>".$lunchGlucides."</strong></td>
+        <td><strong>".$lunchProt."</strong></td>
     </tr>";
 
     $request = "SELECT * FROM public.food WHERE type='dinner' ORDER BY rank;";
