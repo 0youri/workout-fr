@@ -18,14 +18,6 @@
             ?>
             </table>
 
-            <div class="badge bg-dark text-wrap">Snack</div>
-            <table class="table table-bordered">
-            <th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th>
-            <?php
-                echo $snackHTML;
-            ?>
-            </table>
-
             <div class="badge bg-dark text-wrap">Total</div>
             <table class="table table-bordered">
             <th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th>

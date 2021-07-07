@@ -1,20 +1,18 @@
 <?php
-    $lunchHTML = $dinnerHTML = $snackHTML = $totalHTML = "";
-    $lunch = file("model/food/lunch.txt");
-    $dinner = file("model/food/dinner.txt");
-    $snack = file("model/food/snack.txt");
+    $lunchHTML = $dinnerHTML = $totalHTML = "";
+    $request = "SELECT * FROM public.food WHERE type='lunch' ORDER BY rank;";
+    $lunchSQL = requestDB($request,$connect);
     
     $lipidesAll = $glucidesAll = $protAll = $kcalAll = 0;
     
-    for ($i = 0; $i < count($lunch); $i++)
+    while ( $dataLunch = pg_fetch_assoc($lunchSQL) )
     {
-        $explore = explode(":",$lunch[$i]);
-        $aliment = $explore[0];
-        $quantite = $explore[1];
-        $kcal = ( $quantite * $explore[2] ) / 100;
-        $lipides = ( $quantite * $explore[3] ) / 100;
-        $glucides = ( $quantite * $explore[4] ) / 100;
-        $prot = ( $quantite * $explore[5] ) / 100;
+        $aliment = $dataLunch['aliment'];
+        $quantite = $dataLunch['quantite'];
+        $kcal = ( $quantite * $dataLunch['kcal'] ) / 100;
+        $lipides = ( $quantite * $dataLunch['lipides'] ) / 100;
+        $glucides = ( $quantite * $dataLunch['glucides'] ) / 100;
+        $prot = ( $quantite * $dataLunch['proteines'] ) / 100;
         $lunchHTML = $lunchHTML.
         "<tr>
             <td>".$aliment."</td>
@@ -26,15 +24,17 @@
         $protAll = $protAll + $prot;
     }
 
-    for ($i = 0; $i < count($dinner); $i++)
+    $request = "SELECT * FROM public.food WHERE type='dinner' ORDER BY rank;";
+    $dinnerSQL = requestDB($request,$connect);
+
+    while ( $dataDinner = pg_fetch_assoc($dinnerSQL) )
     {
-        $explore = explode(":",$dinner[$i]);
-        $aliment = $explore[0];
-        $quantite = $explore[1];
-        $kcal = ( $quantite * $explore[2] ) / 100;
-        $lipides = ( $quantite * $explore[3] ) / 100;
-        $glucides = ( $quantite * $explore[4] ) / 100;
-        $prot = ( $quantite * $explore[5] ) / 100;
+        $aliment = $dataDinner['aliment'];
+        $quantite = $dataDinner['quantite'];
+        $kcal = ( $quantite * $dataDinner['kcal'] ) / 100;
+        $lipides = ( $quantite * $dataDinner['lipides'] ) / 100;
+        $glucides = ( $quantite * $dataDinner['glucides'] ) / 100;
+        $prot = ( $quantite * $dataDinner['proteines'] ) / 100;
         $dinnerHTML = $dinnerHTML.
         "<tr>
             <td>".$aliment."</td>
@@ -46,25 +46,5 @@
         $protAll = $protAll + $prot;
     }
 
-    for ($i = 0; $i < count($snack); $i++)
-    {
-        $explore = explode(":",$snack[$i]);
-        $aliment = $explore[0];
-        $quantite = $explore[1];
-        $kcal = ( $quantite * $explore[2] ) / 100;
-        $lipides = ( $quantite * $explore[3] ) / 100;
-        $glucides = ( $quantite * $explore[4] ) / 100;
-        $prot = ( $quantite * $explore[5] ) / 100;
-        $snackHTML = $snackHTML.
-        "<tr>
-            <td>".$aliment."</td>
-            <td>".$kcal."</td><td>".$lipides."</td><td>".$glucides."</td><td>".$prot."</td>
-        </tr>";
-        $kcalAll = $kcalAll + $kcal;
-        $lipidesAll = $lipidesAll + $lipides;
-        $glucidesAll = $glucidesAll + $glucides;
-        $protAll = $protAll + $prot;
-    }
-
-    $totalHTML = "<tr> <td>".$kcalAll."</td> <td>".$lipidesAll."</td> <td>".$glucidesAll."</td> <td>".$protAll."</td> </tr>";
+    $totalHTML = "<tr> <td>~".$kcalAll."</td> <td>~".$lipidesAll."</td> <td>~".$glucidesAll."</td> <td>~".$protAll."</td> </tr>";
 ?>
