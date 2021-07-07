@@ -12,7 +12,7 @@
 
             <div class="badge bg-dark text-wrap">Dinner</div>
             <table class="table table-bordered">
-            <th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th>
+            <tr class="table-light"><th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
             <?php
                 echo $dinnerHTML;
             ?>
