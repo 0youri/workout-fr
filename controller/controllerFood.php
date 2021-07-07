@@ -30,7 +30,7 @@
     $lunchProt = $protAll;
 
     $lunchHTML = $lunchHTML.
-    "<tr class='table-dark'>
+    "<tr class='table-light'>
         <td><strong>Total lunch</strong></td>
         <td>".$lunchKcal."</td><td>".$lunchLipides."</td><td>".$lunchGlucides."</td><td>".$lunchProt."</td>
     </tr>";
@@ -63,6 +63,6 @@
         <td>".($glucidesAll-$lunchGlucides)."</td><td>".($protAll-$lunchProt)."</td>
     </tr>";
 
-    $totalHTML = "<tr class='table-dark'> <td>~".$kcalAll."</td> <td>~".$lipidesAll."</td>
+    $totalHTML = "<tr> <td>~".$kcalAll."</td> <td>~".$lipidesAll."</td>
     <td>~".$glucidesAll."</td> <td>~".$protAll."</td> </tr>";
 ?>
