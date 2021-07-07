@@ -33,7 +33,7 @@
             $statsHTML = $statsHTML.'<tr>
             <td>'.$date.'</td>
             <td>'.$statsnbreptext.'</td>
-            <td>'.$statspoids.'kg</td>
+            <td>'.$statspoids.'</td>
             <td>'.$mark.'</td>
             </tr>';
         }
