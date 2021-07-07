@@ -32,7 +32,7 @@
             else $mark = '<i class="bi text-success bi-check-circle-fill"></i>';
             $statsHTML = $statsHTML.'<tr>
             <td>'.$date.'</td>
-            <td>'.$statsnbrep.'<br>('.$statsnbreptext.')</td>
+            <td>'.$statsnbreptext.'</td>
             <td>'.$statspoids.'kg</td>
             <td>'.$mark.'</td>
             </tr>';
