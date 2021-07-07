@@ -72,7 +72,13 @@ function editWorkout(id, muscle)
     `;
 }
 
-document.getElementById('nav-workout').onclick() = () => 
+document.addEventListener('DOMContentLoaded', () => 
+{
+    const url = document.location.href;
+    alert(url);
+}); 
+/*
+document.add('nav-workout').onclick() = () => 
 {
     document.getElementById('nav-workout').classList.add('active');
     document.getElementById('nav-food').classList.remove('active');
@@ -83,3 +89,4 @@ document.getElementById('nav-food').onclick() = () =>
     document.getElementById('nav-food').classList.add('active');
     document.getElementById('nav-workout').classList.remove('active');
 };
+*/
