@@ -6,7 +6,7 @@
         <div class="table-responsive">
             <div class="badge bg-dark text-wrap">Lunch</div>
             <table class="table table-bordered">
-            <th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th>
+            <tr class="table-light"><th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
             <?php echo $lunchHTML; ?>
             </table>
 
@@ -20,7 +20,7 @@
 
             <div class="badge bg-dark text-wrap">Total</div>
             <table class="table table-bordered">
-            <th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th>
+            <tr class="table-light"><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
             <?php
                 echo $totalHTML;
             ?>
