@@ -1,7 +1,7 @@
 <div class="container-fluid bg-dark">
             <header>
                 <h1 class="fw-bold text-white" style="text-align: center">
-                    <a class="link-light" style="text-decoration:none" href="index.php">Workout</a>
+                    <a class="link-light" style="text-decoration:none" href="index.php">Workout-FR</a>
                 </h1>
             </header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top">
