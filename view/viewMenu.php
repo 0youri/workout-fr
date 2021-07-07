@@ -20,7 +20,7 @@
                                 <a class="nav-link" id="nav-workout" href="index.php?page=workout">Workout</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="nav-menu" href="index.php?page=food">Food</a>
+                                <a class="nav-link" id="nav-food" href="index.php?page=food">Food</a>
                             </li>
                             <!--
                             <li class="nav-item">
