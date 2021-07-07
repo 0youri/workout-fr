@@ -6,7 +6,7 @@
             </header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    <button class="" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                     aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -17,15 +17,15 @@
                                 <a class="nav-link" href="index.php">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?page=workout">Entrainement</a>
+                                <a class="nav-link" href="index.php?page=workout">Workout</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?page=food">Food</a>
                             </li>
+                            <!--
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?page=test">Test</a>
                             </li>
-                            <!--
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Ajouter un workout</a>
                             </li>
