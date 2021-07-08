@@ -1,12 +1,12 @@
 <div class="container" id="blockworkout">
     <br>
-    <div class="card text-center">
-        <div class="card-header">
+    <div class="card text-center bg-dark text-white">
+        <div class="card-header border-light">
             <?php 
                 echo "#".$nbW." - ".$typeW;
             ?>
         </div>
-        <div class="card-body">
+        <div class="card-body border-light">
         <?php
             echo $viewCard;
         ?>
