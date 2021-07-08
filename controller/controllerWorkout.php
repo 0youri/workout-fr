@@ -35,7 +35,7 @@
             </div>
             <div id="collapsew'.$dataAllWorkout['id'].'" style="display:none;">
                     <br>
-                    <div class="card card-body bg-dark">
+                    <div class="card card-body bg-dark border-light">
                         <p><strong>Type:</strong> '.$dataAllWorkout['type'].'</p>
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
