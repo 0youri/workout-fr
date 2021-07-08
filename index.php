@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     </head>
         
-    <body>
+    <body class="p-3 mb-2 bg-info text-dark">
         <?php
             require('model/constantes.php');
             require('model/includes.php');
