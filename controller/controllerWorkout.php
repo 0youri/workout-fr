@@ -8,6 +8,7 @@
         $muscle = $_POST['muscle'];
         $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
         requestDB($request,$connect);
+        header("Refresh:0.1;url=index.php?page=workout");
     }
 
     $request = "SELECT * FROM public.allworkout;";
@@ -22,11 +23,11 @@
                     <div class="text-black fs-5">
                         <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'</strong>
                         <span class="position-absolute end-0">
-                            <button class="btn btn-dark bi bi-info-circle-fill border" type="button" id="infow'.$dataAllWorkout['id'].'" 
+                            <button class="btn btn-dark bi bi-info-circle-fill" type="button" id="infow'.$dataAllWorkout['id'].'" 
                             onclick="AfficherCollapse(`collapsew'.$dataAllWorkout['id'].'`);"></button>
-                            <a class="btn btn-dark bi bi-bar-chart-fill border" id="statsw'.$dataAllWorkout['id'].'" 
+                            <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$dataAllWorkout['id'].'" 
                             href="index.php?page=stats&w='.$dataAllWorkout['id'].'"></a>
-                            <a class="btn btn-dark bi bi-plus-circle-fill border" id="addw'.$dataAllWorkout['id'].'" 
+                            <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$dataAllWorkout['id'].'" 
                             href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=-1"></a>
 
                         </span>
@@ -35,11 +36,11 @@
             </div>
             <div id="collapsew'.$dataAllWorkout['id'].'" style="display:none;">
                     <br>
-                    <div class="card card-body bg-dark border-light">
+                    <div class="card card-body">
                         <p><strong>Type:</strong> '.$dataAllWorkout['type'].'</p>
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
-                        <table class="table table-bordered border-light table-dark">
+                        <table class="table table-bordered">
                         <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids (en kg)</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id']." ORDER BY rank;";
@@ -53,7 +54,7 @@
             <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
             name='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
-                <button class='btn btn-dark bi bi-gear-fill border' type='button' 
+                <button class='btn btn-dark bi bi-gear-fill' type='button' 
                 onclick='editWorkout(`".$dataAllWorkout['id'].$dataInfo['rank']."`,`".$dataInfo['muscle']."`);'></button>
             </td>";
         }
