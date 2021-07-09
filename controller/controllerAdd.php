@@ -41,12 +41,12 @@
         }
         $viewCard = '
                 <a href="index.php?page=add&w='.$nbW.'&etat=0" 
-                class="btn btn-dark border-light">Commencer entrainement</a>';
+                class="btn btn-primary">Commencer entrainement</a>';
     }
     // Finish workout
     else if ( $_GET['etat'] == 6)
     {
-        $viewCard = '<h5 class="card-title bg-dark text-white">Entrainement terminé</h5>
+        $viewCard = '<h5 class="card-title">Entrainement terminé</h5>
         <a href="index.php?page=workout" class="btn btn-danger">Terminer</a>';
     }
     // During workout

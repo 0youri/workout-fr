@@ -18,16 +18,17 @@
         
         $workoutHTML = $workoutHTML.'<div id="w'.$dataAllWorkout['id'].'">
             <br>
-            <div class="card-body bg-dark text-white border rounded ">
+            <div class="card-body bg-light text-dark border border-dark border-2 rounded">
                 <div class="position-relative">
                     <div class="text-black fs-5">
                         <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'</strong>
                         <span class="position-absolute end-0">
-                            <button class="btn btn-dark border-light bi bi-info-circle-fill" type="button" id="infow'.$dataAllWorkout['id'].'" 
+                            <button class="btn btn-dark bi bi-info-circle-fill" 
+                            type="button" id="infow'.$dataAllWorkout['id'].'" 
                             onclick="AfficherCollapse(`collapsew'.$dataAllWorkout['id'].'`);"></button>
-                            <a class="btn btn-dark border-light bi bi-bar-chart-fill" id="statsw'.$dataAllWorkout['id'].'" 
+                            <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$dataAllWorkout['id'].'" 
                             href="index.php?page=stats&w='.$dataAllWorkout['id'].'"></a>
-                            <a class="btn btn-dark border-light bi bi-plus-circle-fill" id="addw'.$dataAllWorkout['id'].'" 
+                            <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$dataAllWorkout['id'].'" 
                             href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=-1"></a>
 
                         </span>
