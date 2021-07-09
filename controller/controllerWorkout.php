@@ -18,7 +18,7 @@
         
         $workoutHTML = $workoutHTML.'<div id="w'.$dataAllWorkout['id'].'">
             <br>
-            <div class="card-body bg-light text-dark border rounded">
+            <div class="card-body bg-light border rounded">
                 <div class="position-relative">
                     <div class="text-black fs-5">
                         <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'</strong>
@@ -37,7 +37,7 @@
             </div>
             <div id="collapsew'.$dataAllWorkout['id'].'" style="display:none;">
                     <br>
-                    <div class="card card-body">
+                    <div class="card card-body bg-light">
                         <p><strong>Type:</strong> '.$dataAllWorkout['type'].'</p>
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
