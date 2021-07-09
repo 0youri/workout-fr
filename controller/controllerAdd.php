@@ -42,7 +42,7 @@
     {   
         $viewCard = '
                 <a href="index.php?page=add&w='.$nbW.'&etat=0" 
-                class="btn btn-primary">Commencer entrainement</a>';
+                class="btn btn-dark">Commencer entrainement</a>';
     }
     // Finish workout
     else if ( $_GET['etat'] == 6)
@@ -72,7 +72,7 @@
             <input class="border border-dark container" name="serie'.($i+1).'" id="serie'.($i+1).'"></div>';
         }
         $textCard = $textCard.'</div></p>';
-        $boutonCard = '<button type="button" class="btn btn-dark" onclick="sumbitFormAdd();">Valider</bouton></form>';
+        $boutonCard = '<button type="button" class="btn btn-success" onclick="sumbitFormAdd();">Valider</bouton></form>';
         $viewCard = $titleCard.$textCard.$boutonCard;
  
     }
