@@ -1,5 +1,6 @@
 <br>
-<div class="contrainer row">
+<div class="contrainer">
+<div class="row">
     <div class="col card" style="text-align: center;">
     <a class="btn btn-dark" href="index.php?page=workout">Workout</a>
     </div>
@@ -7,4 +8,5 @@
     <div class="col card" style="text-align: center;">
     <a class="btn btn-dark" href="index.php?page=food">Food</a>
     </div>
+</div>
 </div>
