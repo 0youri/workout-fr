@@ -4,7 +4,7 @@
                     <a class="link-light" style="text-decoration:none" href="index.php">workout-fr</a>
                 </h1>
             </header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-bottom">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top">
                 <div class="container-fluid">
                     <!--
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
