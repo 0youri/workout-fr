@@ -3,6 +3,20 @@
     $viewCard = $titleCard = $textCard = $boutonCard = $lien = "";
     $tab = array();
 
+    // Recover data from table allworkout
+    $request = "SELECT * FROM public.allworkout";
+    $allworkoutSQL = requestDB($request,$connect);
+    // Searching from $allworkoutSQL id and type of workout 
+    while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
+    {
+        if ($dataAllWorkout['id'] == $_GET['w'])
+        {
+            $nbW = $dataAllWorkout['id'];
+            $typeW = $dataAllWorkout['type'];
+            break;
+        }
+    }
+
     // Add workout on DB
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -25,20 +39,7 @@
 
     // Beging workout
     if ($_GET['etat'] == -1)
-    {
-        // Recover data from table allworkout
-        $request = "SELECT * FROM public.allworkout";
-        $allworkoutSQL = requestDB($request,$connect);
-        // Searching from $allworkoutSQL id and type of workout 
-        while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
-        {
-            if ($dataAllWorkout['id'] == $_GET['w'])
-            {
-                $nbW = $dataAllWorkout['id'];
-                $typeW = $dataAllWorkout['type'];
-                break;
-            }
-        }
+    {   
         $viewCard = '
                 <a href="index.php?page=add&w='.$nbW.'&etat=0" 
                 class="btn btn-primary">Commencer entrainement</a>';
