@@ -18,7 +18,8 @@
         
         $workoutHTML = $workoutHTML.'<div id="w'.$dataAllWorkout['id'].'">
             <br>
-            <div class="card-body bg-light text-dark border border-dark border-2 rounded">
+            <div class="card-body bg-light text-dark border border-dark rounded" 
+            onclick="AfficherCollapse(`collapsew'.$dataAllWorkout['id'].'`);">
                 <div class="position-relative">
                     <div class="text-black fs-5">
                         <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'</strong>
