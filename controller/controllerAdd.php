@@ -3,20 +3,7 @@
     $viewCard = $titleCard = $textCard = $boutonCard = $lien = "";
     $tab = array();
 
-    // Recover data from table allworkout
-    $request = "SELECT * FROM public.allworkout";
-    $allworkoutSQL = requestDB($request,$connect);
-    // Searching from $allworkoutSQL id and type of workout 
-    while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
-    {
-        if ($dataAllWorkout['id'] == $_GET['w'])
-        {
-            $nbW = $dataAllWorkout['id'];
-            $typeW = $dataAllWorkout['type'];
-            break;
-        }
-    }
-
+ 
     // Add workout on DB
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -39,13 +26,29 @@
 
     // Beging workout
     if ($_GET['etat'] == -1)
-    {   
+    {
+           // Recover data from table allworkout
+        $request = "SELECT * FROM public.allworkout";
+        $allworkoutSQL = requestDB($request,$connect);
+        // Searching from $allworkoutSQL id and type of workout 
+        while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
+        {
+            if ($dataAllWorkout['id'] == $_GET['w'])
+            {
+                $nbW = $dataAllWorkout['id'];
+                $typeW = $dataAllWorkout['type'];
+                break;
+            }
+        }
+        $request = "SELECT count(*) FROM public.workout WHERE id=".$nbW.";";
+        $etatF = requestDB($request,$connect);
+        $etatF = pg_fetch_assoc($etatF)['count'];
         $viewCard = '
-                <a href="index.php?page=add&w='.$nbW.'&etat=0" 
+                <a href="index.php?page=add&w='.$nbW.'&typeW='.$typeW.'&etatF='.$etatF.'&etat=0" 
                 class="btn btn-dark">Commencer entrainement</a>';
     }
     // Finish workout
-    else if ( $_GET['etat'] == 6)
+    else if ( $_GET['etat'] == $_GET['etatF'])
     {
         $viewCard = '<h5 class="card-title">Entrainement terminé</h5>
         <a href="index.php?page=workout" class="btn btn-danger">Terminer</a>';
@@ -53,23 +56,25 @@
     // During workout
     else
     {   
+        $nbW = $_GET['w'];
+        $typeW = $_GET['typeW'];
         $tab = getExercice($nbW,$_GET['etat'],$connect);
         $muscle = $tab[0];
         $exercice = $tab[1];
         $nbseries = $tab[2];
         $nbrep = $tab[3];
         $poids = $tab[4];
-        $lien = 'index.php?page=add&w='.$nbW.'&etat='.($_GET['etat']+1);
+        $lien = 'index.php?page=add&w='.$nbW.'&typeW='.$typeW.'&etatF='.$_GET['etatF'].'&etat='.($_GET['etat']+1);
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
             <input style="display:none;" name="poids" value="'.$poids.'">
             <input style="display:none;" name="muscle" value="'.$muscle.'">
             <h5 class="card-title">['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | '.$poids.'kg</h5>';
         $textCard = '<p class="card-text"><div class="row">';
-        for ($i = 0; $i < $nbseries; $i++)
+        for ($i = 1; $i <= $nbseries; $i++)
         {
             $textCard = $textCard.' <div class="col">
-            <input class="border border-dark container" name="serie'.($i+1).'" id="serie'.($i+1).'"></div>';
+            <input class="border border-dark container" name="serie'.$i.'" id="serie'.$i.'"></div>';
         }
         $textCard = $textCard.'</div></p>';
         $boutonCard = '<button type="button" class="btn btn-success" onclick="sumbitFormAdd();">Valider</bouton></form>';

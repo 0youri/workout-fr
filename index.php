@@ -33,14 +33,14 @@
                 }
                 else
                 {
-                    include('view/viewAccueil.php');
-                    //include('controller/controllerAccueil.php');
+                    include('view/viewWorkout.php');
+                    include('controller/controllerWorkout.php');
                 }
             }
             else
             {
-                include('view/viewAccueil.php');
-                //include('controller/controllerAccueil.php');
+                include('view/viewWorkout.php');
+                include('controller/controllerWorkout.php');
             }
         ?>
     </body>

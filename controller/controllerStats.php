@@ -11,25 +11,17 @@
         $nbrep = $dataWorkout['repetitions'];
         $poids = $dataWorkout['poids'];
 
-        $request = "SELECT * FROM public.stats WHERE id=".$idW." AND muscle='".$muscle."';";
+        $request = "SELECT * FROM public.stats WHERE id=".$idW." AND muscle='".$muscle."' ORDER by date;";
         $statsSQL = requestDB($request,$connect);
         $statsHTML =  $statsHTML.'<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercice.' - '.$nbseries.'x'.$nbrep.'</div>
         <div class="table-responsive">    
         <table class="table table-bordered">
-            <th>Date</th><th>Nb reps</th><th>Poids</th><th>Niveau</th>';
+            <th>Date</th><th>Nb reps</th><th>Poids</th>';
         while ( $dataStats = pg_fetch_assoc($statsSQL) )
         {
             $date = $dataStats['date'];
             $statspoids = $dataStats['poids'];
-            $statsnbrep = $dataStats['serie1'] + $dataStats['serie2'] + $dataStats['serie3'] + $dataStats['serie4'];
             $statsnbreptext = $dataStats['serie1'].":".$dataStats['serie2'].":".$dataStats['serie3'].":".$dataStats['serie4'];
-            if ( $statsnbrep < 24)
-                $mark = '<i class="bi text-danger bi-exclamation-triangle-fill"></i>';
-            else if ( $statsnbrep >= 24 && $statsnbrep < 32)
-                $mark = '<i class="bi text-warning bi-exclamation-triangle-fill"></i>';
-            else if ( $statsnbrep > 32 && $statsnbrep <= 39)
-                $mark = '<i class="bi text-primary bi-bar-chart-fill"></i>';
-            else $mark = '<i class="bi text-success bi-check-circle-fill"></i>';
             $statsHTML = $statsHTML.'<tr>
             <td>'.$date.'</td>
             <td>'.$statsnbreptext.'</td>
