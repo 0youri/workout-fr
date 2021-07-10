@@ -16,17 +16,17 @@
         $statsHTML =  $statsHTML.'<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercice.' - '.$nbseries.'x'.$nbrep.'</div>
         <div class="table-responsive">    
         <table class="table table-bordered">
-            <th>Date</th><th>Nb reps</th><th>Poids</th>';
+            <tr class="bg-light"><th>Date</th><th>Nb reps</th><th>Poids</th></tr>';
         while ( $dataStats = pg_fetch_assoc($statsSQL) )
         {
             $date = $dataStats['date'];
             $statspoids = $dataStats['poids'];
             $statsnbreptext = $dataStats['serie1'].":".$dataStats['serie2'].":".$dataStats['serie3'].":".$dataStats['serie4'];
-            $statsHTML = $statsHTML.'<tr>
+            $statsHTML = $statsHTML.'
+            <tr>
             <td>'.$date.'</td>
             <td>'.$statsnbreptext.'</td>
             <td>'.$statspoids.'</td>
-            <td>'.$mark.'</td>
             </tr>';
         }
         $statsHTML = $statsHTML. '</table></div>';
