@@ -29,7 +29,9 @@
                             href="index.php?page=stats&w='.$dataAllWorkout['id'].'"></a>
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$dataAllWorkout['id'].'" 
                             href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=-1"></a>
-
+                            <button class="btn btn-dark bi bi-gear-fill" type="button" 
+                            data-bs-toggle="modal"  data-bs-target="#editModal"
+                            onclick="editWorkout(`'.$dataAllWorkout['id'].'`);"></button>
                         </span>
                     </div>
                 </div>
@@ -48,14 +50,15 @@
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $workoutHTML = $workoutHTML."<tr>
-            <td>".$dataInfo['muscle']."</td>
-            <td>".$dataInfo['exercice']."</td>
-            <td>".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
+            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle'].">".$dataInfo['muscle']."</td>
+            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle'].">".$dataInfo['exercice']."</td>
+            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle'].">
+            ".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
             name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editWorkout(`".$dataAllWorkout['id'].$dataInfo['rank']."`,`".$dataInfo['muscle']."`);'></button>
+                onclick='editPoids(`".$dataAllWorkout['id'].$dataInfo['rank']."`,`".$dataInfo['muscle']."`);'></button>
             </td>";
         }
     

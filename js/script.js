@@ -47,11 +47,11 @@ function resetForm(id,muscle)
     td_poids.innerHTML = `${value}`;
     td_poids_boutons.innerHTML = `
     <button class='btn btn-dark bi bi-gear-fill' type='button' 
-    onclick="editWorkout('${id}','${muscle}');"></button>
+    onclick="editPoids('${id}','${muscle}');"></button>
     `;
 }
 
-function editWorkout(id, muscle)
+function editPoids(id, muscle)
 {
     let td_poids = document.getElementById(`td-poids${id}`);
     let td_poids_boutons = document.getElementById(`td-poids-boutons${id}`);
@@ -74,6 +74,13 @@ function editWorkout(id, muscle)
     `;
 }
 
+function editWorkout(id)
+{
+    alert( document.getElementById(id).innerHTML );
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => 
 {
     const url = document.location.href;
@@ -88,3 +95,6 @@ document.addEventListener('DOMContentLoaded', () =>
         document.getElementById('nav-workout').classList.remove('active');
     }
 }); 
+
+
+
