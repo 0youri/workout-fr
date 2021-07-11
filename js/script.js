@@ -76,7 +76,7 @@ function editPoids(id, muscle)
 
 function editWorkout(id)
 {
-    alert( document.getElementById(id).innerHTML );
+    alert( document.getElementById(`td-edit-${id}-Dos`).innerHTML );
 }
 
 
