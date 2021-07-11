@@ -50,9 +50,9 @@
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $workoutHTML = $workoutHTML."<tr>
-            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle'].">".$dataInfo['muscle']."</td>
-            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle'].">".$dataInfo['exercice']."</td>
-            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle'].">
+            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['muscle']."</td>
+            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['exercice']."</td>
+            <td id='td-edit-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
             ".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
             name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
