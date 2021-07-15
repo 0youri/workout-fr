@@ -19,7 +19,6 @@
             $connect = connectDB();
             
             include('view/viewMenu.php');
-            $_GET['page'] = "workout";
             if(isset($_GET['page'])) // Choix de la page
             {
                 $page = $_GET['page'];
