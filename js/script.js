@@ -79,6 +79,8 @@ function editWorkout(id)
     // Entete du formulaire
     document.getElementById('h5-workout-name').innerHTML = 
     `Edit workout ${document.getElementById(`strong-workout-name-${id}`).innerHTML}`;
+    document.getElementById(`h5-workout-name`).
+    setAttribute('onchange',`editForm('${id}');`);
     // Options select Muscle du formulaire
     let nb = 1;
     document.getElementById('select-edit-muscle').innerHTML = 
@@ -89,8 +91,12 @@ function editWorkout(id)
         document.getElementById('select-edit-muscle').innerHTML +=
         `<option value="${muscle}">${muscle}</option>`;
         nb++;
-    }
-    
+    }  
+}
+
+function editForm(id)
+{
+
 }
 
 function resetWorkout()

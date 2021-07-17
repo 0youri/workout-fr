@@ -33,7 +33,8 @@
                             href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=-1"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" 
                             data-bs-toggle="modal"  data-bs-target="#editModal"
-                            onclick="editWorkout(`'.$dataAllWorkout['id'].'`);"></button>
+                            onclick="editWorkout(`'.$dataAllWorkout['id'].'`);
+                            resetWorkout();"></button>
                         </span>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
             <div class="modal-body">
                 <div>
                     <label>Muscle</label>
-                    <select class="form-select" id="select-edit-muscle">
+                    <select class="form-select" id="select-edit-muscle" onchange="editForm(0);">
                     </select>
                 </div>
                 <br>
