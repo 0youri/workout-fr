@@ -20,7 +20,9 @@
             <div class="card-body bg-light border rounded">
                 <div class="position-relative">
                     <div class="text-black fs-5">
-                        <strong>#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'</strong>
+                        <strong id="strong-workout-name-'.$dataAllWorkout['id'].'"
+                        >#'.$dataAllWorkout['id'].' - '.$dataAllWorkout['type'].'
+                        </strong>
                         <span class="position-absolute end-0">
                             <button class="btn btn-dark bi bi-info-circle-fill" 
                             type="button" id="infow'.$dataAllWorkout['id'].'" 
@@ -50,11 +52,11 @@
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $workoutHTML = $workoutHTML."<tr>
-            <td id='td-muscle-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['muscle']."</td>
+            <td id='td-muscle-".$dataAllWorkout['id']."-".$dataInfo['rank']."'>".$dataInfo['muscle']."</td>
             <td id='td-exercice-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['exercice']."</td>
             <td id='td-nb-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
             ".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
-            <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
+            <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."'
             name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 

@@ -10,25 +10,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit workout</h5>
+                <h5 class="modal-title" id="h5-workout-name"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div>
-                    <label>Type workout</label>
-                    <input type="text" class="form-control" id="edit-typew" disabled>
-                </div>
-                <br>
-                <div>
                     <label>Muscle</label>
                     <select class="form-select" id="select-edit-muscle">
                         <option value="-1" selected disabled>Choisir</option>
-                        <option value="Facile">Facile</option>
-                        <option value="Moyen">Moyen</option>
-                        <option value="Difficile">Difficile</option>
                     </select>
                 </div>
-                <br>
                 <br>
                 <div>
                     <label>Exercice</label>

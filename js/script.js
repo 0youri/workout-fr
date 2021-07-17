@@ -76,7 +76,19 @@ function editPoids(id, muscle)
 
 function editWorkout(id)
 {
-    alert( document.getElementById(`td-edit-${id}`).innerHTML );
+    // Entete du formulaire
+    document.getElementById('h5-workout-name').innerHTML = 
+    `Edit workout ${document.getElementById(`strong-workout-name-${id}`).innerHTML}`;
+    // Options select Muscle du formulaire
+    let nb = 1;
+    while ( document.getElementById(`td-muscle-${id}-${nb}`) )
+    {
+        let muscle = document.getElementById(`td-muscle-${id}-${nb}`).innerHTML;
+        document.getElementById('select-edit-muscle').innerHTML +=
+        `<option value="${muscle}">${muscle}</option>`;
+        nb++;
+    }
+    
 }
 
 
