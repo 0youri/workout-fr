@@ -81,6 +81,8 @@ function editWorkout(id)
     `Edit workout ${document.getElementById(`strong-workout-name-${id}`).innerHTML}`;
     // Options select Muscle du formulaire
     let nb = 1;
+    document.getElementById('select-edit-muscle').innerHTML = 
+    '<option value="-1" selected disabled>Choisir</option>';
     while ( document.getElementById(`td-muscle-${id}-${nb}`) )
     {
         let muscle = document.getElementById(`td-muscle-${id}-${nb}`).innerHTML;
@@ -91,7 +93,17 @@ function editWorkout(id)
     
 }
 
-
+function resetWorkout()
+{
+    let h5 = document.getElementById('h5-workout-name');
+    let selectMuscle = document.getElementById('select-edit-muscle');
+    let inputExercice = document.getElementById('input-edit-exercice');
+    let inputSeries = document.getElementById('input-edit-series');
+    let inputReps = document.getElementById('input-edit-repetitions');
+    h5.innerHTML = selectMuscle.innerHTML = inputExercice.innerHTML =
+    inputSeries.innerHTML = inputReps.innerHTML = "";
+    inputExercice.disabled = inputSeries.disabled = inputReps.disabled = true;
+}
 
 document.addEventListener('DOMContentLoaded', () => 
 {

@@ -17,7 +17,6 @@
                 <div>
                     <label>Muscle</label>
                     <select class="form-select" id="select-edit-muscle">
-                        <option value="-1" selected disabled>Choisir</option>
                     </select>
                 </div>
                 <br>
