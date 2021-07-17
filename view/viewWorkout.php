@@ -37,7 +37,7 @@
                 </div>
                 <br>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="input-check">
+                    <input class="form-check-input" type="checkbox" id="input-check">
                     <label class="form-check-label">Supprimer les statistiques</label>
                 </div>
             </div>
