@@ -43,7 +43,7 @@
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
                         <table class="table table-bordered bg-white">
-                        <th>Muscle</th><th>Exercice</th><th>Nb séries</th><th>Nb reps</th><th>Poids (en kg)</th><th>Settings</th>
+                        <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids (en kg)</th><th>Settings</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id']." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
@@ -52,10 +52,8 @@
             $workoutHTML = $workoutHTML."<tr>
             <td id='td-muscle-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['muscle']."</td>
             <td id='td-exercice-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['exercice']."</td>
-            <td id='td-series-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
-            ".$dataInfo['series']."</td>
-            <td id='td-reps-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
-            ".$dataInfo['repetitions']."</td>
+            <td id='td-nb-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
+            ".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
             name='td-poids".$dataAllWorkout['id']."'>
             ".$dataInfo['poids']."</td>
