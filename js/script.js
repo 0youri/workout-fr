@@ -117,8 +117,8 @@ function resetWorkout()
     let inputExercice = document.getElementById('input-edit-exercice');
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
-    h5.innerHTML = selectMuscle.innerHTML = inputExercice.innerHTML =
-    inputSeries.innerHTML = inputReps.innerHTML = "";
+    h5.innerHTML = selectMuscle.innerHTML = inputExercice.value =
+    inputSeries.value = inputReps.value = "";
     inputExercice.disabled = inputSeries.disabled = inputReps.disabled = true;
 }
 
