@@ -36,7 +36,7 @@
                     id="input-edit-repetitions" name="input-edit-repetitions" disabled>
                 </div>
                 <br>
-                <div class="form-check">
+                <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="input-check">
                     <label class="form-check-label">Supprimer les statistiques</label>
                 </div>
