@@ -58,7 +58,7 @@ function editPoids(id, muscle)
     const value = td_poids.innerHTML;
     td_poids.innerHTML = 
     `
-        <form method="POST" id="formEdit" action="index.php?page=workout">
+        <form method="POST" id="formEditPoids" action="index.php?page=workout">
         <input style="display:none;" name="w" value="${id[0]}">
         <input style="display:none;" name="muscle" value="${muscle}">
         <input name="editP" class="form-control" size="1" id="editP" class="border border-dark" value="${value}">
@@ -67,7 +67,7 @@ function editPoids(id, muscle)
     td_poids_boutons.innerHTML = `
     <div class="d-grid gap-2 d-md-block">
     <button type="button" class="btn btn-success bi bi-check-circle-fill" 
-    onclick="sumbitForm('formEdit');"></button>
+    onclick="sumbitForm('formEditPoids');"></button>
     <button type="button" class="btn btn-danger bi bi-x-circle-fill" 
     onclick="resetForm('${id}','${muscle}');"></button>
     </div>

@@ -14,36 +14,38 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div>
-                    <label>Muscle</label>
-                    <select class="form-select" onchange="editForm(0);"
-                    id="select-edit-muscle" name="select-edit-muscle">
-                    </select>
-                </div>
-                <br>
-                <div>
-                    <label>Exercice</label>
-                    <input type="text" class="form-control"
-                    id="input-edit-exercice" name="input-edit-exercice" disabled>
-                </div>
-                <br>
-                <div>
-                    <label>Nb séries</label>
-                    <input type="text" class="form-control" 
-                    id="input-edit-series" name="input-edit-series" disabled>
-                </div>
-                <br>
-                <div>
-                    <label>Nb répétitions</label>
-                    <input type="text" class="form-control"
-                    id="input-edit-repetitions" name="input-edit-repetitions" disabled>
-                </div>
-                <br>
+                <form method="POST" id="formEditWorkout" action="index.php?page=workout">
+                    <div>
+                        <label>Muscle</label>
+                        <select class="form-select" onchange="editForm(0);"
+                        id="select-edit-muscle" name="select-edit-muscle">
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Exercice</label>
+                        <input type="text" class="form-control"
+                        id="input-edit-exercice" name="input-edit-exercice" disabled>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Nb séries</label>
+                        <input type="text" class="form-control" 
+                        id="input-edit-series" name="input-edit-series" disabled>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Nb répétitions</label>
+                        <input type="text" class="form-control"
+                        id="input-edit-repetitions" name="input-edit-repetitions" disabled>
+                    </div>
+                </form>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary" id="modifquiz">Engresister</button>
+                <button type="button" class="btn btn-success" 
+                onclick="sumbitForm('formEditWorkout');">Engresister</button>
             </div>
         </div>
     </div>
