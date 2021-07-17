@@ -20,7 +20,6 @@
                     id="select-edit-muscle" name="select-edit-muscle">
                     </select>
                 </div>
-                <br>
                 <div>
                     <label>Exercice</label>
                     <input type="text" class="form-control"
@@ -36,6 +35,7 @@
                     <input type="text" class="form-control"
                     id="input-edit-repetitions" name="input-edit-repetitions" disabled>
                 </div>
+                <br>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="input-check">
                     <label class="form-check-label">Supprimer les statistiques</label>
