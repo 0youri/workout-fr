@@ -19,7 +19,6 @@
             $connect = connectDB();
             
             include('view/viewMenu.php');
-
             if(isset($_GET['page'])) // Choix de la page
             {
                 $page = $_GET['page'];
@@ -33,14 +32,14 @@
                 }
                 else
                 {
-                    include('view/viewWorkout.php');
                     include('controller/controllerWorkout.php');
+                    include('view/viewWorkout.php');
                 }
             }
             else
             {
-                include('view/viewWorkout.php');
                 include('controller/controllerWorkout.php');
+                include('view/viewWorkout.php');
             }
         ?>
     </body>
