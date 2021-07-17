@@ -96,7 +96,18 @@ function editWorkout(id)
 
 function editForm(id)
 {
-
+    const muscle = document.getElementById('select-edit-muscle').value;
+    let inputExercice = document.getElementById('input-edit-exercice');
+    let inputSeries = document.getElementById('input-edit-series');
+    let inputReps = document.getElementById('input-edit-repetitions');
+    let tdExercice = document.getElementById(`td-exercice-${id}-${muscle}`).innerHTML;
+    let tdNb = document.getElementById(`td-nb-${id}-${muscle}`).innerHTML;
+    // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
+    tdNb = tdNb.split("x"); 
+    inputExercice.disabled = inputSeries.disabled = inputReps.disabled = false;
+    inputExercice.value = tdExercice;
+    inputSeries.value = tdNb[0];
+    inputReps.value = tdNb[1];
 }
 
 function resetWorkout()
