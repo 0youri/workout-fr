@@ -16,21 +16,29 @@
             <div class="modal-body">
                 <div>
                     <label>Muscle</label>
-                    <select class="form-select" id="select-edit-muscle" onchange="editForm(0);">
+                    <select class="form-select" onchange="editForm(0);"
+                    id="select-edit-muscle" name="select-edit-muscle">
                     </select>
                 </div>
                 <br>
                 <div>
                     <label>Exercice</label>
-                    <input type="text" class="form-control" id="input-edit-exercice" disabled>
+                    <input type="text" class="form-control"
+                    id="input-edit-exercice" name="input-edit-exercice" disabled>
                 </div>
                 <div>
                     <label>Nb séries</label>
-                    <input type="text" class="form-control" id="input-edit-series" disabled>
+                    <input type="text" class="form-control" 
+                    id="input-edit-series" name="input-edit-series" disabled>
                 </div>
                 <div>
                     <label>Nb répétitions</label>
-                    <input type="text" class="form-control" id="input-edit-repetitions" disabled>
+                    <input type="text" class="form-control"
+                    id="input-edit-repetitions" name="input-edit-repetitions" disabled>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="input-check">
+                    <label class="form-check-label">Supprimer les statistiques</label>
                 </div>
             </div>
 
