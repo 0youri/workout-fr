@@ -55,8 +55,7 @@
             <td id='td-nb-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
             ".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."' 
-            name='td-poids".$dataAllWorkout['id']."'>
-            ".$dataInfo['poids']."</td>
+            name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
                 onclick='editPoids(`".$dataAllWorkout['id'].$dataInfo['rank']."`,
