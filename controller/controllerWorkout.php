@@ -55,8 +55,8 @@
             $workoutHTML = $workoutHTML."<tr>
             <td id='td-muscle-".$dataAllWorkout['id']."-".$dataInfo['rank']."'>".$dataInfo['muscle']."</td>
             <td id='td-exercice-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['exercice']."</td>
-            <td id='td-nb-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>
-            ".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
+            <td id='td-nb-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'
+            >".$dataInfo['series']."x".$dataInfo['repetitions']."</td>
             <td id='td-poids".$dataAllWorkout['id'].$dataInfo['rank']."'
             name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
