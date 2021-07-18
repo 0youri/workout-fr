@@ -18,11 +18,13 @@
             $exercice = $_POST['input-edit-exercice'];
             $series = $_POST['input-edit-series'];
             $repetitions = $_POST['input-edit-repetitions'];
+            /*
             $request = "UPDATE public.workout SET 
             exercice='".$exercice."', series=".$series.",repetitions=".$repetitions."
             WHERE id=".$id." AND muscle='".$muscle."';";
             request($request,$connect);
-            $request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
+            //$request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
+            */
         }
     }
 
