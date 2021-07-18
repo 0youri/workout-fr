@@ -13,9 +13,6 @@
         }
         else
         {
-            if ( !empty($_POST['checkbox-edit']) ) echo $_POST['checkbox-edit'];
-            else echo "empty";
-            /*
             $id = $_POST['w'];
             $muscle = $_POST['select-edit-muscle'];
             $exercice = $_POST['input-edit-exercice'];
@@ -26,9 +23,13 @@
             exercice='".$exercice."', series=".$series.", repetitions=".$repetitions."
             WHERE id=".$id." AND muscle='".$muscle."';";
             requestDB($request,$connect);
-            $request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
-            requestDB($request,$connect);
-            */
+            if ( $_POST['checkbox-edit'] == "on" )
+            {
+                echo "delete";
+                //$request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
+                //requestDB($request,$connect);
+            }
+            else echo "empty";
         }
     }
 
