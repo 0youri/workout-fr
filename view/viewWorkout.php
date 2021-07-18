@@ -39,6 +39,12 @@
                         <input type="text" class="form-control"
                         id="input-edit-repetitions" name="input-edit-repetitions" disabled>
                     </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" value="" id="checkbox-edit">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Supprimer les statistiques
+                        </label>
+                    </div>
                 </form>
             </div>
 

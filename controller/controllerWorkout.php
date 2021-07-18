@@ -13,6 +13,8 @@
         }
         else
         {
+            echo $_POST['checkbox-edit'];
+            /*
             $id = $_POST['w'];
             $muscle = $_POST['select-edit-muscle'];
             $exercice = $_POST['input-edit-exercice'];
@@ -25,6 +27,7 @@
             requestDB($request,$connect);
             $request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
             requestDB($request,$connect);
+            */
         }
     }
 
