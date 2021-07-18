@@ -13,7 +13,8 @@
         }
         else
         {
-            echo $_POST['checkbox-edit'];
+            if ( !empty($_POST['checkbox-edit']) ) echo $_POST['checkbox-edit'];
+            else echo "empty";
             /*
             $id = $_POST['w'];
             $muscle = $_POST['select-edit-muscle'];

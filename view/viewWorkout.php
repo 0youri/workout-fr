@@ -39,6 +39,7 @@
                         <input type="text" class="form-control"
                         id="input-edit-repetitions" name="input-edit-repetitions" disabled>
                     </div>
+                    <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-edit" name="checkbox-edit">
