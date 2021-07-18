@@ -25,11 +25,9 @@
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
             {
-                echo "delete";
-                //$request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
-                //requestDB($request,$connect);
+                $request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
+                requestDB($request,$connect);
             }
-            else echo "empty";
         }
     }
 
