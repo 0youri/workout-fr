@@ -20,10 +20,10 @@
             $repetitions = $_POST['input-edit-repetitions'];
             
             $request = "UPDATE public.workout SET 
-            exercice='".$exercice."', series=".$series.",repetitions=".$repetitions."
+            exercice='".$exercice."', series=".$series.", repetitions=".$repetitions."
             WHERE id=".$id." AND muscle='".$muscle."';";
             echo $request;
-            //request($request,$connect);
+            request($request,$connect);
             //$request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
         }
     }
