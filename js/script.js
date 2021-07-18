@@ -76,6 +76,8 @@ function editPoids(id, muscle)
 
 function editWorkout(id)
 {
+    document.getElementById('formEditWorkout').innerHTML += 
+    `<input style="display:none;" name="w" value="${id}">`;
     // Entete du formulaire
     document.getElementById('h5-workout-name').innerHTML = 
     `Edit workout ${document.getElementById(`strong-workout-name-${id}`).innerHTML}`;

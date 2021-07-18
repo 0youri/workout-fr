@@ -3,11 +3,27 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $editP = $_POST['editP'];
-        $id = $_POST['w'];
-        $muscle = $_POST['muscle'];
-        $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
-        requestDB($request,$connect);
+        if ( isset($_POST['editP']) )
+        {
+            $editP = $_POST['editP'];
+            $id = $_POST['w'];
+            $muscle = $_POST['muscle'];
+            $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
+            requestDB($request,$connect);
+        }
+        else
+        {
+            $id = $_POST['w'];
+            $muscle = $_POST['select-edit-muscle'];
+            $exercice = $_POST['input-edit-exercice'];
+            $series = $_POST['input-edit-series'];
+            $repetitions = $_POST['input-edit-repetitions'];
+            $request = "UPDATE public.workout SET 
+            exercice='".$exercice."', series=".$series.",repetitions=".$repetitions."
+            WHERE id=".$id." AND muscle='".$muscle."';";
+            request($request,$connect);
+            $request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
+        }
     }
 
     $request = "SELECT * FROM public.allworkout;";

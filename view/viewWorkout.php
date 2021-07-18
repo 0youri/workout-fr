@@ -43,9 +43,9 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-success" 
-                onclick="sumbitForm('formEditWorkout');">Engresister</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="button" class="btn btn-primary" 
+                onclick="sumbitForm('formEditWorkout');">Edit</button>
             </div>
         </div>
     </div>
