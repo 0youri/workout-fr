@@ -7,11 +7,8 @@ function AfficherCollapse(element)
 
 function sumbitFormAdd()
 {
-    let nbSeries;
-    if ( document.getElementById(`serie4`) ) nbSeries = 4;
-    else nbSeries = 3;
-    let compteur = 0;
-    for (let i = 1; i <= nbSeries; i++)
+    let compteur = 0; let i = 1;
+    while ( document.getElementById(`serie${i}`) )
     {
         if ( document.getElementById(`serie${i}`) && document.getElementById(`serie${i}`).value == "" )
         {
@@ -26,6 +23,7 @@ function sumbitFormAdd()
             document.getElementById(`serie${i}`).classList.remove("border-danger");
             document.getElementById(`serie${i}`).classList.remove("border-2");
         }
+        i++;
     }
 
     if ( compteur === 0 ) sumbitForm("formAdd");

@@ -67,13 +67,15 @@
                         <p><strong>Exercices:</strong>
                         <div class="table-responsive">
                         <table class="table table-bordered bg-white">
-                        <th>Muscle</th><th>Exercice</th><th>Nb séries x Nb reps</th><th>Poids (en kg)</th><th>Settings</th>
+                        <th style="display:none;">Rank</th><th>Muscle</th><th>Exercice</th>
+                        <th>Nb séries x Nb reps</th><th>Poids (en kg)</th><th>Settings</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$dataAllWorkout['id']." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $workoutHTML = $workoutHTML."<tr>
+            <td id='td-rank' style='display:none;'>".$dataInfo['rank']."</td>
             <td id='td-muscle-".$dataAllWorkout['id']."-".$dataInfo['rank']."'>".$dataInfo['muscle']."</td>
             <td id='td-exercice-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'>".$dataInfo['exercice']."</td>
             <td id='td-nb-".$dataAllWorkout['id']."-".$dataInfo['muscle']."'
