@@ -44,7 +44,7 @@
         $etatF = requestDB($request,$connect);
         $etatF = pg_fetch_assoc($etatF)['count'];
         $viewCard = '
-                <a href="index.php?page=add&w='.$nbW.'&typeW='.$typeW.'&etatF='.$etatF.'&etat=0" 
+                <a href="index.php?page=addstats&w='.$nbW.'&typeW='.$typeW.'&etatF='.$etatF.'&etat=0" 
                 class="btn btn-dark">Commencer entrainement</a>';
     }
     // Finish workout
@@ -64,7 +64,7 @@
         $nbseries = $tab[2];
         $nbrep = $tab[3];
         $poids = $tab[4];
-        $lien = 'index.php?page=add&w='.$nbW.'&typeW='.$typeW.'&etatF='.$_GET['etatF'].'&etat='.($_GET['etat']+1);
+        $lien = 'index.php?page=addstats&w='.$nbW.'&typeW='.$typeW.'&etatF='.$_GET['etatF'].'&etat='.($_GET['etat']+1);
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
             <input style="display:none;" name="poids" value="'.$poids.'">
