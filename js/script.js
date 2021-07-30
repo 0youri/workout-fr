@@ -87,15 +87,15 @@ function editWorkout(id)
     document.getElementById('h5-workout-name').innerHTML = 
     `Edit workout ${document.getElementById(`strong-workout-name-${id}`).innerHTML}`;
     // Options select Muscle du formulaire
-    let nb = 1;
+    let rank = 1;
     document.getElementById('select-edit-muscle').innerHTML = 
     '<option value="-1" selected disabled>Choisir</option>';
-    while ( document.getElementById(`td-muscle-${id}-${nb}`) )
+    while ( document.getElementById(`td-muscle-${id}-${rank}`) )
     {
-        let muscle = document.getElementById(`td-muscle-${id}-${nb}`).innerHTML;
+        let muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
         document.getElementById('select-edit-muscle').innerHTML +=
-        `<option value="${muscle}">${muscle}</option>`;
-        nb++;
+        `<option value="${rank}-${muscle}">#${rank} ${muscle}</option>`;
+        rank++;
     }
     document.getElementById(`select-edit-muscle`).
     setAttribute('onchange',`editForm('${id}');`);
@@ -103,7 +103,8 @@ function editWorkout(id)
 
 function editForm(id)
 {
-    const muscle = document.getElementById('select-edit-muscle').value;
+    const muscle = document.getElementById('select-edit-muscle').value
+    .split("-")[0]; 
     let inputExercice = document.getElementById('input-edit-exercice');
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');

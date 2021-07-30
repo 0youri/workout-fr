@@ -16,14 +16,16 @@
         else
         {
             $id = $_POST['w'];
-            $muscle = $_POST['select-edit-muscle'];
+            $tab = explode("-", $_POST['select-edit-muscle']);
+            $muscle = $tab[0];
+            $rank = $tab[1];
             $exercice = $_POST['input-edit-exercice'];
             $series = $_POST['input-edit-series'];
             $repetitions = $_POST['input-edit-repetitions'];
             
             $request = "UPDATE public.workout SET 
             exercice='".$exercice."', series=".$series.", repetitions=".$repetitions."
-            WHERE id=".$id." AND muscle='".$muscle."';";
+            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
             {

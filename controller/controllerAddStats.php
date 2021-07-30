@@ -68,8 +68,9 @@
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$lien.'">
             <input style="display:none;" name="poids" value="'.$poids.'">
+            <input style="display:none;" name="rank" value="'.$_GET['etat'].'">
             <input style="display:none;" name="muscle" value="'.$muscle.'">
-            <h5 class="card-title">['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | '.$poids.'kg</h5>';
+            <h5 class="card-title">#'.$_GET['etat'].'['.$muscle.'] '.$exercice.' | '.$nbseries.'x'.$nbrep.' | '.$poids.'kg</h5>';
         $textCard = '<p class="card-text"><div class="row">';
         for ($i = 1; $i <= $nbseries; $i++)
         {
