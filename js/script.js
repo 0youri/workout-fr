@@ -105,6 +105,7 @@ function editForm(id)
 {
     const muscle = document.getElementById('select-edit-muscle').value
     .split("-")[0]; 
+    alert(muscle);
     let inputExercice = document.getElementById('input-edit-exercice');
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
