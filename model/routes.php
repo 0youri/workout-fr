@@ -1,7 +1,8 @@
 <?php
 	// Différentes pages
 	$routes = array(
-		'add' => array('controller' => 'controllerAdd', 'view' => 'viewAdd'),
+		'addstats' => array('controller' => 'controllerAddStats', 'view' => 'viewAddStats'),
+		'addworkout' => array('controller' => 'controllerAddWorkout', 'view' => 'viewAddWorkout'),
 		'stats' => array('controller' => 'controllerStats', 'view' => 'viewStats'),
 		'workout' => array('controller' => 'controllerWorkout', 'view' => 'viewWorkout'),
 		'food' => array('controller' => 'controllerFood', 'view' => 'viewFood'),

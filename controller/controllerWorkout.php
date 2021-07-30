@@ -51,7 +51,7 @@
                             <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$dataAllWorkout['id'].'" 
                             href="index.php?page=stats&w='.$dataAllWorkout['id'].'"></a>
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$dataAllWorkout['id'].'" 
-                            href="index.php?page=add&w='.$dataAllWorkout['id'].'&etat=-1"></a>
+                            href="index.php?page=addstats&w='.$dataAllWorkout['id'].'&etat=-1"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" 
                             data-bs-toggle="modal"  data-bs-target="#editModal"
                             onclick="resetWorkout(); editWorkout(`'.$dataAllWorkout['id'].'`);">
