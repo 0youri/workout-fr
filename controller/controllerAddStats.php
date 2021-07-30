@@ -11,13 +11,14 @@
         {
             $id = $_GET['w'];
             $muscle = $_POST['muscle'];
+            $rank = $_POST['rank'];
             $today = date("d/m/Y");   
             $serie1 = $_POST['serie1'];
             $serie2 = $_POST['serie2'];
             $serie3 = $_POST['serie3'];
             $serie4 = $_POST['serie4'];
             $poids = $_POST['poids'];
-            $values = "'".$today."',".$serie1.",".$serie2.",".$serie3.",".$serie4.",'".$poids."','".$muscle."'";
+            $values = "'".$today."',".$serie1.",".$serie2.",".$serie3.",".$serie4.",'".$poids."','".$muscle."',".$rank."";
             addTableDataDB($id,$values,$connect);
         }
     }
