@@ -35,29 +35,20 @@ function sumbitForm(id)
     document.getElementById(id).submit();
 }
 
-function resetForm(id,muscle)
+
+
+// Changement poids
+
+function editPoids(id, rank, muscle)
 {
-    let td_poids = document.getElementById(`td-poids${id}`);
-    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}`); 
-
-    const value = document.getElementById(`editP`).value;
-
-    td_poids.innerHTML = `${value}`;
-    td_poids_boutons.innerHTML = `
-    <button class='btn btn-dark bi bi-gear-fill' type='button' 
-    onclick="editPoids('${id}','${muscle}');"></button>
-    `;
-}
-
-function editPoids(id, muscle)
-{
-    let td_poids = document.getElementById(`td-poids${id}`);
-    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}`);
+    let td_poids = document.getElementById(`td-poids${id}${rank}`);
+    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}${rank}`);
     const value = td_poids.innerHTML;
     td_poids.innerHTML = 
     `
         <form method="POST" id="formEditPoids" action="index.php?page=workout">
-        <input style="display:none;" name="w" value="${id[0]}">
+        <input style="display:none;" name="w" value="${id}">
+        <input style="display:none;" name="rank" value="${rank}">
         <input style="display:none;" name="muscle" value="${muscle}">
         <input name="editP" class="form-control" size="1" id="editP" class="border border-dark" value="${value}">
         </form>
@@ -67,10 +58,26 @@ function editPoids(id, muscle)
     <button type="button" class="btn btn-success bi bi-check-circle-fill" 
     onclick="sumbitForm('formEditPoids');"></button>
     <button type="button" class="btn btn-danger bi bi-x-circle-fill" 
-    onclick="resetForm('${id}','${muscle}');"></button>
+    onclick="resetForm(${id},${rank},'${muscle}');"></button>
     </div>
     `;
 }
+
+function resetForm(id, rank, muscle)
+{
+    let td_poids = document.getElementById(`td-poids${id}${rank}`);
+    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}${rank}`); 
+
+    const value = document.getElementById(`editP`).value;
+
+    td_poids.innerHTML = `${value}`;
+    td_poids_boutons.innerHTML = `
+    <button class='btn btn-dark bi bi-gear-fill' type='button' 
+    onclick="editPoids(${id},${rank},'${muscle}');"></button>
+    `;
+}
+
+// Changement infos workout
 
 function editWorkout(id)
 {
@@ -122,6 +129,9 @@ function resetWorkout()
     inputExercice.disabled = inputSeries.disabled = inputReps.disabled = true;
 }
 
+
+// Page choisie
+ 
 document.addEventListener('DOMContentLoaded', () => 
 {
     const url = document.location.href;

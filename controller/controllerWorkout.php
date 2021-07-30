@@ -7,8 +7,10 @@
         {
             $editP = $_POST['editP'];
             $id = $_POST['w'];
+            $rank = $_POST['rank'];
             $muscle = $_POST['muscle'];
-            $request = "UPDATE public.workout SET poids='".$editP."' WHERE id=".$id." AND muscle='".$muscle."';";
+            $request = "UPDATE public.workout SET poids='".$editP."' 
+            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
         }
         else
@@ -84,7 +86,7 @@
             name='td-poids".$dataAllWorkout['id']."'>".$dataInfo['poids']."</td>
             <td id='td-poids-boutons".$dataAllWorkout['id'].$dataInfo['rank']."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editPoids(`".$dataAllWorkout['id'].$dataInfo['rank']."`,
+                onclick='editPoids(".$dataAllWorkout['id'].",".$dataInfo['rank'].",
                 `".$dataInfo['muscle']."`);'></button>
             </td>";
         }
