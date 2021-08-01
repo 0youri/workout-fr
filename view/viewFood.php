@@ -4,7 +4,8 @@
         <div class="card-header">Food</div>
         <div class="card-body">
         <div class="table-responsive">
-            <div class="badge bg-dark text-wrap">Lunch
+            <div class="row">
+                <div class="badge bg-dark text-wrap">Lunch</div>
                 <button class="btn btn-dark bi bi-gear-fill" type="button"></button>
             </div>
             <table class="table table-bordered">
