@@ -2,7 +2,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Food <button class="btn btn-sm bi bi-gear-wide-connected" type="button"></button>
+            Food <button class="btn bi bi-gear-wide-connected" type="button"></button>
         </div>
         <div class="card-body">
         <div class="table-responsive">
