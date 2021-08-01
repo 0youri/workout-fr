@@ -6,14 +6,17 @@
         <div class="table-responsive">
             <div class="d-grid gap-2 d-md-block">
                 <div class="badge bg-dark text-wrap">Lunch</div>
-                <button class="btn btn-dark btn-sm bbi bi-pencil-square" type="button"></button>
+                <button class="btn btn-sm bbi bi-pencil-square" type="button"></button>
             </div>
             <table class="table table-bordered">
             <tr class="table-light"><th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
             <?php echo $lunchHTML; ?>
             </table>
 
-            <div class="badge bg-dark text-wrap">Dinner</div>
+            <div class="d-grid gap-2 d-md-block">
+                <div class="badge bg-dark text-wrap">Dinner</div>
+                <button class="btn btn-sm bbi bi-pencil-square" type="button"></button>
+            </div>
             <table class="table table-bordered">
             <tr class="table-light"><th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
             <?php
