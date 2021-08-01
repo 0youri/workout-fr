@@ -2,10 +2,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <div class="d-grid gap-2 d-md-block">
-                <div>Food</div>
-                <button class="btn btn-sm bbi bi-pencil-square" type="button"></button>
-            </div>
+            Food<button class="btn btn-sm bbi bi-pencil-square" type="button"></button>
         </div>
         <div class="card-body">
         <div class="table-responsive">
