@@ -1,9 +1,11 @@
 <br>
 <div class="container">
     <div class="card">
-        <div class="d-grid gap-2 d-md-block">
-            <div class="card-header">Food</div>
-            <button class="btn btn-sm bbi bi-pencil-square" type="button"></button>
+        <div class="card-header">
+            <div class="d-grid gap-2 d-md-block">
+                <div>Food</div>
+                <button class="btn btn-sm bbi bi-pencil-square" type="button"></button>
+            </div>
         </div>
         <div class="card-body">
         <div class="table-responsive">
