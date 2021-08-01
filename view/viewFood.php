@@ -4,7 +4,9 @@
         <div class="card-header">Food</div>
         <div class="card-body">
         <div class="table-responsive">
-            <div class="badge bg-dark text-wrap">Lunch</div>
+            <div class="badge bg-dark text-wrap">Lunch
+                <button class="btn btn-dark bi bi-gear-fill" type="button"></button>
+            </div>
             <table class="table table-bordered">
             <tr class="table-light"><th>Aliment</th><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
             <?php echo $lunchHTML; ?>
