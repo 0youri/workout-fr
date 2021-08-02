@@ -130,6 +130,12 @@ function resetWorkout()
     inputExercice.disabled = inputSeries.disabled = inputReps.disabled = true;
 }
 
+// Edit Food
+
+function selectMeal(id)
+{
+
+}
 
 // Page choisie
  
