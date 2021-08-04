@@ -26,6 +26,7 @@
             $request = "UPDATE public.workout SET 
             exercice='".$exercice."', series=".$series.", repetitions=".$repetitions."
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+            echo $request;
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
             {
