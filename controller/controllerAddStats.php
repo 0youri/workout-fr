@@ -12,7 +12,7 @@
             $id = $_GET['w'];
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
-            $today = date("d/m/Y");   
+            $today = date("Y-m-d");   
             $serie1 = $_POST['serie1'];
             $serie2 = $_POST['serie2'];
             $serie3 = $_POST['serie3'];
