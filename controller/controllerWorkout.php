@@ -19,22 +19,18 @@
             $tab = explode("-", $_POST['select-edit-muscle']);
             $rank = $tab[0];
             $muscle = $tab[1];
-            echo '<br>$rank : '.$rank;
-            echo '<br>$muscle : '.$muscle;
             $exercice = $_POST['input-edit-exercice'];
             $series = $_POST['input-edit-series'];
             $repetitions = $_POST['input-edit-repetitions'];
-            /*
             $request = "UPDATE public.workout SET 
             exercice='".$exercice."', series=".$series.", repetitions=".$repetitions."
-            WHERE id=".$id." AND muscle='".$muscle."';";
+            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
             {
-                $request = "DELETE FROM public.stats WHERE id=".$id." AND muscle='".$muscle."' ";
+                $request = "DELETE FROM public.stats WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
             }
-            */
         }
     }
 
