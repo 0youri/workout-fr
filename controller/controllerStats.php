@@ -6,27 +6,27 @@
     while ( $dataWorkout = pg_fetch_assoc($workoutSQL) )
     {
         $muscle = $dataWorkout['muscle'];
-        $exercice = $dataWorkout['exercice'];
-        $nbseries = $dataWorkout['series'];
-        $nbrep = $dataWorkout['repetitions'];
-        $poids = $dataWorkout['poids'];
+        $exercise = $dataWorkout['exercise'];
+        $noseries = $dataWorkout['series'];
+        $noreps = $dataWorkout['repetitions'];
+        $weight = $dataWorkout['weight'];
 
         $request = "SELECT * FROM public.stats WHERE id=".$idW." AND muscle='".$muscle."' ORDER by date;";
         $statsSQL = requestDB($request,$connect);
-        $statsHTML =  $statsHTML.'<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercice.' - '.$nbseries.'x'.$nbrep.'</div>
+        $statsHTML =  $statsHTML.'<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercise.' - '.$noseries.'x'.$noreps.'</div>
         <div class="table-responsive">    
         <table class="table table-bordered">
-            <tr class="bg-light"><th>Date</th><th>Nb reps</th><th>Poids</th></tr>';
+            <tr class="bg-light"><th>Date</th><th>No. reps</th><th>Weight</th></tr>';
         while ( $dataStats = pg_fetch_assoc($statsSQL) )
         {
             $date = $dataStats['date'];
-            $statspoids = $dataStats['poids'];
-            $statsnbreptext = $dataStats['serie1'].":".$dataStats['serie2'].":".$dataStats['serie3'].":".$dataStats['serie4'];
+            $statsweight = $dataStats['weight'];
+            $statsnorepstext = $dataStats['serie1'].":".$dataStats['serie2'].":".$dataStats['serie3'].":".$dataStats['serie4'];
             $statsHTML = $statsHTML.'
             <tr>
             <td>'.$date.'</td>
-            <td>'.$statsnbreptext.'</td>
-            <td>'.$statspoids.'</td>
+            <td>'.$statsnorepstext.'</td>
+            <td>'.$statsweight.'</td>
             </tr>';
         }
         $statsHTML = $statsHTML. '</table></div>';

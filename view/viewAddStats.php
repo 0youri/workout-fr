@@ -3,7 +3,7 @@
     <div class="card text-center">
         <div class="card-header">
             <?php 
-                echo "#".$nbW." - ".$typeW;
+                echo "#".$noW." - ".$typeW;
             ?>
         </div>
         <div class="card-body">
