@@ -115,7 +115,7 @@ function editForm(id)
     let tdNo = document.getElementById(`td-no-${id}-${rank}`).innerHTML;
     let tdWeight = document.getElementById(`td-weight-${id}-${rank}`).innerHTML;
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
-    tdNb = tdNb.split("x"); 
+    tdNo = tdNo.split("x"); 
     inputExercise.disabled = inputSeries.disabled = 
     inputReps.disabled = inputWeight.disabled =false;
     inputExercise.value = tdExercise;
