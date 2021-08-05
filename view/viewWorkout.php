@@ -24,34 +24,34 @@
                     </div>
                     <br>
                     <div>
-                        <label>Exercice</label>
+                        <label>Exercise</label>
                         <input type="text" class="form-control"
-                        id="input-edit-exercice" name="input-edit-exercice" disabled>
+                        id="input-edit-exercise" name="input-edit-exercise" disabled>
                     </div>
                     <br>
                     <div>
-                        <label>Nb séries</label>
+                        <label>No. series</label>
                         <input type="text" class="form-control" 
                         id="input-edit-series" name="input-edit-series" disabled>
                     </div>
                     <br>
                     <div>
-                        <label>Nb répétitions</label>
+                        <label>No. repetitions</label>
                         <input type="text" class="form-control"
                         id="input-edit-repetitions" name="input-edit-repetitions" disabled>
                     </div>
                     <br>
                     <div>
-                        <label>Poids</label>
+                        <label>Weight</label>
                         <input type="text" class="form-control"
-                        id="input-edit-poids" name="input-edit-poids" disabled>
+                        id="input-edit-weight" name="input-edit-weight" disabled>
                     </div>
                     <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-edit" name="checkbox-edit">
                         <label class="form-check-label" for="flexCheckDefault">
-                            Supprimer les statistiques
+                            Delete stats
                         </label>
                     </div>
                 </form>

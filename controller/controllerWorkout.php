@@ -19,12 +19,12 @@
             $tab = explode("-", $_POST['select-edit-muscle']);
             $rank = $tab[0];
             $muscle = $tab[1];
-            $exercice = $_POST['input-edit-exercice'];
+            $exercice = $_POST['input-edit-exercise'];
             $series = $_POST['input-edit-series'];
             $repetitions = $_POST['input-edit-repetitions'];
-            $poids = $_POST['input-edit-poids'];
+            $poids = $_POST['input-edit-weight'];
             $request = "UPDATE public.workout 
-            SET exercice='".$exercice."', series=".$series.", repetitions=".$repetitions.", poids='".$poids."'
+            SET exercise='".$exercice."', series=".$series.", repetitions=".$repetitions.", weight='".$poids."'
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
@@ -69,11 +69,11 @@
                     <br>
                     <div class="card card-body bg-light">
                         <p><strong>Type:</strong> '.$type.'</p>
-                        <p><strong>Exercices:</strong>
+                        <p><strong>Exercises:</strong>
                         <div class="table-responsive">
                         <table class="table table-bordered bg-white">
-                        <th style="display:none;">Rank</th><th>Muscle</th><th>Exercice</th>
-                        <th>Nb séries x Nb reps</th><th>Poids (en kg)</th><th>Settings</th>
+                        <th style="display:none;">Rank</th><th>Muscle</th><th>Exercise</th>
+                        <th>No. series x No. reps</th><th>Weight (kg)</th><th>Settings</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$id." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
@@ -81,18 +81,19 @@
         {
             $rank = $dataInfo['rank'];
             $muscle = $dataInfo['muscle'];
-            $exercice = $dataInfo['exercice'];
+            $exercice = $dataInfo['exercise'];
             $series = $dataInfo['series'];
             $reps = $dataInfo['repetitions'];
+            $weight = $dataInfo['weight'];
             $workoutHTML = $workoutHTML."<tr>
             <td id='td-rank-".$id."-".$rank."' style='display:none;'>".$rank."</td>
             <td id='td-muscle-".$id."-".$rank."'>".$muscle."</td>
-            <td id='td-exercice-".$id."-".$rank."'>".$exercice."</td>
-            <td id='td-nb-".$id."-".$rank."'
+            <td id='td-exercise-".$id."-".$rank."'>".$exercice."</td>
+            <td id='td-no-".$id."-".$rank."'
             >".$series."x".$reps."</td>
-            <td id='td-poids-".$id."-".$rank."'
-            name='td-poids".$id."'>".$dataInfo['poids']."</td>
-            <td id='td-poids-boutons-".$id."-".$rank."'>
+            <td id='td-weight-".$id."-".$rank."'
+            name='td-weight".$id."'>".$weight."</td>
+            <td id='td-weight-button-".$id."-".$rank."'>
                 <button class='btn btn-dark bi bi-gear-fill' type='button' 
                 onclick='editPoids(".$id.",".$rank.",
                 `".$muscle."`);'></button>

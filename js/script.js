@@ -41,8 +41,8 @@ function sumbitForm(id)
 
 function editPoids(id, rank, muscle)
 {
-    let td_poids = document.getElementById(`td-poids-${id}-${rank}`);
-    let td_poids_boutons = document.getElementById(`td-poids-boutons-${id}-${rank}`);
+    let td_poids = document.getElementById(`td-weight-${id}-${rank}`);
+    let td_poids_boutons = document.getElementById(`td-weight-button-${id}-${rank}`);
     const value = td_poids.innerHTML;
     td_poids.innerHTML = 
     `
@@ -65,8 +65,8 @@ function editPoids(id, rank, muscle)
 
 function resetForm(id, rank, muscle)
 {
-    let td_poids = document.getElementById(`td-poids-${id}-${rank}`);
-    let td_poids_boutons = document.getElementById(`td-poids-boutons-${id}-${rank}`); 
+    let td_poids = document.getElementById(`td-weight-${id}-${rank}`);
+    let td_poids_boutons = document.getElementById(`td-weight-button-${id}-${rank}`); 
 
     const value = document.getElementById(`editP`).value;
 
@@ -89,7 +89,7 @@ function editWorkout(id)
     // Options select Muscle du formulaire
     let rank = 1;
     document.getElementById('select-edit-muscle').innerHTML = 
-    '<option value="-1" selected disabled>Choisir</option>';
+    '<option value="-1" selected disabled>Choose</option>';
     while ( document.getElementById(`td-muscle-${id}-${rank}`) )
     {
         let muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
@@ -106,34 +106,36 @@ function editForm(id)
     const rank = document.getElementById('select-edit-muscle').value
     .split("-")[0]; 
     // Pointeur sur input
-    let inputExercice = document.getElementById('input-edit-exercice');
+    let inputExercise = document.getElementById('input-edit-exercise');
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
-    let inputPoids = document.getElementById('input-edit-poids');
+    let inputWeight = document.getElementById('input-edit-weight');
     // Recup infos
-    let tdExercice = document.getElementById(`td-exercice-${id}-${rank}`).innerHTML;
-    let tdNb = document.getElementById(`td-nb-${id}-${rank}`).innerHTML;
-    let tdPoids = document.getElementById(`td-poids-${id}-${rank}`).innerHTML;
+    let tdExercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
+    let tdNo = document.getElementById(`td-no-${id}-${rank}`).innerHTML;
+    let tdWeight = document.getElementById(`td-weight-${id}-${rank}`).innerHTML;
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNb = tdNb.split("x"); 
-    inputExercice.disabled = inputSeries.disabled = 
-    inputReps.disabled = inputPoids.disabled =false;
-    inputExercice.value = tdExercice;
-    inputSeries.value = tdNb[0];
-    inputReps.value = tdNb[1];
-    inputPoids.value = tdPoids;
+    inputExercise.disabled = inputSeries.disabled = 
+    inputReps.disabled = inputWeight.disabled =false;
+    inputExercise.value = tdExercise;
+    inputSeries.value = tdNo[0];
+    inputReps.value = tdNo[1];
+    inputWeight.value = tdWeight;
 }
 
 function resetWorkout()
 {
     let h5 = document.getElementById('h5-workout-name');
     let selectMuscle = document.getElementById('select-edit-muscle');
-    let inputExercice = document.getElementById('input-edit-exercice');
+    let inputExercise = document.getElementById('input-edit-exercise');
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
-    h5.innerHTML = selectMuscle.innerHTML = inputExercice.value =
-    inputSeries.value = inputReps.value = "";
-    inputExercice.disabled = inputSeries.disabled = inputReps.disabled = true;
+    let inputWeight = document.getElementById('input-edit-weight');
+    h5.innerHTML = selectMuscle.innerHTML = inputExercise.value =
+    inputSeries.value = inputReps.value = inputWeight.value = "";
+    inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
+    inputWeight.disabled = true;
 }
 
 // Edit Food
