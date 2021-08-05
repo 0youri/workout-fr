@@ -9,7 +9,8 @@
             $id = $_POST['w'];
             $rank = $_POST['rank'];
             $muscle = $_POST['muscle'];
-            $request = "UPDATE public.workout SET poids='".$editP."' 
+            $request = "UPDATE public.workout 
+            SET weight='".$editP."' 
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
         }
@@ -19,12 +20,12 @@
             $tab = explode("-", $_POST['select-edit-muscle']);
             $rank = $tab[0];
             $muscle = $tab[1];
-            $exercice = $_POST['input-edit-exercise'];
+            $exercise = $_POST['input-edit-exercise'];
             $series = $_POST['input-edit-series'];
             $repetitions = $_POST['input-edit-repetitions'];
-            $poids = $_POST['input-edit-weight'];
+            $weight = $_POST['input-edit-weight'];
             $request = "UPDATE public.workout 
-            SET exercise='".$exercice."', series=".$series.", repetitions=".$repetitions.", weight='".$poids."'
+            SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", weight='".$weight."'
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
