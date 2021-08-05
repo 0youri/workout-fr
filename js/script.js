@@ -41,8 +41,8 @@ function sumbitForm(id)
 
 function editPoids(id, rank, muscle)
 {
-    let td_poids = document.getElementById(`td-poids${id}${rank}`);
-    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}${rank}`);
+    let td_poids = document.getElementById(`td-poids-${id}-${rank}`);
+    let td_poids_boutons = document.getElementById(`td-poids-boutons-${id}-${rank}`);
     const value = td_poids.innerHTML;
     td_poids.innerHTML = 
     `
@@ -65,8 +65,8 @@ function editPoids(id, rank, muscle)
 
 function resetForm(id, rank, muscle)
 {
-    let td_poids = document.getElementById(`td-poids${id}${rank}`);
-    let td_poids_boutons = document.getElementById(`td-poids-boutons${id}${rank}`); 
+    let td_poids = document.getElementById(`td-poids-${id}-${rank}`);
+    let td_poids_boutons = document.getElementById(`td-poids-boutons-${id}-${rank}`); 
 
     const value = document.getElementById(`editP`).value;
 
@@ -103,19 +103,24 @@ function editWorkout(id)
 
 function editForm(id)
 {
-    const muscle = document.getElementById('select-edit-muscle').value
-    .split("-")[1]; 
+    const rank = document.getElementById('select-edit-muscle').value
+    .split("-")[0]; 
+    // Pointeur sur input
     let inputExercice = document.getElementById('input-edit-exercice');
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
-    let tdExercice = document.getElementById(`td-exercice-${id}-${muscle}`).innerHTML;
-    let tdNb = document.getElementById(`td-nb-${id}-${muscle}`).innerHTML;
+    let inputPoids = document.getElementById('input-edit-poids');
+    // Recup infos
+    let tdExercice = document.getElementById(`td-exercice-${id}-${rank}`).innerHTML;
+    let tdNb = document.getElementById(`td-nb-${id}-${rank}`).innerHTML;
+    let tdPoids = document.getElementById(`td-poids-${id}-${rank}`).innerHTML;
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNb = tdNb.split("x"); 
     inputExercice.disabled = inputSeries.disabled = inputReps.disabled = false;
     inputExercice.value = tdExercice;
     inputSeries.value = tdNb[0];
     inputReps.value = tdNb[1];
+    inputPoids.value = tdPoids;
 }
 
 function resetWorkout()
