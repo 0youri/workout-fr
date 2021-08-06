@@ -3,6 +3,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
+        /*
         if ( isset($_POST['editP']) )
         {
             $editP = $_POST['editP'];
@@ -14,25 +15,24 @@
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
         }
-        else
+        */
+        $id = $_POST['w'];
+        $tab = explode("-", $_POST['select-edit-muscle']);
+        $rank = $tab[0];
+        $muscle = $tab[1];
+        $exercise = $_POST['input-edit-exercise'];
+        $series = $_POST['input-edit-series'];
+        $repetitions = $_POST['input-edit-repetitions'];
+        $weight = $_POST['input-edit-weight'];
+        $request = "UPDATE public.workout 
+        SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", weight='".$weight."'
+        WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+        requestDB($request,$connect);
+        if ( $_POST['checkbox-edit'] == "on" )
         {
-            $id = $_POST['w'];
-            $tab = explode("-", $_POST['select-edit-muscle']);
-            $rank = $tab[0];
-            $muscle = $tab[1];
-            $exercise = $_POST['input-edit-exercise'];
-            $series = $_POST['input-edit-series'];
-            $repetitions = $_POST['input-edit-repetitions'];
-            $weight = $_POST['input-edit-weight'];
-            $request = "UPDATE public.workout 
-            SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", weight='".$weight."'
+            $request = "DELETE FROM public.stats 
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
-            if ( $_POST['checkbox-edit'] == "on" )
-            {
-                $request = "DELETE FROM public.stats WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
-                requestDB($request,$connect);
-            }
         }
     }
 
@@ -74,7 +74,7 @@
                         <div class="table-responsive">
                         <table class="table table-bordered bg-white">
                         <th style="display:none;">Rank</th><th>Muscle</th><th>Exercise</th>
-                        <th>No. series x No. reps</th><th>Weight (kg)</th><th>Settings</th>
+                        <th>No. series x No. reps</th><th>Weight (kg)</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$id." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
@@ -93,12 +93,7 @@
             <td id='td-no-".$id."-".$rank."'
             >".$series."x".$reps."</td>
             <td id='td-weight-".$id."-".$rank."'
-            name='td-weight".$id."'>".$weight."</td>
-            <td id='td-weight-button-".$id."-".$rank."'>
-                <button class='btn btn-dark bi bi-gear-fill' type='button' 
-                onclick='editPoids(".$id.",".$rank.",
-                `".$muscle."`);'></button>
-            </td>";
+            name='td-weight".$id."'>".$weight."</td>";
         }
     
         $workoutHTML = $workoutHTML.'</table></div></p></div></div></div>';
