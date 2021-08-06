@@ -10,13 +10,13 @@
         <div class="table-responsive">
             <div class="badge bg-dark text-wrap">Lunch</div>
             <table class="table table-bordered">
-            <tr class="table-light"><th>Food</th><th>Amount</th><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
+            <tr class="table-light"><th>Food</th><th>Amount (g)</th><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
             <?php echo $lunchHTML; ?>
             </table>
 
             <div class="badge bg-dark text-wrap">Dinner</div>
             <table class="table table-bordered">
-            <tr class="table-light"><th>Food</th><th>Amount</th><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
+            <tr class="table-light"><th>Food</th><th>Amount (g)</th><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
             <?php
                 echo $dinnerHTML;
             ?>
