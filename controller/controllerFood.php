@@ -33,11 +33,11 @@
     $lunchHTML = $lunchHTML.
     "<tr class='table-light'>
         <td><strong>Total lunch</strong></td>
-        <td></td>
         <td><strong>".$kcalLunch."</strong></td>
         <td><strong>".$fatsLunch."</strong></td>
         <td><strong>".$carbsLunch."</strong></td>
         <td><strong>".$proteinLunch."</strong></td>
+        <td></td>
     </tr>";
 
     $request = "SELECT * FROM public.food WHERE type='dinner' ORDER BY rank;";
@@ -65,11 +65,11 @@
     $dinnerHTML = $dinnerHTML.
     "<tr class='table-light'>
         <td><strong>Total dinner</strong></td>
-        <td></td>
         <td><strong>".($kcalAll-$kcalLunch)."</strong></td>
         <td><strong>".($fatsAll-$fatsLunch)."</strong></td>
         <td><strong>".($carbsAll-$carbsLunch)."</strong></td>
         <td><strong>".($proteinAll-$proteinLunch)."</strong></td>
+        <td></td>
     </tr>";
 
     $totalHTML = "<tr> <td>~".$kcalAll."</td> <td>~".$fatsAll."</td>
