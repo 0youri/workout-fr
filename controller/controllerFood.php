@@ -4,11 +4,11 @@
     $lunchSQL = requestDB($request,$connect);
     
     $fatsAll = $carbsAll = $proteinAll = $kcalAll = 
-    $lunchKcal = $lunchfats = $lunchcarbs = $lunchprotein = 0;
+    $kcalLunch = $fatsLunch = $carbsLunch = $proteinLunch = 0;
     
     while ( $dataLunch = pg_fetch_assoc($lunchSQL) )
     {
-        $aliment = $dataLunch['food'];
+        $food = $dataLunch['food'];
         $amount = $dataLunch['amount'];
         $kcal = ( $amount * $dataLunch['kcal'] ) / 100;
         $fats = ( $amount * $dataLunch['fats'] ) / 100;
@@ -16,7 +16,7 @@
         $protein = ( $amount * $dataLunch['protein'] ) / 100;
         $lunchHTML = $lunchHTML.
         "<tr>
-            <td>".$aliment."</td><td>".$amount."</td>
+            <td>".$food."</td><td>".$amount."</td>
             <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$protein."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
@@ -24,19 +24,19 @@
         $carbsAll = $carbsAll + $carbs;
         $proteinAll = $proteinAll + $protein;
     }
-    $lunchKcal = $kcalAll;
-    $lunchfats = $fatsAll;
-    $lunchcarbs = $carbsAll;
-    $lunchprotein = $proteinAll;
+    $kcalLunch = $kcalAll;
+    $fatsLunch = $fatsAll;
+    $carbsLunch = $carbsAll;
+    $proteinLunch = $proteinAll;
 
     $lunchHTML = $lunchHTML.
     "<tr class='table-light'>
         <td><strong>Total lunch</strong></td>
         <td></td>
-        <td><strong>".$lunchKcal."</strong></td>
-        <td><strong>".$lunchfats."</strong></td>
-        <td><strong>".$lunchcarbs."</strong></td>
-        <td><strong>".$lunchprotein."</strong></td>
+        <td><strong>".$kcalLunch."</strong></td>
+        <td><strong>".$fatsLunch."</strong></td>
+        <td><strong>".$carbsLunch."</strong></td>
+        <td><strong>".$proteinLunch."</strong></td>
     </tr>";
 
     $request = "SELECT * FROM public.food WHERE type='dinner' ORDER BY rank;";
@@ -44,7 +44,7 @@
     
     while ( $dataDinner = pg_fetch_assoc($dinnerSQL) )
     {
-        $aliment = $dataDinner['food'];
+        $food = $dataDinner['food'];
         $amount = $dataDinner['amount'];
         $kcal = ( $amount * $dataDinner['kcal'] ) / 100;
         $fats = ( $amount * $dataDinner['fats'] ) / 100;
@@ -52,7 +52,7 @@
         $protein = ( $amount * $dataDinner['protein'] ) / 100;
         $dinnerHTML = $dinnerHTML.
         "<tr>
-            <td>".$aliment."</td><td>".$amount."</td>
+            <td>".$food."</td><td>".$amount."</td>
             <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$protein."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
@@ -64,10 +64,10 @@
     "<tr class='table-light'>
         <td><strong>Total dinner</strong></td>
         <td></td>
-        <td><strong>".($kcalAll-$lunchKcal)."</strong></td>
-        <td><strong>".($fatsAll-$lunchfats)."</strong></td>
-        <td><strong>".($carbsAll-$lunchcarbs)."</strong></td>
-        <td><strong>".($proteinAll-$lunchprotein)."</strong></td>
+        <td><strong>".($kcalAll-$kcalLunch)."</strong></td>
+        <td><strong>".($fatsAll-$fatsLunch)."</strong></td>
+        <td><strong>".($carbsAll-$carbsLunch)."</strong></td>
+        <td><strong>".($proteinAll-$proteinLunch)."</strong></td>
     </tr>";
 
     $totalHTML = "<tr> <td>~".$kcalAll."</td> <td>~".$fatsAll."</td>
