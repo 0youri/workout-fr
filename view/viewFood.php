@@ -10,13 +10,27 @@
         <div class="table-responsive">
             <div class="badge bg-dark text-wrap">Lunch</div>
             <table class="table table-bordered">
-            <tr class="table-light"><th>Food</th><th>Amount (g)</th><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
+            <tr class="table-light">
+                <th>Food</th>
+                <th>Kcal</th>
+                <th>Fats</th>
+                <th>Carbs</th>
+                <th>Protein</th>
+                <th>Amount (g)</th>
+            </tr>
             <?php echo $lunchHTML; ?>
             </table>
 
             <div class="badge bg-dark text-wrap">Dinner</div>
             <table class="table table-bordered">
-            <tr class="table-light"><th>Food</th><th>Amount (g)</th><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
+            <tr class="table-light">
+                <th>Food</th>
+                <th>Kcal</th>
+                <th>Fats</th>
+                <th>Carbs</th>
+                <th>Protein</th>
+                <th>Amount (g)</th>
+            </tr>
             <?php
                 echo $dinnerHTML;
             ?>
@@ -24,7 +38,7 @@
 
             <div class="badge bg-dark text-wrap">Total</div>
             <table class="table table-bordered">
-            <tr class="table-light"><th>Kcal</th><th>Lipides</th><th>Glucides</th><th>Protéines</th></tr>
+            <tr class="table-light"><th>Kcal</th><th>Fats</th><th>Carbs</th><th>Protein</th></tr>
             <?php
                 echo $totalHTML;
             ?>

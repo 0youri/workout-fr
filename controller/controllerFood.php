@@ -16,8 +16,9 @@
         $protein = ( $amount * $dataLunch['protein'] ) / 100;
         $lunchHTML = $lunchHTML.
         "<tr>
-            <td>".$food."</td><td>".$amount."</td>
+            <td>".$food."</td>
             <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$protein."</td>
+            <td>".$amount."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
         $fatsAll = $fatsAll + $fats;
@@ -52,8 +53,9 @@
         $protein = ( $amount * $dataDinner['protein'] ) / 100;
         $dinnerHTML = $dinnerHTML.
         "<tr>
-            <td>".$food."</td><td>".$amount."</td>
+            <td>".$food."</td>
             <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$protein."</td>
+            <td>".$amount."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
         $fatsAll = $fatsAll + $fats;
