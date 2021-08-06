@@ -9,14 +9,14 @@
     while ( $dataLunch = pg_fetch_assoc($lunchSQL) )
     {
         $aliment = $dataLunch['food'];
-        $quantite = $dataLunch['amount'];
-        $kcal = ( $quantite * $dataLunch['kcal'] ) / 100;
-        $fats = ( $quantite * $dataLunch['fats'] ) / 100;
-        $carbs = ( $quantite * $dataLunch['carbs'] ) / 100;
-        $prot = ( $quantite * $dataLunch['protein'] ) / 100;
+        $amount = $dataLunch['amount'];
+        $kcal = ( $amount * $dataLunch['kcal'] ) / 100;
+        $fats = ( $amount * $dataLunch['fats'] ) / 100;
+        $carbs = ( $amount * $dataLunch['carbs'] ) / 100;
+        $prot = ( $amount * $dataLunch['protein'] ) / 100;
         $lunchHTML = $lunchHTML.
         "<tr>
-            <td>".$aliment."</td>
+            <td>".$aliment."</td><td>".$amount."</td>
             <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$protein."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
@@ -44,14 +44,14 @@
     while ( $dataDinner = pg_fetch_assoc($dinnerSQL) )
     {
         $aliment = $dataDinner['aliment'];
-        $quantite = $dataDinner['quantite'];
-        $kcal = ( $quantite * $dataDinner['kcal'] ) / 100;
-        $fats = ( $quantite * $dataDinner['fats'] ) / 100;
-        $carbs = ( $quantite * $dataDinner['carbs'] ) / 100;
-        $prot = ( $quantite * $dataDinner['protein'] ) / 100;
+        $amount = $dataDinner['amount'];
+        $kcal = ( $amount * $dataDinner['kcal'] ) / 100;
+        $fats = ( $amount * $dataDinner['fats'] ) / 100;
+        $carbs = ( $amount * $dataDinner['carbs'] ) / 100;
+        $prot = ( $amount * $dataDinner['protein'] ) / 100;
         $dinnerHTML = $dinnerHTML.
         "<tr>
-            <td>".$aliment."</td>
+            <td>".$aliment."</td><td>".$amount."</td>
             <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$prot."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
