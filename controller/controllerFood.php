@@ -13,7 +13,7 @@
         $kcal = ( $amount * $dataLunch['kcal'] ) / 100;
         $fats = ( $amount * $dataLunch['fats'] ) / 100;
         $carbs = ( $amount * $dataLunch['carbs'] ) / 100;
-        $prot = ( $amount * $dataLunch['protein'] ) / 100;
+        $protein = ( $amount * $dataLunch['protein'] ) / 100;
         $lunchHTML = $lunchHTML.
         "<tr>
             <td>".$aliment."</td><td>".$amount."</td>
@@ -48,16 +48,16 @@
         $kcal = ( $amount * $dataDinner['kcal'] ) / 100;
         $fats = ( $amount * $dataDinner['fats'] ) / 100;
         $carbs = ( $amount * $dataDinner['carbs'] ) / 100;
-        $prot = ( $amount * $dataDinner['protein'] ) / 100;
+        $protein = ( $amount * $dataDinner['protein'] ) / 100;
         $dinnerHTML = $dinnerHTML.
         "<tr>
             <td>".$aliment."</td><td>".$amount."</td>
-            <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$prot."</td>
+            <td>".$kcal."</td><td>".$fats."</td><td>".$carbs."</td><td>".$protein."</td>
         </tr>";
         $kcalAll = $kcalAll + $kcal;
         $fatsAll = $fatsAll + $fats;
         $carbsAll = $carbsAll + $carbs;
-        $protAll = $protAll + $prot;
+        $proteinAll = $proteinAll + $protein;
     }
     $dinnerHTML = $dinnerHTML.
     "<tr class='table-light'>
