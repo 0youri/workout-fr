@@ -43,7 +43,7 @@
     
     while ( $dataDinner = pg_fetch_assoc($dinnerSQL) )
     {
-        $aliment = $dataDinner['aliment'];
+        $aliment = $dataDinner['food'];
         $amount = $dataDinner['amount'];
         $kcal = ( $amount * $dataDinner['kcal'] ) / 100;
         $fats = ( $amount * $dataDinner['fats'] ) / 100;
