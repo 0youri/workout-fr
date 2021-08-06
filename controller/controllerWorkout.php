@@ -74,7 +74,7 @@
                         <div class="table-responsive">
                         <table class="table table-bordered bg-white">
                         <th style="display:none;">Rank</th><th>Muscle</th><th>Exercise</th>
-                        <th>No. series x No. reps</th><th>Weight (kg)</th>
+                        <th>No. series x No. reps</th><th>Weight (kg)</th><th>Rest period</th>
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$id." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
@@ -86,14 +86,15 @@
             $series = $dataInfo['series'];
             $reps = $dataInfo['repetitions'];
             $weight = $dataInfo['weight'];
+            $time = $dataInfo['time'];
             $workoutHTML = $workoutHTML."<tr>
             <td id='td-rank-".$id."-".$rank."' style='display:none;'>".$rank."</td>
             <td id='td-muscle-".$id."-".$rank."'>".$muscle."</td>
             <td id='td-exercise-".$id."-".$rank."'>".$exercice."</td>
             <td id='td-no-".$id."-".$rank."'
             >".$series."x".$reps."</td>
-            <td id='td-weight-".$id."-".$rank."'
-            name='td-weight".$id."'>".$weight."</td>";
+            <td id='td-weight-".$id."-".$rank."'>".$weight."</td>
+            <td id='td-time-".$id."-".$rank."'>".$time."</td>";
         }
     
         $workoutHTML = $workoutHTML.'</table></div></p></div></div></div>';
