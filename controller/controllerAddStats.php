@@ -51,15 +51,8 @@
     // Finish workout
     else if ( $_GET['state'] == $_GET['stateF'])
     {
-       
         header('Location: index.php');
         exit();
-        /*
-         $noW = $_GET['w'];
-        $typeW = $_GET['typeW'];
-        //$viewCard = '<h5 class="card-title">Workout is end</h5>
-        <a href="index.php?page=workout" class="btn btn-danger">To end</a>';
-        */
     }
     // During workout
     else
