@@ -52,16 +52,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="h5-workout-name"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal">Request SQL</button>
+                <h5 class="modal-title" id="h5-workout-name">Form Request SQL</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <form method="POST" id="formRequestSql" action="index.php">
                     <div>
-                        <label>Request</label>
+                        <label>Request SQL</label>
                         <textarea class="form-control" id="input-request-sql" name="input-request-sql"
-                        rows="5">
-                        </textarea>
+                        rows="5"></textarea>
                     </div>
                 </form>
             </div>
