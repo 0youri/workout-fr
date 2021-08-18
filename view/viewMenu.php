@@ -27,7 +27,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="nav-food" data-bs-toggle="modal"  
-                                data-bs-target="#modalRequestSql">Request SQL</a>
+                                data-bs-target="#modalRequestSql" href="#">Request SQL</a>
                             </li>
                             <!--
                             <li class="nav-item">
