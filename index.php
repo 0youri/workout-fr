@@ -20,6 +20,8 @@
             $connect = connectDB();
             
             include('view/viewMenu.php');
+            include('controller/controllerMenu.php');
+            
             if(isset($_GET['page'])) // Choose of page
             {
                 $page = $_GET['page'];

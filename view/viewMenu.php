@@ -25,6 +25,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="nav-food" href="index.php?page=addworkout">Add Workout</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="nav-food" data-bs-toggle="modal"  
+                                data-bs-target="#modalRequestSql">Request SQL</a>
+                            </li>
                             <!--
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?page=test">Test</a>
@@ -41,3 +45,31 @@
                 </div>
             </nav>
 </div> 
+
+
+
+<div class="modal fade" id="modalRequestSql">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="h5-workout-name"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">Request SQL</button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="formRequestSql" action="index.php">
+                    <div>
+                        <label>Request</label>
+                        <textarea class="form-control" id="input-request-sql" name="input-request-sql"
+                        rows="5">
+                        </textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="button" class="btn btn-primary" 
+                onclick="sumbitForm('formRequestSql');">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
