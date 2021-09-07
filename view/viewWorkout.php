@@ -67,8 +67,8 @@
 </div>
 
 
-<div class="container card-body bg-dark border rounded position-relative">
-    <a class="btn-dark bi bi-plus-circle-fill position-absolute top-50 start-50" 
+<div class="container card-body bg-dark border rounded">
+    <a class="btn-dark bi bi-plus-circle-fill" 
     data-bs-toggle="modal" data-bs-target="#modalAddWorkout" href="#"></a>
 </div>
 
