@@ -67,8 +67,8 @@
 </div>
 
 
-<div class="card-body bg-success border rounded">
-    <a class="nav-link bi bi-plus-circle-fill" id="nav-food" data-bs-toggle="modal" 
+<div class="container card-body bg-success border rounded">
+    <a class="bg-light bi bi-plus-circle-fill" data-bs-toggle="modal" 
     data-bs-target="#modalAddWorkout" href="#"></a>
 </div>
 
