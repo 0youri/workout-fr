@@ -73,7 +73,6 @@
 </div>
 
 <!-- Add Workout -->
-<!--
 <div class="modal fade" id="modalAddWorkout">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -126,6 +125,3 @@
         </div>
     </div>
 </div>
-
-
--->
