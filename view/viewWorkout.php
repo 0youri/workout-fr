@@ -67,11 +67,9 @@
 </div>
 
 
-<div class="container card-body bg-dark border rounded">
-    <a class="btn-dark" data-bs-toggle="modal" 
-    style="text-align: center;" data-bs-target="#modalAddWorkout" href="#">
-        <i class="bi bi-plus-circle-fill"></i>
-    </a>
+<div class="container card-body bg-dark border rounded" style="text-align: center">
+    <a class="btn-dark bi bi-plus-circle-fill" data-bs-toggle="modal" 
+    data-bs-target="#modalAddWorkout" href="#"></a>
 </div>
 
 <!-- Add Workout -->
