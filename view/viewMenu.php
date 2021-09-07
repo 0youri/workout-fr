@@ -32,12 +32,6 @@
                             </li>
                             -->
                         </ul>
-                        <!--
-                        <div class="d-flex">
-                            <input type="text" class="form-control me-2" id="search" placeholder="Ex: Fullbody" onChange="Recherche();" >
-                            <button class="btn btn-outline-light bi bi-search" type="button" onclick="Recherche();"></button>
-                        </div>
-                        -->
                     </div>
                 </div>
             </nav>
