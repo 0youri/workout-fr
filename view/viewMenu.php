@@ -23,7 +23,8 @@
                                 <a class="nav-link" id="nav-food" href="index.php?page=food">Food</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="nav-food" href="index.php?page=addworkout">Add Workout</a>
+                                <a class="nav-link" id="nav-food" data-bs-toggle="modal"  
+                                data-bs-target="#modalAddWorkout" href="#">Add Workout</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="nav-food" data-bs-toggle="modal"  
