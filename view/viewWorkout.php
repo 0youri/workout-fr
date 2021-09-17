@@ -3,7 +3,12 @@
         echo $workoutHTML;
     ?>
     <br>
+    <div class="container card-body bg-dark border rounded" style="text-align: center">
+        <a class="container btn-dark bi bi-plus-circle-fill" data-bs-toggle="modal" 
+        data-bs-target="#modalAddWorkout" href="#"></a>
+    </div>
 </div>
+
 
 
 <!-- Edit Workout -->
@@ -63,13 +68,6 @@
                 onclick="sumbitForm('formEditWorkout');">Edit</button>
             </div>
         </div>
-    </div>
-</div>
-
-<div>
-    <div class="container card-body bg-dark border rounded" style="text-align: center">
-        <a class="container btn-dark bi bi-plus-circle-fill" data-bs-toggle="modal" 
-        data-bs-target="#modalAddWorkout" href="#"></a>
     </div>
 </div>
 
