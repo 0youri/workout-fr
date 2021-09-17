@@ -43,21 +43,24 @@ function sumbitForm(id)
 
 function editWorkout(id)
 {
+    const type = document.getElementById(`span-workout-type-${id}`).innerHTML;
+    document.getElementById('input-edit-workout-id') = id;
+    document.getElementById('input-edit-workout-type') = type;
     document.getElementById('formEditWorkout').innerHTML += 
     `<input style="display:none;" name="w" value="${id}">`;
     // Entete du formulaire
     document.getElementById('h5-workout-name').innerHTML = 
-    `Edit workout ${document.getElementById(`strong-workout-name-${id}`).innerHTML}`;
+    `Edit workout #${id} - ${type}`;
     // Options select Muscle du formulaire
-    let rank = 1;
+    let rank;
     document.getElementById('select-edit-muscle').innerHTML = 
     '<option value="-1" selected disabled>Choose</option>';
-    while ( document.getElementById(`td-muscle-${id}-${rank}`) )
+    while ( rank = document.getElementById(`td-muscle-${id}-${rank}`) )
     {
-        let muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
+        const muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
+        const exercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
         document.getElementById('select-edit-muscle').innerHTML +=
-        `<option value="${rank}-${muscle}">#${rank} ${muscle}</option>`;
-        rank++;
+        `<option value="${rank}-${muscle}">#${rank} - ${muscle} - ${exercise}</option>`;
     }
     document.getElementById(`select-edit-muscle`).
     setAttribute('onchange',`editForm('${id}');`);
@@ -126,50 +129,3 @@ document.addEventListener('DOMContentLoaded', () =>
 
 
 
-
-
-
-
-
-/*
-// Changement poids
-
-function editPoids(id, rank, muscle)
-{
-    let td_poids = document.getElementById(`td-weight-${id}-${rank}`);
-    let td_poids_boutons = document.getElementById(`td-weight-button-${id}-${rank}`);
-    const value = td_poids.innerHTML;
-    td_poids.innerHTML = 
-    `
-        <form method="POST" id="formEditPoids" action="index.php?page=workout">
-        <input style="display:none;" name="w" value="${id}">
-        <input style="display:none;" name="rank" value="${rank}">
-        <input style="display:none;" name="muscle" value="${muscle}">
-        <input name="editP" class="form-control" size="1" id="editP" class="border border-dark" value="${value}">
-        </form>
-    `;
-    td_poids_boutons.innerHTML = `
-    <div class="d-grid gap-2 d-md-block">
-    <button type="button" class="btn btn-success bi bi-check-circle-fill" 
-    onclick="sumbitForm('formEditPoids');"></button>
-    <button type="button" class="btn btn-danger bi bi-x-circle-fill" 
-    onclick="resetForm(${id},${rank},'${muscle}');"></button>
-    </div>
-    `;
-}
-
-function resetForm(id, rank, muscle)
-{
-    let td_poids = document.getElementById(`td-weight-${id}-${rank}`);
-    let td_poids_boutons = document.getElementById(`td-weight-button-${id}-${rank}`); 
-
-    const value = document.getElementById(`editP`).value;
-
-    td_poids.innerHTML = `${value}`;
-    td_poids_boutons.innerHTML = `
-    <button class='btn btn-dark bi bi-gear-fill' type='button' 
-    onclick="editPoids(${id},${rank},'${muscle}');"></button>
-    `;
-}
-
-*/

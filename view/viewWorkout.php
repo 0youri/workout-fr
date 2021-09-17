@@ -22,10 +22,28 @@
             <div class="modal-body">
                 <form method="POST" id="formEditWorkout" action="index.php?page=workout">
                     <div>
+                        <label>Workout ID</label>
+                        <input type="text" class="form-control"
+                        id="input-edit-workout-id" name="input-edit-workout-id">
+                    </div>
+                    <br>
+                    <div>
+                        <label>Workout type</label>
+                        <input type="text" class="form-control"
+                        id="input-edit-workout-type" name="input-edit-workout-type">
+                    </div>
+                    <br>
+                    <div>
                         <label>Muscle</label>
                         <select class="form-select" onchange="editForm(0);"
                         id="select-edit-muscle" name="select-edit-muscle">
                         </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Rank</label>
+                        <input type="text" class="form-control"
+                        id="input-edit-rank" name="input-edit-rank" disabled>
                     </div>
                     <br>
                     <div>
@@ -82,7 +100,39 @@
             <div class="modal-body">
                 <form method="POST" id="formEditWorkout" action="index.php?page=workout">
                     <div>
-                        <label>Muscle</label>
+                        <label>Type</label>
+                        <select class="form-select" onchange="editForm(0);"
+                        id="select-edit-muscle" name="select-add-muscle">
+                        </select>
+                    </div>
+                    <br>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="button" class="btn btn-primary" 
+                onclick="sumbitForm('formEditWorkout');">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Add Exercise -->
+<div class="modal fade" id="modalAddWorkout">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="h5-workout-name">Add Workout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="formEditWorkout" action="index.php?page=workout">
+                    <div>
+                        <label>Type</label>
                         <select class="form-select" onchange="editForm(0);"
                         id="select-edit-muscle" name="select-add-muscle">
                         </select>
