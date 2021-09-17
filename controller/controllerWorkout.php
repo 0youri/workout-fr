@@ -99,7 +99,7 @@
     
         $workoutHTML = $workoutHTML.'</table>
         <div class="container card-body bg-dark border rounded" style="text-align: center"
-        data-bs-toggle="modal" data-bs-target="#modalAddWorkout">
+        data-bs-toggle="modal" data-bs-target="#modalAddExercise">
             <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
         </div>
         </div></p></div></div></div>';
