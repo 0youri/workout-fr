@@ -100,10 +100,9 @@
             <div class="modal-body">
                 <form method="POST" id="formEditWorkout" action="index.php?page=workout">
                     <div>
-                        <label>Type</label>
-                        <select class="form-select" onchange="editForm(0);"
-                        id="select-edit-muscle" name="select-add-muscle">
-                        </select>
+                        <label>Workout type</label>
+                        <input type="text" class="form-control"
+                        id="input-add-workout-type" name="input-add-workout-type">
                     </div>
                     <br>
                 </form>
@@ -111,14 +110,11 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                <button type="button" class="btn btn-primary" 
-                onclick="sumbitForm('formEditWorkout');">Edit</button>
+                <button type="button" class="btn btn-success">Add</button>
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 <!-- Add Exercise -->
