@@ -1,6 +1,7 @@
 <?php
     $workoutHTML = $id = "";
-    echo "$_POST : ".$_POST['formAddWorkout'];
+    if ( isset($_POST['formAddWorkout']) ) echo "Isset";
+    else echo "No-isset";
     if ( $_SERVER["REQUEST_METHOD"] == "POSTDD")
     {
         /*
