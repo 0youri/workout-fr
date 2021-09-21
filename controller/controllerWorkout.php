@@ -33,10 +33,15 @@
             $repetitions = $_POST['input-edit-repetitions'];
             $weight = $_POST['input-edit-weight'];
             $newrank = $_POST['input-edit-rank'];
-            $request = "UPDATE public.workout 
+            $request = "
+            UPDATE public.workout
+            SET rank=".$rank." WHERE id=".$id." AND rank=".$newrank.";
+            UPDATE public.workout 
             SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
             weight='".$weight."', rank='".$newrank."'
-            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+            
+            ";
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
             {
@@ -109,7 +114,7 @@
     
         $workoutHTML = $workoutHTML.'</table>
         <div class="container card-body bg-dark border rounded" style="text-align: center"
-        data-bs-toggle="modal" data-bs-target="#modalAddExercise">
+        data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="">
             <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
         </div>
         </div></p></div></div></div>';

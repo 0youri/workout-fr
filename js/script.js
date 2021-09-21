@@ -109,6 +109,13 @@ function resetWorkout()
     inputWeight.disabled = inputRank.disabled = true;
 }
 
+// Add Exercise
+function formAddExercise(id)
+{
+    document.getElementById('formAddExercise').innerHTML += 
+    `<input style="display:none;" name="w" value="${id}">`;
+}
+
 // Edit Food
 
 function selectMeal(id)
@@ -116,7 +123,7 @@ function selectMeal(id)
 
 }
 
-// Page choisie
+// Selected page 
  
 document.addEventListener('DOMContentLoaded', () => 
 {

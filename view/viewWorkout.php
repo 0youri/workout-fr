@@ -136,16 +136,15 @@
             <div class="modal-body">
                 <form method="POST" id="formAddExercise" action="index.php?page=workout">
                     <div>
-                        <label>Type</label>
-                        <select class="form-select" onchange="editForm(0);"
-                        id="select-edit-muscle" name="select-add-muscle">
-                        </select>
+                        <label>Muscle</label>
+                        <input type="text" class="form-control"
+                        id="input-edit-muscle" name="input-edit-muscle" >
                     </div>
                     <br>
                     <div>
-                        <label>Exercice</label>
+                        <label>Exercise</label>
                         <input type="text" class="form-control"
-                        id="input-edit-exercice" name="input-edit-exercice" disabled>
+                        id="input-edit-exercise" name="input-edit-exercise" disabled>
                     </div>
                     <br>
                     <div>
