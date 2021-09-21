@@ -78,6 +78,7 @@ function editForm(id)
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
     let inputWeight = document.getElementById('input-edit-weight');
+    let inputRank = document.getElementById('input-edit-rank');
     // Recup infos
     let tdExercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
     let tdNo = document.getElementById(`td-no-${id}-${rank}`).innerHTML;
@@ -85,11 +86,12 @@ function editForm(id)
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNo = tdNo.split("x"); 
     inputExercise.disabled = inputSeries.disabled = 
-    inputReps.disabled = inputWeight.disabled =false;
+    inputReps.disabled = inputWeight.disabled = inputRank.disabled = false;
     inputExercise.value = tdExercise;
     inputSeries.value = tdNo[0];
     inputReps.value = tdNo[1];
     inputWeight.value = tdWeight;
+    inputRank.value = rank;
 }
 
 function resetWorkout()
