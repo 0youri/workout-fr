@@ -1,6 +1,6 @@
 <?php
     $workoutHTML = $id = "";
-    if ( exist($_POST['formAddWorkout']) ) echo "Isset";
+    if ( !empty($_POST['formAddWorkout']) ) echo "Isset";
     else echo "No-isset";
     if ( $_SERVER["REQUEST_METHOD"] == "POSTDD")
     {
