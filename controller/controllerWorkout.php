@@ -21,7 +21,8 @@
             requestDB($request,$connect);
         }
         */
-        else if ( )
+
+        else if ( isset($_POST['input-edit-workout-id']) )
         {
             $id = $_POST['w'];
             $tab = explode("-", $_POST['select-edit-muscle']);
