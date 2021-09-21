@@ -52,15 +52,16 @@ function editWorkout(id)
     document.getElementById('h5-workout-name').innerHTML = 
     `Edit workout #${id} - ${type}`;
     // Options select Muscle du formulaire
-    let rank;
+    let rank = 1;
     document.getElementById('select-edit-muscle').innerHTML = 
     '<option value="-1" selected disabled>Choose</option>';
-    while ( rank = document.getElementById(`td-rank-${id}-${rank}`) )
+    while ( document.getElementById(`td-rank-${id}-${rank}`) )
     {
         const muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
         const exercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
         document.getElementById('select-edit-muscle').innerHTML +=
         `<option value="${rank}-${muscle}">#${rank} - ${muscle} - ${exercise}</option>`;
+        rank++;
     }
     document.getElementById(`select-edit-muscle`).
     setAttribute('onchange',`editForm('${id}');`);
