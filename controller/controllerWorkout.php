@@ -1,9 +1,13 @@
 <?php
     $workoutHTML = $id = "";
-    if ( !empty($_POST['formAddWorkout']) ) echo "Isset";
-    else echo "No-isset";
+
     if ( $_SERVER["REQUEST_METHOD"] == "POSTDD")
     {
+        // Form Add Workout
+        if ( isset($_POST['input-add-workout-type']) )
+        {
+
+        }
         /*
         if ( isset($_POST['editP']) )
         {
@@ -17,23 +21,26 @@
             requestDB($request,$connect);
         }
         */
-        $id = $_POST['w'];
-        $tab = explode("-", $_POST['select-edit-muscle']);
-        $rank = $tab[0];
-        $muscle = $tab[1];
-        $exercise = $_POST['input-edit-exercise'];
-        $series = $_POST['input-edit-series'];
-        $repetitions = $_POST['input-edit-repetitions'];
-        $weight = $_POST['input-edit-weight'];
-        $request = "UPDATE public.workout 
-        SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", weight='".$weight."'
-        WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
-        requestDB($request,$connect);
-        if ( $_POST['checkbox-edit'] == "on" )
+        else if ( )
         {
-            $request = "DELETE FROM public.stats 
+            $id = $_POST['w'];
+            $tab = explode("-", $_POST['select-edit-muscle']);
+            $rank = $tab[0];
+            $muscle = $tab[1];
+            $exercise = $_POST['input-edit-exercise'];
+            $series = $_POST['input-edit-series'];
+            $repetitions = $_POST['input-edit-repetitions'];
+            $weight = $_POST['input-edit-weight'];
+            $request = "UPDATE public.workout 
+            SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", weight='".$weight."'
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
             requestDB($request,$connect);
+            if ( $_POST['checkbox-edit'] == "on" )
+            {
+                $request = "DELETE FROM public.stats 
+                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+                requestDB($request,$connect);
+            }
         }
     }
 
