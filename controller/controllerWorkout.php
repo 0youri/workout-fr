@@ -40,7 +40,6 @@
             SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
             weight='".$weight."', rank='".$newrank."'
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
-            
             ";
             requestDB($request,$connect);
             if ( $_POST['checkbox-edit'] == "on" )
