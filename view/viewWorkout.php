@@ -21,13 +21,13 @@
             </div>
             <div class="modal-body">
                 <form method="POST" id="formEditWorkout" action="index.php?page=workout">
-                    <div>
+                    <div style="display:none;">
                         <label>Workout ID</label>
                         <input type="text" class="form-control"
                         id="input-edit-workout-id" name="input-edit-workout-id">
                     </div>
                     <br>
-                    <div>
+                    <div style="display:none;">
                         <label>Workout type</label>
                         <input type="text" class="form-control"
                         id="input-edit-workout-type" name="input-edit-workout-type">
