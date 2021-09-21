@@ -22,6 +22,7 @@
             <div class="modal-body">
                 <form method="POST" id="formEditWorkout" action="index.php?page=workout">
                     <div style="display:none;">
+                    <div>
                         <label>Workout ID</label>
                         <input type="text" class="form-control"
                         id="input-edit-workout-id" name="input-edit-workout-id">
@@ -33,6 +34,7 @@
                         id="input-edit-workout-type" name="input-edit-workout-type">
                     </div>
                     <br>
+                    </div>
                     <div>
                         <label>Muscle</label>
                         <select class="form-select" onchange="editForm(0);"
