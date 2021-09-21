@@ -98,7 +98,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" id="formAddWorkout" action="index.php?page=workout">
+                <form method="POST" id="formAddWorkout" name="formAddWorkout" action="index.php?page=workout">
                     <div>
                         <label>Workout type</label>
                         <input type="text" class="form-control"

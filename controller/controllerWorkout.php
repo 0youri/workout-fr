@@ -1,8 +1,6 @@
 <?php
     $workoutHTML = $id = "";
-    echo "$_SERVER : ".$_SERVER["REQUEST_METHOD"];
-    echo "<br>";
-    echo "$_POST : ".$_POST;
+    echo "$_POST : ".$_POST['formAddWorkout'];
     if ( $_SERVER["REQUEST_METHOD"] == "POSTDD")
     {
         /*
