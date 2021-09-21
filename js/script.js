@@ -55,7 +55,7 @@ function editWorkout(id)
     let rank;
     document.getElementById('select-edit-muscle').innerHTML = 
     '<option value="-1" selected disabled>Choose</option>';
-    while ( rank = document.getElementById(`td-muscle-${id}-${rank}`) )
+    while ( rank = document.getElementById(`td-rank-${id}-${rank}`) )
     {
         const muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
         const exercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
