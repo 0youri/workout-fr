@@ -115,7 +115,8 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                <button type="button" class="btn btn-success">Add</button>
+                <button type="button" class="btn btn-success"
+                onclick="sumbitForm('formAddWorkout');">Add</button>
             </div>
         </div>
     </div>
