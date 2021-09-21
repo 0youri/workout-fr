@@ -35,7 +35,11 @@
             $newrank = $_POST['input-edit-rank'];
             $request = "
             UPDATE public.workout
-            SET rank=".$rank." WHERE id=".$id." AND rank=".$newrank.";
+            SET rank=".$rank." 
+            WHERE id=".$id." AND rank=".$newrank.";
+            ";
+            requestDB($request,$connect);
+            $request = "
             UPDATE public.workout 
             SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
             weight='".$weight."', rank='".$newrank."'
