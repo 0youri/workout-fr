@@ -45,15 +45,15 @@ function editWorkout(id)
 {
     const type = document.getElementById(`span-workout-type-${id}`).innerHTML;
     
-    //document.getElementById('input-edit-workout-type').value = "Full Body";
     document.getElementById('formEditWorkout').innerHTML += 
     `<input style="display:none;" name="w" value="${id}">`;
     // Entete du formulaire
     document.getElementById('h5-edit-workout-name').innerHTML = 
     `Edit workout #${id} - ${type}`;
-    let inputID = document.getElementById('input-edit-workout-id');
-    inputID.value = "1";
-    // Options select Muscle du formulaire
+    
+    // Input/Options select Muscle du formulaire
+    document.getElementById('input-edit-workout-id').value = id;
+    document.getElementById('input-edit-workout-type').value = type;
     let rank = 1;
     document.getElementById('select-edit-muscle').innerHTML = 
     '<option value="-1" selected disabled>Choose</option>';
