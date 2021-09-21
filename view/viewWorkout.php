@@ -104,6 +104,11 @@
                         <input type="text" class="form-control"
                         id="input-add-workout-type" name="input-add-workout-type">
                     </div>
+                    <div>
+                        <label>Rank</label>
+                        <input type="text" class="form-control"
+                        id="input-add-workout-rank" name="input-add-workout-rank">
+                    </div>
                     <br>
                 </form>
             </div>
