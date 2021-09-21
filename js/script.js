@@ -102,10 +102,11 @@ function resetWorkout()
     let inputSeries = document.getElementById('input-edit-series');
     let inputReps = document.getElementById('input-edit-repetitions');
     let inputWeight = document.getElementById('input-edit-weight');
-    h5.innerHTML = selectMuscle.innerHTML = inputExercise.value =
+    let inputRank = document.getElementById('input-edit-rank');
+    h5.innerHTML = selectMuscle.innerHTML = inputExercise.value = inputRank.value =
     inputSeries.value = inputReps.value = inputWeight.value = "";
     inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
-    inputWeight.disabled = true;
+    inputWeight.disabled = inputRank.disabled = true;
 }
 
 // Edit Food
