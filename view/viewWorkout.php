@@ -126,7 +126,7 @@
 
 
 <!-- Add Exercise -->
-<div class="modal fade" id="modalAddWorkout">
+<div class="modal fade" id="modalAddExercise">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
