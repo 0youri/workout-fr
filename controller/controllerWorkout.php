@@ -6,7 +6,14 @@
         // Form Add Workout
         if ( isset($_POST['input-add-workout-type']) )
         {
-
+            $type = $_POST['input-add-workout-type'];
+            $rank = $_POST['input-add-workout-rank'];
+            $request = "INSERT INTO public.allworkout (id,type,rank)
+            VALUES (".$type.",0) ";
+            requestDB($request,$connect);
+            $request = "
+            UPDATE public.allworkout
+            SET rank=";
         }
         /*
         if ( isset($_POST['editP']) )
@@ -21,7 +28,6 @@
             requestDB($request,$connect);
         }
         */
-
         else if ( isset($_POST['input-edit-workout-id']) )
         {
             $id = $_POST['w'];
@@ -55,7 +61,7 @@
         }
     }
 
-    $request = "SELECT * FROM public.allworkout;";
+    $request = "SELECT * FROM public.allworkout ORDER BY rank;";
     $allworkoutSQL = requestDB($request,$connect);
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
