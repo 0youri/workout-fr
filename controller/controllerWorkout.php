@@ -8,7 +8,7 @@
         {
             $type = $_POST['input-add-workout-type'];
             $rank = $_POST['input-add-workout-rank'];
-            $request = "INSERT INTO public.allworkout (id,type,rank)
+            $request = "INSERT INTO public.allworkout (type,rank)
             VALUES ('".$type."',0) ";
             requestDB($request,$connect);
             $request = "
