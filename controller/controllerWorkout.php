@@ -67,8 +67,9 @@
         }
     }
 
-    $request = "SELECT * FROM public.allworkout ORDER BY type,rank;";
+    $request = "SELECT * FROM public.allworkout ORDER BY rank;";
     $allworkoutSQL = requestDB($request,$connect);
+    // Display all workout with their exercises
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
         $id = $dataAllWorkout['id'];
