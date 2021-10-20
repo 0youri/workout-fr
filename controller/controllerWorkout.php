@@ -9,7 +9,7 @@
             $type = $_POST['input-add-workout-type'];
             $rank = $_POST['input-add-workout-rank'];
             $request = "INSERT INTO public.allworkout (id,type,rank)
-            VALUES (".$type.",0) ";
+            VALUES ('".$type."',0) ";
             requestDB($request,$connect);
             $request = "
             UPDATE public.allworkout
@@ -69,7 +69,7 @@
 
     $request = "SELECT * FROM public.allworkout ORDER BY rank;";
     $allworkoutSQL = requestDB($request,$connect);
-    // Display all workout with their exercises
+    // Display all workout
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
         $id = $dataAllWorkout['id'];
@@ -109,6 +109,7 @@
         ';
         $request = "SELECT * FROM public.workout WHERE id=".$id." ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
+        // Display exercise by workout
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
         {
             $rank = $dataInfo['rank'];
