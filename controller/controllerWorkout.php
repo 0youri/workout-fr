@@ -13,7 +13,13 @@
             requestDB($request,$connect);
             $request = "
             UPDATE public.allworkout
-            SET rank=";
+            SET rank=(SELECT max(rank) from public.allworkout)+1
+            WHERE rank=".$rank.";";
+            requestDB($request,$connect);
+            $request = "UPDATE public.allworkout
+            SET rank=".$rank."
+            WHERE rank=0;";
+            requestDB($request,$connect);
         }
         /*
         if ( isset($_POST['editP']) )
@@ -61,7 +67,7 @@
         }
     }
 
-    $request = "SELECT * FROM public.allworkout ORDER BY rank;";
+    $request = "SELECT * FROM public.allworkout ORDER BY type,rank;";
     $allworkoutSQL = requestDB($request,$connect);
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
