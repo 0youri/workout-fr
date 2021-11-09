@@ -121,10 +121,7 @@ function formAddExercise()
         sumbitForm('formAddExercise');
     else
     {
-        alert(NaN);
-        alert(typeof(Number(inputRank.value)));
-
-        if ( Number(inputRank.value) == NaN )
+        if ( Number(inputRank.value) === 0 )
         {
             alert('add red');
             inputRank.classList.remove("border-dark");
@@ -139,7 +136,7 @@ function formAddExercise()
             inputRank.classList.remove("border-2");
         }
 
-        if ( Number(inputSeries.value)  === NaN )
+        if ( Number(inputSeries.value)  === 0 )
         {
             inputSeries.classList.remove("border-dark");
             inputSeries.classList.add("border-danger");
@@ -152,7 +149,7 @@ function formAddExercise()
             inputSeries.classList.add("border-dark");
         }
 
-        if ( Number(inputReps.value) === NaN  )
+        if ( Number(inputReps.value) === 0  )
         {
             inputReps.classList.remove("border-dark");
             inputReps.classList.add("border-danger");
