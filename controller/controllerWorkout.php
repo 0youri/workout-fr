@@ -36,6 +36,8 @@
             $request = `INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
             VALUES (`.$id.`,'`.$muscle.`',`.$exercise.`,`.$series.`,`.$reps.`,`.$weight.`,`.$rank.`,`.$time.`);
             `;
+            requestDB($request,$connect);
+            echo $request;
         }
         /*
         if ( isset($_POST['editP']) )
