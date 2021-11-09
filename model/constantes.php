@@ -18,7 +18,7 @@ echo parse_url($_ENV['DATABASE_URL'],PHP_URL_HOST);
 echo "<br>";
 echo parse_url($_ENV['DATABASE_URL'],PHP_URL_PORT);
 echo "<br>";
-echo parse_url($_ENV['DATABASE_URL'],PHP_URL_PATH);
+echo substr(parse_url($_ENV['DATABASE_URL'],PHP_URL_PATH),1);
 
 echo "<br>";
 echo parse_url($_ENV['DATABASE_URL'],PHP_URL_USER);
