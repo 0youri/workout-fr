@@ -3,7 +3,7 @@
 
     if ( $_SERVER["REQUEST_METHOD"] == "POST")
     {
-        // Form Add Workout
+        // Add Workout
         if ( isset($_POST['input-add-workout-type']) )
         {
             $type = $_POST['input-add-workout-type'];
@@ -21,6 +21,11 @@
             WHERE rank=0;";
             requestDB($request,$connect);
         }
+        // Add Exercise
+        else if ( )
+        {
+
+        }
         /*
         if ( isset($_POST['editP']) )
         {
@@ -34,6 +39,7 @@
             requestDB($request,$connect);
         }
         */
+        // Edit Exercise
         else if ( isset($_POST['input-edit-workout-id']) )
         {
             $id = $_POST['w'];

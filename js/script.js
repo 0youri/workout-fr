@@ -110,10 +110,56 @@ function resetWorkout()
 }
 
 // Add Exercise
-function formAddExercise(id)
-{
-    document.getElementById('formAddExercise').innerHTML += 
-    `<input style="display:none;" name="w" value="${id}">`;
+function formAddExercise()
+{ 
+    let inputRank = document.getElementById('input-add-rank');
+    let inputSeries = document.getElementById('input-add-series');
+    let inputReps = document.getElementById('input-add-repetitions');
+
+    if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) 
+        && Number.isInteger(inputReps.value) )
+        sumbitForm('formAddExercise');
+    else
+    {
+        if ( !Number.isInteger(inputRank.value) )
+        {
+            inputRank.classList.remove("border-dark");
+            inputRank.classList.add("border-danger");
+            inputRank.classList.add("border-2");
+        }
+        else
+        {
+            inputRank.classList.remove("border-danger");
+            inputRank.classList.remove("border-2");
+            inputRank.classList.add("border-dark");
+        }
+
+        if ( !Number.isInteger(inputSeries.value) )
+        {
+            inputSeries.classList.remove("border-dark");
+            inputSeries.classList.add("border-danger");
+            inputSeries.classList.add("border-2");
+        }
+        else
+        {
+            inputSeries.classList.remove("border-danger");
+            inputSeries.classList.remove("border-2");
+            inputSeries.classList.add("border-dark");
+        }
+
+        if ( !Number.isInteger(inputReps.value) )
+        {
+            inputReps.classList.remove("border-dark");
+            inputReps.classList.add("border-danger");
+            inputReps.classList.add("border-2");
+        }
+        else
+        {
+            inputReps.classList.remove("border-danger");
+            inputReps.classList.remove("border-2");
+            inputReps.classList.add("border-dark");
+        }
+    }
 }
 
 // Edit Food

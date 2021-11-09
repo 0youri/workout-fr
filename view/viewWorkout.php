@@ -130,49 +130,47 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="h5-workout-name">Add Workout</h5>
+                <h5 class="modal-title" id="h5-exercise-name">Add Exercise</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form method="POST" id="formAddExercise" action="index.php?page=workout">
                     <div>
+                        <label>Rank</label>
+                        <input type="numeric" class="form-control"
+                        id="input-add-rank" name="input-add-rank" >
+                    </div>
+                    <div>
                         <label>Muscle</label>
                         <input type="text" class="form-control"
-                        id="input-edit-muscle" name="input-edit-muscle" >
+                        id="input-add-muscle" name="input-add-muscle" >
                     </div>
                     <br>
                     <div>
                         <label>Exercise</label>
                         <input type="text" class="form-control"
-                        id="input-edit-exercise" name="input-edit-exercise" disabled>
+                        id="input-add-exercise" name="input-add-exercise">
                     </div>
                     <br>
                     <div>
-                        <label>Nb séries</label>
+                        <label>No series</label>
                         <input type="text" class="form-control" 
-                        id="input-edit-series" name="input-edit-series" disabled>
+                        id="input-add-series" name="input-add-series" >
                     </div>
                     <br>
                     <div>
-                        <label>Nb répétitions</label>
+                        <label>No repetitions</label>
                         <input type="text" class="form-control"
-                        id="input-edit-repetitions" name="input-edit-repetitions" disabled>
+                        id="input-add-repetitions" name="input-add-repetitions">
                     </div>
                     <br>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox"
-                        id="checkbox-edit" name="checkbox-edit">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Supprimer les statistiques
-                        </label>
-                    </div>
                 </form>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                <button type="button" class="btn btn-primary" 
-                onclick="sumbitForm('formEditWorkout');">Edit</button>
+                <button type="button" class="btn btn-success" 
+                onclick="formAddExercise();">Add</button>
             </div>
         </div>
     </div>
