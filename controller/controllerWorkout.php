@@ -22,6 +22,7 @@
             requestDB($request,$connect);
         }
         // Add Exercise
+        /*
         else if ( )
         {
 
