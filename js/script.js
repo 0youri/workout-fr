@@ -115,14 +115,14 @@ function formAddExercise()
     let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');
     let inputReps = document.getElementById('input-add-repetitions');
-    alert(Number.isInteger(1));
-    alert(Number.isInteger('1'));
+    
     if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) 
         && Number.isInteger(inputReps.value) )
         sumbitForm('formAddExercise');
     else
     {
-        if ( !Number.isInteger(Number(inputRank.value)) )
+        alert(typeof(inputRank.value));
+        if ( !Number.isInteger(inputRank.value) )
         {
             alert('add red');
             inputRank.classList.remove("border-dark");
