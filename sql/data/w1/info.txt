@@ -1,6 +1,0 @@
-Dos:Pull ups:4:10:0:
-Pecs:Dips:4:10:20:
-Bras:Dumbbell Curl:4:10:12:
-Epaules:Rear Delt Fly:4:10:+59:
-Jambes:Leg press:4:10:190:
-Autre:Lower back bench:4:10:0:

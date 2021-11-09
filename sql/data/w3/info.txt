@@ -1,6 +1,0 @@
-Dos:Incline Bench Press:4:10:24:
-Pecs:Lat pulldown:4:10:++66:
-Bras:Hammer Curl:4:10:12:
-Epaules:Seated dumbbell press:4:10:20:
-Jambes:Squat:4:10:70:
-Autre:Smith machine calf raise:4:15:0:

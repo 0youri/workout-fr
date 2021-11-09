@@ -1,7 +1,0 @@
-4 oeufs:200:145:10.3:0.7:12.3:
-2 charcuteries:100:78:7:3:4:
-1 wrap:100:198:4:33:5:
-1 banane:100:94:0.2:20.5:1.2:
-50g beurre de cacahuètes:50:612:48:12:30:
-50g poudre flocons d'avoine:50:354:8:56:10:
-250ml lait:250:45.6:1.6:4.8:3.2:

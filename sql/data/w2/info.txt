@@ -1,6 +1,0 @@
-Pecs:Dumbbell Bench Press:4:10:24:
-Dos:Seated cable row:4:10:+59:
-Bras:Extension high pulley:4:10:+54:
-Epaules:Barbell upright row:4:10:45:
-Jambes:Leg curl assis:4:10:56.5:
-Autre:Pull up bar abs:4:10:0:
