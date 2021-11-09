@@ -120,10 +120,12 @@ function formAddExercise()
     let inputWeight = document.getElementById('input-add-weight');
     let inputTime = document.getElementById('input-add-time');
 
-
     if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) && Number.isInteger(inputReps.value) 
     && inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" )
-        sumbitForm('formAddExercise');
+    {
+        alert("help");
+        sumbitForm('formAddExercise'); 
+    }
     else
     {
         // Verif input Muscle
