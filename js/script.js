@@ -122,7 +122,7 @@ function formAddExercise()
     else
     {
         alert(typeof(inputRank.value));
-        if ( !Number.isInteger(inputRank.value) )
+        if ( Number(inputRank.value) === NaN )
         {
             alert('add red');
             inputRank.classList.remove("border-dark");
@@ -137,7 +137,7 @@ function formAddExercise()
             inputRank.classList.remove("border-2");
         }
 
-        if ( !Number.isInteger(Number(inputSeries.value)) )
+        if ( Number(inputSeries.value)  === NaN )
         {
             inputSeries.classList.remove("border-dark");
             inputSeries.classList.add("border-danger");
@@ -150,7 +150,7 @@ function formAddExercise()
             inputSeries.classList.add("border-dark");
         }
 
-        if ( !Number.isInteger(Number(inputReps.value)) )
+        if ( Number(inputReps.value) === NaN  )
         {
             inputReps.classList.remove("border-dark");
             inputReps.classList.add("border-danger");
