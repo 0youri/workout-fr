@@ -122,8 +122,9 @@ function formAddExercise()
         sumbitForm('formAddExercise');
     else
     {
-        if ( !Number.isInteger(inputRank.value) )
+        if ( !Number.isInteger(Number(inputRank.value)) )
         {
+            alert('add red');
             inputRank.classList.remove("border-dark");
             inputRank.classList.add("border-danger");
             inputRank.classList.add("border-2");
@@ -136,7 +137,7 @@ function formAddExercise()
             inputRank.classList.remove("border-2");
         }
 
-        if ( !Number.isInteger(inputSeries.value) )
+        if ( !Number.isInteger(Number(inputSeries.value)) )
         {
             inputSeries.classList.remove("border-dark");
             inputSeries.classList.add("border-danger");
@@ -149,7 +150,7 @@ function formAddExercise()
             inputSeries.classList.add("border-dark");
         }
 
-        if ( !Number.isInteger(inputReps.value) )
+        if ( !Number.isInteger(Number(inputReps.value)) )
         {
             inputReps.classList.remove("border-dark");
             inputReps.classList.add("border-danger");
