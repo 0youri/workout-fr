@@ -123,13 +123,11 @@ function formAddExercise()
     {
         if ( Number(inputRank.value) === 0 )
         {
-            alert('add red');
             inputRank.classList.add("border-danger");
             inputRank.classList.add("border-2");
         }
         else
         {
-            alert('add dark');
             inputRank.classList.remove("border-danger");
             inputRank.classList.remove("border-2");
         }
