@@ -129,9 +129,9 @@ function formAddExercise()
         }
         else
         {
+            inputRank.classList.add("border-dark");
             inputRank.classList.remove("border-danger");
             inputRank.classList.remove("border-2");
-            inputRank.classList.add("border-dark");
         }
 
         if ( !Number.isInteger(inputSeries.value) )
