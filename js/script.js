@@ -115,8 +115,8 @@ function formAddExercise()
     let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');
     let inputReps = document.getElementById('input-add-repetitions');
-    alert(isNaN(1));
-    alert(isNaN('1'));
+    alert(Number.isInteger(1));
+    alert(Number.isInteger('1'));
     if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) 
         && Number.isInteger(inputReps.value) )
         sumbitForm('formAddExercise');
