@@ -129,6 +129,7 @@ function formAddExercise()
         }
         else
         {
+            alert('add dark');
             inputRank.classList.add("border-dark");
             inputRank.classList.remove("border-danger");
             inputRank.classList.remove("border-2");
