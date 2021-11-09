@@ -120,7 +120,7 @@ function formAddExercise()
     let inputWeight = document.getElementById('input-add-weight');
     let inputTime = document.getElementById('input-add-time');
 
-    if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) && Number.isInteger(inputReps.value) 
+    if ( Number(inputRank.value) !== 0 && Number(inputSeries.value) !== 0 && Number(inputReps.value) !== 0
     && inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" )
     {
         alert("help");
