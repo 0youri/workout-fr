@@ -124,21 +124,18 @@ function formAddExercise()
         if ( Number(inputRank.value) === 0 )
         {
             alert('add red');
-            inputRank.classList.remove("border-dark");
             inputRank.classList.add("border-danger");
             inputRank.classList.add("border-2");
         }
         else
         {
             alert('add dark');
-            inputRank.classList.add("border-dark");
             inputRank.classList.remove("border-danger");
             inputRank.classList.remove("border-2");
         }
 
         if ( Number(inputSeries.value)  === 0 )
         {
-            inputSeries.classList.remove("border-dark");
             inputSeries.classList.add("border-danger");
             inputSeries.classList.add("border-2");
         }
@@ -146,12 +143,10 @@ function formAddExercise()
         {
             inputSeries.classList.remove("border-danger");
             inputSeries.classList.remove("border-2");
-            inputSeries.classList.add("border-dark");
         }
 
         if ( Number(inputReps.value) === 0  )
         {
-            inputReps.classList.remove("border-dark");
             inputReps.classList.add("border-danger");
             inputReps.classList.add("border-2");
         }
@@ -159,7 +154,6 @@ function formAddExercise()
         {
             inputReps.classList.remove("border-danger");
             inputReps.classList.remove("border-2");
-            inputReps.classList.add("border-dark");
         }
     }
 }
