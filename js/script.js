@@ -122,7 +122,7 @@ function formAddExercise()
         sumbitForm('formAddExercise');
     else
     {
-        if ( !isNaN(inputRank.value) )
+        if ( !Number.isInteger(inputRank.value) )
         {
             inputRank.classList.remove("border-dark");
             inputRank.classList.add("border-danger");
