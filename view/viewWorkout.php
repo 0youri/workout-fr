@@ -137,7 +137,7 @@
                 <form method="POST" id="formAddExercise" action="index.php?page=workout">
                     <div>
                         <label>Rank</label>
-                        <input type="numeric" class="form-control"
+                        <input type="number" class="form-control"
                         id="input-add-rank" name="input-add-rank" >
                     </div>
                     <div>
@@ -148,19 +148,19 @@
                     <br>
                     <div>
                         <label>Exercise</label>
-                        <input type="text" class="form-control"
+                        <input type="number" class="form-control"
                         id="input-add-exercise" name="input-add-exercise">
                     </div>
                     <br>
                     <div>
                         <label>No series</label>
-                        <input type="text" class="form-control" 
+                        <input type="number" class="form-control" 
                         id="input-add-series" name="input-add-series" >
                     </div>
                     <br>
                     <div>
                         <label>No repetitions</label>
-                        <input type="text" class="form-control"
+                        <input type="number" class="form-control"
                         id="input-add-repetitions" name="input-add-repetitions">
                     </div>
                     <br>
