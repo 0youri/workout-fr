@@ -122,10 +122,7 @@ function formAddExercise()
 
     if ( Number(inputRank.value) !== 0 && Number(inputSeries.value) !== 0 && Number(inputReps.value) !== 0
     && inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" )
-    {
-        alert("help");
-        sumbitForm('formAddExercise'); 
-    }
+        sumbitForm('formAddExercise');
     else
     {
         // Verif input Muscle

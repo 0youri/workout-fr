@@ -36,8 +36,6 @@
             $request = "INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
             VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',".$rank.",'".$time."');
             ";
-            echo $request;
-
             requestDB($request,$connect);
         }
         /*
