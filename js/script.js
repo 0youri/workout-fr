@@ -121,10 +121,10 @@ function formAddExercise()
         sumbitForm('formAddExercise');
     else
     {
-        alert(Number(inputRank.value));
+        alert(NaN);
         alert(typeof(Number(inputRank.value)));
 
-        if ( Number(inputRank.value) === NaN )
+        if ( Number(inputRank.value) == NaN )
         {
             alert('add red');
             inputRank.classList.remove("border-dark");
