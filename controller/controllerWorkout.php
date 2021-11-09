@@ -34,7 +34,7 @@
             $weight = $_POST['input-add-weight'];
             $time = $_POST['input-add-time'];
             $request = "INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
-            VALUES (".$id.",'".$muscle."',".$exercise.",".$series.",".$reps.",".$weight.",".$rank.",".$time.");
+            VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',".$rank.",'".$time."');
             ";
             echo $request;
 
