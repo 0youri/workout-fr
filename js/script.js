@@ -115,12 +115,66 @@ function formAddExercise()
     let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');
     let inputReps = document.getElementById('input-add-repetitions');
-    
-    if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) 
-        && Number.isInteger(inputReps.value) )
+    let inputMuscle = document.getElementById('input-add-muscle');
+    let inputExercise = document.getElementById('input-add-exercise');
+    let inputWeight = document.getElementById('input-add-weight');
+    let inputTime = document.getElementById('input-add-time');
+
+
+    if ( Number.isInteger(inputRank.value) && Number.isInteger(inputSeries.value) && Number.isInteger(inputReps.value) 
+    && inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" )
         sumbitForm('formAddExercise');
     else
     {
+        // Verif input Muscle
+        if ( inputMuscle.value == "" )
+        {
+            inputMuscle.classList.add("border-danger");
+            inputMuscle.classList.add("border-2");
+        }
+        else
+        {
+            inputMuscle.classList.remove("border-danger");
+            inputMuscle.classList.remove("border-2");
+        }
+
+        // Verif input Exercise
+        if ( inputExercise.value == "" )
+        {
+            inputExercise.classList.add("border-danger");
+            inputExercise.classList.add("border-2");
+        }
+        else
+        {
+            inputExercise.classList.remove("border-danger");
+            inputExercise.classList.remove("border-2");
+        }
+
+        // Verif input Weight
+        if ( inputWeight.value == "" )
+        {
+            inputWeight.classList.add("border-danger");
+            inputWeight.classList.add("border-2");
+        }
+        else
+        {
+            inputWeight.classList.remove("border-danger");
+            inputWeight.classList.remove("border-2");
+        }
+ 
+        // Verif input Rest period
+        if ( inputTime.value == "" )
+        {
+            inputTime.classList.add("border-danger");
+            inputTime.classList.add("border-2");
+        }
+        else
+        {
+            inputTime.classList.remove("border-danger");
+            inputTime.classList.remove("border-2");
+        }
+
+        // Verif input Rank
         if ( Number(inputRank.value) === 0 )
         {
             inputRank.classList.add("border-danger");
@@ -132,6 +186,7 @@ function formAddExercise()
             inputRank.classList.remove("border-2");
         }
 
+        // Verif input Series
         if ( Number(inputSeries.value)  === 0 )
         {
             inputSeries.classList.add("border-danger");
@@ -143,6 +198,7 @@ function formAddExercise()
             inputSeries.classList.remove("border-2");
         }
 
+        // Verif input Repetitions
         if ( Number(inputReps.value) === 0  )
         {
             inputReps.classList.add("border-danger");
@@ -154,6 +210,40 @@ function formAddExercise()
             inputReps.classList.remove("border-2");
         }
     }
+}
+
+function resetFormAdd(id)
+{
+    let inputRank = document.getElementById('input-add-rank');
+    let inputSeries = document.getElementById('input-add-series');
+    let inputReps = document.getElementById('input-add-repetitions');
+    let inputMuscle = document.getElementById('input-add-muscle');
+    let inputExercise = document.getElementById('input-add-exercise');
+    let inputWeight = document.getElementById('input-add-weight');
+    let inputTime = document.getElementById('input-add-time');
+    let inputID = document.getElementById('input-add-workout-id');
+
+    // Drop red color and border on input
+    inputRank.classList.remove("border-danger");
+    inputRank.classList.remove("border-2");
+    inputSeries.classList.remove("border-danger");
+    inputSeries.classList.remove("border-2");
+    inputReps.classList.remove("border-danger");
+    inputReps.classList.remove("border-2");
+    inputMuscle.classList.remove("border-danger");
+    inputMuscle.classList.remove("border-2");
+    inputExercise.classList.remove("border-danger");
+    inputExercise.classList.remove("border-2");
+    inputWeight.classList.remove("border-danger");
+    inputWeight.classList.remove("border-2");
+    inputTime.classList.remove("border-danger");
+    inputTime.classList.remove("border-2");
+
+    // Drop input value 
+    inputRank.value = inputSeries.value = inputReps.value = inputMuscle.value = 
+    inputExercise.value = inputWeight.value = inputTime.value = "";
+
+    inputID.value = id;
 }
 
 // Edit Food

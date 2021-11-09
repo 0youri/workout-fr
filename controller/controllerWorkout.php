@@ -22,10 +22,20 @@
             requestDB($request,$connect);
         }
         // Add Exercise
-        /*
-        else if ( )
+        
+        else if ( isset($_POST['input-add-rank']) )
         {
-
+            $id = $_POST['input-add-workout-id'];
+            $rank = $_POST['input-add-rank'];
+            $muscle = $_POST['input-add-muscle'];
+            $exercise = $_POST['input-add-exercise'];
+            $series = $_POST['input-add-series'];
+            $reps = $_POST['input-add-repetitions'];
+            $weight = $_POST['input-add-weight'];
+            $time = $_POST['input-add-time'];
+            $request = `INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
+            VALUES (`.$id.`,'`.$muscle.`',`.$exercise.`,`.$series.`,`.$reps.`,`.$weight.`,`.$rank.`,`.$time.`);
+            `;
         }
         /*
         if ( isset($_POST['editP']) )
@@ -139,7 +149,7 @@
     
         $workoutHTML = $workoutHTML.'</table>
         <div class="container card-body bg-dark border rounded" style="text-align: center"
-        data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="">
+        data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="resetFormAdd(`'.$id.');">
             <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
         </div>
         </div></p></div></div></div>';

@@ -132,9 +132,12 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="h5-exercise-name">Add Exercise</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
             </div>
             <div class="modal-body">
                 <form method="POST" id="formAddExercise" action="index.php?page=workout">
+                    <input style="display:none;" type="text" class="form-control" 
+                    id="input-add-workout-id" name="input-add-workout-id" value="">
                     <div>
                         <label>Rank</label>
                         <input type="number" class="form-control"
@@ -148,7 +151,7 @@
                     <br>
                     <div>
                         <label>Exercise</label>
-                        <input type="number" class="form-control"
+                        <input type="text" class="form-control"
                         id="input-add-exercise" name="input-add-exercise">
                     </div>
                     <br>
@@ -164,6 +167,17 @@
                         id="input-add-repetitions" name="input-add-repetitions">
                     </div>
                     <br>
+                    <div>
+                        <label>Weight (kg)</label>
+                        <input type="text" class="form-control"
+                        id="input-add-weight" name="input-add-weight">
+                    </div>
+                    <br>
+                    <div>
+                        <label>Rest period (min)</label>
+                        <input type="text" class="form-control"
+                        id="input-add-time" name="input-add-time">
+                    </div>
                 </form>
             </div>
 
