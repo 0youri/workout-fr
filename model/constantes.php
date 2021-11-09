@@ -15,4 +15,15 @@
 	define('PASSWORD', parse_url($_ENV['DATABASE_URL'],PHP_URL_PASS)) ; // Mot de passe
 */
 echo parse_url($_ENV['DATABASE_URL'],PHP_URL_HOST);
+echo "<br>";
+echo parse_url($_ENV['DATABASE_URL'],PHP_URL_PORT);
+echo "<br>";
+echo parse_url($_ENV['DATABASE_URL'],PHP_URL_PATH);
+
+echo "<br>";
+echo parse_url($_ENV['DATABASE_URL'],PHP_URL_USER);
+echo "<br>";
+echo parse_url($_ENV['DATABASE_URL'],PHP_URL_PASS);
+echo "<br>";
+
 	?>
