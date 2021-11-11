@@ -203,7 +203,7 @@
                 <form method="POST" id="formDeleteWorkout" name="formDeleteWorkout" action="index.php?page=workout">
                     <input style="display:none;" type="text" class="form-control" 
                     id="input-delete-workout-id" name="input-delete-workout-id" value="">
-                    <strong class="fs-5" id="strong-delete-workout">Are you sure you want to delete workout : </strong>
+                    <strong class="fs-6" id="strong-delete-workout">Are you sure you want to delete workout : </strong>
                 </form>
             </div>
 
