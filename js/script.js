@@ -260,7 +260,7 @@ function deleteWorkout(id)
     let inputDW = document.getElementById('input-delete-workout-id');
     let type = document.getElementById(`span-workout-type-${id}`).innerHTML;
     let rank = document.getElementById(`span-workout-rank-${id}`).innerHTML;
-    strongDW.innerHTML += `Are you sure you want to delete workout #${rank} ${type} ?`;
+    strongDW.innerHTML = `Are you sure you want to delete workout #${rank} ${type} ?`;
     inputDW.value = id;
 }
 
