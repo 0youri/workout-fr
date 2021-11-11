@@ -27,7 +27,6 @@
                         <input type="text" class="form-control"
                         id="input-edit-workout-id" name="input-edit-workout-id">
                     </div>
-                    <br>
                     <div style="display:none;">
                         <label>Workout type</label>
                         <input type="text" class="form-control"
@@ -41,37 +40,31 @@
                         id="select-edit-muscle" name="select-edit-muscle">
                         </select>
                     </div>
-                    <br>
                     <div>
                         <label>Rank</label>
                         <input type="text" class="form-control"
                         id="input-edit-rank" name="input-edit-rank" disabled>
                     </div>
-                    <br>
                     <div>
                         <label>Exercise</label>
                         <input type="text" class="form-control"
                         id="input-edit-exercise" name="input-edit-exercise" disabled>
                     </div>
-                    <br>
                     <div>
                         <label>No. series</label>
                         <input type="text" class="form-control" 
                         id="input-edit-series" name="input-edit-series" disabled>
                     </div>
-                    <br>
                     <div>
                         <label>No. repetitions</label>
                         <input type="text" class="form-control"
                         id="input-edit-repetitions" name="input-edit-repetitions" disabled>
                     </div>
-                    <br>
                     <div>
                         <label>Weight</label>
                         <input type="text" class="form-control"
                         id="input-edit-weight" name="input-edit-weight" disabled>
                     </div>
-                    <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-edit-delete-stats" name="checkbox-edit-delete-stats">
