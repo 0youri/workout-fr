@@ -89,7 +89,8 @@
         {
             $id = $_POST['input-delete-workout-id'];
             $request = "DELETE FROM public.allworkout WHERE id=".$id.";";
-            requestDB($request,$connect);
+            echo $request;
+            //requestDB($request,$connect);
         }
     }
 
