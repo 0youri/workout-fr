@@ -112,6 +112,10 @@
                             data-bs-toggle="modal"  data-bs-target="#editModal"
                             onclick="resetWorkout(); editWorkout(`'.$id.'`);">
                             </button>
+                            <button class="btn btn-dark bi bi-x-square-fill" type="button" 
+                            data-bs-toggle="modal"  data-bs-target="#deleteWorkout"
+                            onclick="deleteWorkout(`'.$id.'`);">
+                            </button>
                         </span>
                     </div>
                 </div>
