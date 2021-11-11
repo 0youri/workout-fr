@@ -83,6 +83,11 @@
                 requestDB($request,$connect);
             }
         }
+        else if ( isset($_POST['input-delete-workout-id']) )
+        {
+            $id = $_POST['input-delete-workout-id'];
+            $request = "DELETE FROM public.allworkout WHERE id=".$id.";";
+        }
     }
 
     $request = "SELECT * FROM public.allworkout ORDER BY rank;";
@@ -98,7 +103,8 @@
             <div class="card-body bg-light border rounded">
                 <div class="position-relative">
                     <div class="text-black fs-5">
-                        <strong>#'.$rankW.' - <span id="span-workout-type-'.$id.'">'.$type.'</span>
+                        <strong>#<span id="span-workout-rank-'.$id.'">'.$rankW.'</span> 
+                        - <span id="span-workout-type-'.$id.'">'.$type.'</span>
                         </strong>
                         <span class="position-absolute end-0">
                             <button class="btn btn-dark bi bi-info-circle-fill" 

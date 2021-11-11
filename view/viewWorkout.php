@@ -189,3 +189,29 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Delete Workout -->
+<div class="modal fade" id="deleteWorkout">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="formDeleteWorkout" name="formDeleteWorkout" action="index.php?page=workout">
+                    <input style="display:none;" type="text" class="form-control" 
+                    id="input-delete-workout-id" name="input-delete-workout-id" value="">
+                    <strong class="fs-5" id="strong-delete-workout">Are you sure you want to delete workout : </strong>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="button" class="btn btn-danger"
+                onclick="sumbitForm('formDeleteWorkout');">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
