@@ -209,7 +209,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                <button type="button" class="btn btn-danger"
+                <button type="button" class="btn btn-danger" id="button-delete-workout"
                 onclick="sumbitForm('formDeleteWorkout');">Delete</button>
             </div>
         </div>
