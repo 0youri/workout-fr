@@ -63,25 +63,7 @@
             $repetitions = $_POST['input-edit-repetitions'];
             $weight = $_POST['input-edit-weight'];
             $newrank = $_POST['input-edit-rank'];
-            $request = "
-            UPDATE public.workout
-            SET rank=".$rank." 
-            WHERE id=".$id." AND rank=".$newrank.";
-            ";
-            requestDB($request,$connect);
-            $request = "
-            UPDATE public.workout 
-            SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-            weight='".$weight."', rank='".$newrank."'
-            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
-            ";
-            requestDB($request,$connect);
-            if ( $_POST['checkbox-edit-delete-stats'] == "on" )
-            {
-                $request = "DELETE FROM public.stats 
-                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
-                requestDB($request,$connect);
-            }
+            
             if ( $_POST['checkbox-edit-delete-exercise'] == "on" )
             {
                 $request = "DELETE FROM public.stats 
@@ -90,6 +72,28 @@
                 $request = "DELETE FROM public.workout 
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
+            }
+            else
+            {
+                $request = "
+                UPDATE public.workout
+                SET rank=".$rank." 
+                WHERE id=".$id." AND rank=".$newrank.";
+                ";
+                requestDB($request,$connect);
+                $request = "
+                UPDATE public.workout 
+                SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
+                weight='".$weight."', rank='".$newrank."'
+                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                ";
+                requestDB($request,$connect);
+                if ( $_POST['checkbox-edit-delete-stats'] == "on" )
+                {
+                    $request = "DELETE FROM public.stats 
+                    WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+                    requestDB($request,$connect);
+                }
             }
         }
 
