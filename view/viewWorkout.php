@@ -203,13 +203,13 @@
                 <form method="POST" id="formDeleteWorkout" name="formDeleteWorkout" action="index.php?page=workout">
                     <input style="display:none;" type="text" class="form-control" 
                     id="input-delete-workout-id" name="input-delete-workout-id" value="">
-                    <strong class="fs-6" id="strong-delete-workout">Are you sure you want to delete workout : </strong>
+                    <strong class="fs-6" id="strong-delete-workout"></strong>
                 </form>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                <button type="button" class="btn btn-danger" id="button-delete-workout"
+                <button type="button" class="btn btn-danger"
                 onclick="sumbitForm('formDeleteWorkout');">Delete</button>
             </div>
         </div>
