@@ -83,10 +83,13 @@
                 requestDB($request,$connect);
             }
         }
+
+        // Delete Workout
         else if ( isset($_POST['input-delete-workout-id']) )
         {
             $id = $_POST['input-delete-workout-id'];
             $request = "DELETE FROM public.allworkout WHERE id=".$id.";";
+            requestDB($request,$connect);
         }
     }
 
