@@ -79,14 +79,17 @@ function editForm(id)
     let inputReps = document.getElementById('input-edit-repetitions');
     let inputWeight = document.getElementById('input-edit-weight');
     let inputRank = document.getElementById('input-edit-rank');
+    let checkboxDS = document.getElementById('checkbox-edit-delete-stats');
+    let checkboxDE = document.getElementById('checkbox-edit-delete-exercise');
     // Recup infos
     let tdExercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
     let tdNo = document.getElementById(`td-no-${id}-${rank}`).innerHTML;
     let tdWeight = document.getElementById(`td-weight-${id}-${rank}`).innerHTML;
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNo = tdNo.split("x"); 
-    inputExercise.disabled = inputSeries.disabled = 
-    inputReps.disabled = inputWeight.disabled = inputRank.disabled = false;
+    inputExercise.disabled = inputSeries.disabled = inputReps.disabled 
+    = inputWeight.disabled = inputRank.disabled = checkboxDE.disabled
+    = checkboxDS.disabled = false;
     inputExercise.value = tdExercise;
     inputSeries.value = tdNo[0];
     inputReps.value = tdNo[1];

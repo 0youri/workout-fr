@@ -68,14 +68,14 @@
                     <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
-                        id="checkbox-edit-delete-stats" name="checkbox-edit-delete-stats">
+                        id="checkbox-edit-delete-stats" name="checkbox-edit-delete-stats" disabled>
                         <label class="form-check-label" for="flexCheckDefault">
                             Delete stats
                         </label>
                     </div>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
-                        id="checkbox-edit-delete-exercise" name="checkbox-edit-delete-exercise">
+                        id="checkbox-edit-delete-exercise" name="checkbox-edit-delete-exercise" disabled>
                         <label class="form-check-label" for="flexCheckDefault">
                             Delete exercise
                         </label>
