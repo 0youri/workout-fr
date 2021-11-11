@@ -65,6 +65,7 @@
                         <input type="text" class="form-control"
                         id="input-edit-weight" name="input-edit-weight" disabled>
                     </div>
+                    <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-edit-delete-stats" name="checkbox-edit-delete-stats">
