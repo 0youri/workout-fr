@@ -76,9 +76,18 @@
             WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
             ";
             requestDB($request,$connect);
-            if ( $_POST['checkbox-edit'] == "on" )
+            if ( $_POST['checkbox-edit-delete-stats'] == "on" )
             {
                 $request = "DELETE FROM public.stats 
+                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+                requestDB($request,$connect);
+            }
+            if ( $_POST['checkbox-edit-delete-exercise'] == "on" )
+            {
+                $request = "DELETE FROM public.stats 
+                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+                requestDB($request,$connect);
+                $request = "DELETE FROM public.workout 
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
             }

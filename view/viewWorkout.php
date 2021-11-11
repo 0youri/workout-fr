@@ -74,9 +74,16 @@
                     <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
-                        id="checkbox-edit" name="checkbox-edit">
+                        id="checkbox-edit-delete-stats" name="checkbox-edit-delete-stats">
                         <label class="form-check-label" for="flexCheckDefault">
                             Delete stats
+                        </label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox"
+                        id="checkbox-edit-delete-exercise" name="checkbox-edit-delete-exercise">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Delete exercise
                         </label>
                     </div>
                 </form>
