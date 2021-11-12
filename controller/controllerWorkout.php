@@ -63,7 +63,7 @@
             $repetitions = $_POST['input-edit-repetitions'];
             $weight = $_POST['input-edit-weight'];
             $newrank = $_POST['input-edit-rank'];
-            
+
             if ( $_POST['checkbox-edit-delete-exercise'] == "on" )
             {
                 $request = "DELETE FROM public.stats 
@@ -76,10 +76,10 @@
             else
             {
                 $request = "
+                IF EXISTS (SELECT * FROM public.workout WHERE rank=".$newrank." AND id=".$id."
                 UPDATE public.workout
                 SET rank=".$rank." 
-                WHERE id=".$id." AND rank=".$newrank.";
-                ";
+                WHERE id=".$id." AND rank=".$newrank.";";
                 requestDB($request,$connect);
                 $request = "
                 UPDATE public.workout 
