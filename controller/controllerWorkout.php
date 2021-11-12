@@ -76,7 +76,7 @@
             else
             {
                 $request = "
-                IF EXISTS (SELECT * FROM public.workout WHERE rank=".$newrank." AND id=".$id."
+                IF EXISTS (SELECT * FROM public.workout WHERE rank=".$newrank." AND id=".$id.")
                 UPDATE public.workout
                 SET rank=".$rank." 
                 WHERE id=".$id." AND rank=".$newrank.";";
