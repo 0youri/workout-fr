@@ -16,8 +16,7 @@
             WHERE rank=".$rank.";
             UPDATE public.allworkout
             SET rank=".$rank."
-            WHERE rank=0;
-            ";
+            WHERE rank=0;";
             requestDB($request,$connect);
         }
 
@@ -97,12 +96,17 @@
         else if ( isset($_POST['input-delete-workout-id']) )
         {
             $id = $_POST['input-delete-workout-id'];
-            $request = "DELETE FROM public.stats WHERE id=".$id.";";
+            $request = "DELETE FROM public.stats WHERE id=".$id.";
+            DELETE FROM public.workout WHERE id=".$id.";
+            DELETE FROM public.allworkout WHERE id=".$id.";";
+            echo requestDB($request,$connect);
+            /*
             requestDB($request,$connect);
             $request = "DELETE FROM public.workout WHERE id=".$id.";";
             requestDB($request,$connect);
             $request = "DELETE FROM public.allworkout WHERE id=".$id.";";
             requestDB($request,$connect);
+            */
         }
     }
 
