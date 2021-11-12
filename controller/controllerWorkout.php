@@ -96,18 +96,20 @@
         else if ( isset($_POST['input-delete-workout-id']) )
         {
             $id = $_POST['input-delete-workout-id'];
+            /*
             $request = "DELETE FROM public.stats WHERE id=".$id.";
             DELETE FROM public.workout WHERE id=".$id.";
             DELETE FROM public.allworkout WHERE id=".$id.";";
             echo requestDB($request,$connect);
             echo "here";
-            /*
+            */
+            $request = "DELETE FROM public.stats WHERE id=".$id.";"
             requestDB($request,$connect);
             $request = "DELETE FROM public.workout WHERE id=".$id.";";
             requestDB($request,$connect);
             $request = "DELETE FROM public.allworkout WHERE id=".$id.";";
             requestDB($request,$connect);
-            */
+    
         }
     }
 
