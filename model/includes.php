@@ -19,7 +19,7 @@ function requestDB($request,$connect)
 {
         if ( !pg_connection_busy($connect) ) pg_send_query($connect,$request);
         else echo '<br>Error model/includes.php -> pg_connection_busy(...)';
-        $result = pg_get_result($connect);
+        while ( $result = pg_get_result($connect) ) { continue }
         if ( !$result ) echo "<br>Error model/includes.php -> pg_get_result(...)";
         return $result;
 }
