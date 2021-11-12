@@ -24,7 +24,7 @@ function requestDB($request,$connect)
         while ( pg_get_result($connect) ) // $result = pg_get_result($connect);
         {
                 //array_push($results, $result);
-                continue
+        
         }
         if ( !$result ) echo "<br>Error model/includes.php -> pg_get_result(...)";
         return $result;
