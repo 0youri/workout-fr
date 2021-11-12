@@ -100,8 +100,10 @@
             $request = "
             DELETE FROM public.stats WHERE id=".$id.";
             DELETE FROM public.workout WHERE id=".$id.";
-            DELETE FROM public.allworkout WHERE id=".$id.";";
+            DELETE FROM public.allworkout WHERE id=".$id.";
+            ";
             requestDB($request,$connect);
+            sleep(1000);
         }
     }
 
