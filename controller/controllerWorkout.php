@@ -103,7 +103,6 @@
             DELETE FROM public.allworkout WHERE id=".$id.";
             ";
             requestDB($request,$connect);
-            sleep(1);
         }
     }
 
