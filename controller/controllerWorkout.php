@@ -103,7 +103,7 @@
             echo requestDB($request,$connect);
             echo "here";
             */
-            $request = "DELETE FROM public.stats WHERE id=".$id.";"
+            $request = "DELETE FROM public.stats WHERE id=".$id.";";
             requestDB($request,$connect);
             $request = "DELETE FROM public.workout WHERE id=".$id.";";
             requestDB($request,$connect);
