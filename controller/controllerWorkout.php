@@ -8,17 +8,16 @@
         {
             $type = $_POST['input-add-workout-type'];
             $rank = $_POST['input-add-workout-rank'];
-            $request = "INSERT INTO public.allworkout (type,rank)
-            VALUES ('".$type."',0) ";
-            requestDB($request,$connect);
             $request = "
+            INSERT INTO public.allworkout (type,rank)
+            VALUES ('".$type."',0);
             UPDATE public.allworkout
             SET rank=(SELECT max(rank) from public.allworkout)+1
-            WHERE rank=".$rank.";";
-            requestDB($request,$connect);
-            $request = "UPDATE public.allworkout
+            WHERE rank=".$rank.";
+            UPDATE public.allworkout
             SET rank=".$rank."
-            WHERE rank=0;";
+            WHERE rank=0;
+            ";
             requestDB($request,$connect);
         }
 
@@ -79,14 +78,11 @@
                 IF EXISTS (SELECT * FROM public.workout WHERE rank=".$newrank." AND id=".$id.")
                 UPDATE public.workout
                 SET rank=".$rank." 
-                WHERE id=".$id." AND rank=".$newrank.";";
-                requestDB($request,$connect);
-                $request = "
+                WHERE id=".$id." AND rank=".$newrank.";
                 UPDATE public.workout 
                 SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
                 weight='".$weight."', rank='".$newrank."'
-                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
-                ";
+                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
                 if ( $_POST['checkbox-edit-delete-stats'] == "on" )
                 {
@@ -101,11 +97,10 @@
         else if ( isset($_POST['input-delete-workout-id']) )
         {
             $id = $_POST['input-delete-workout-id'];
-            $request = "DELETE FROM public.stats WHERE id=".$id.";";
-            requestDB($request,$connect);
-            $request = "DELETE FROM public.workout WHERE id=".$id.";";
-            requestDB($request,$connect);
-            $request = "DELETE FROM public.allworkout WHERE id=".$id.";";
+            $request = "
+            DELETE FROM public.stats WHERE id=".$id.";
+            DELETE FROM public.workout WHERE id=".$id.";
+            DELETE FROM public.allworkout WHERE id=".$id.";";
             requestDB($request,$connect);
         }
     }
