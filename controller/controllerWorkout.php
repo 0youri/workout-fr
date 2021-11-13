@@ -32,10 +32,10 @@
             $time = $_POST['input-add-time'];
             $request = "INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
             VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',
-            (select count(rank) from public.workout where id=".$id.")+1,'".$time."');
+            ((select count(rank) from public.workout where id=".$id.")+1),'".$time."');
             ";
-            echo $request;
             requestDB($request,$connect);
+            echo $request;
         }
         /*
         if ( isset($_POST['editP']) )
@@ -90,7 +90,6 @@
                 weight='".$weight."', rank='".$newrank."'
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
-                echo $request;
                 if ( $_POST['checkbox-edit-delete-stats'] == "on" )
                 {
                     $request = "DELETE FROM public.stats 
