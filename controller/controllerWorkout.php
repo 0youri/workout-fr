@@ -62,12 +62,20 @@
             $weight = $_POST['input-edit-weight'];
             $newrank = $_POST['input-edit-rank'];
 
+            // Delete Exercise
             if ( $_POST['checkbox-edit-delete-exercise'] == "on" )
             {
-                $request = "DELETE FROM public.stats 
+                $request = "
+                DELETE FROM public.stats 
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+
                 DELETE FROM public.workout 
-                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
+                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+
+                UPDATE public.workout
+                SET rank=rank-1
+                WHERE id=".$id." AND rank>".$rank.";
+                ";
                 requestDB($request,$connect);
             }
             else
@@ -82,6 +90,7 @@
                 weight='".$weight."', rank='".$newrank."'
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
+                echo $request;
                 if ( $_POST['checkbox-edit-delete-stats'] == "on" )
                 {
                     $request = "DELETE FROM public.stats 
@@ -128,7 +137,7 @@
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
                             href="index.php?page=addstats&w='.$id.'&state=-1"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" 
-                            data-bs-toggle="modal"  data-bs-target="#editModal"
+                            data-bs-toggle="modal"  data-bs-target="#editExercise"
                             onclick="resetWorkout(); editWorkout(`'.$id.'`);">
                             </button>
                             <button class="btn btn-dark bi bi-x-circle-fill" type="button" 
@@ -181,7 +190,7 @@
             </div>
             <div class="col">
                 <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal"  data-bs-target="#editModal" onclick="resetWorkout(); editWorkout(`'.$id.'`);">
+                data-bs-toggle="modal"  data-bs-target="#editExercise" onclick="resetWorkout(); editWorkout(`'.$id.'`);">
                     <a class="btn-dark bi bi-gear-fill" href="#"></a>
                 </div>
             </div>

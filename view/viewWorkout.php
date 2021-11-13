@@ -11,8 +11,8 @@
 
 
 
-<!-- Edit Workout -->
-<div class="modal fade" id="editModal">
+<!-- Edit Exercise -->
+<div class="modal fade" id="editExercise">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,7 +20,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" id="formEditWorkout" action="index.php?page=workout">
+                <form method="POST" id="formEditExercise" action="index.php?page=workout">
                     <div style="display:none;">
                     <div>
                         <label>Workout ID</label>
@@ -86,7 +86,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-primary" 
-                onclick="sumbitForm('formEditWorkout');">Edit</button>
+                onclick="sumbitForm('formEditExercise');">Edit</button>
             </div>
         </div>
     </div>
@@ -195,6 +195,31 @@
 
 <!-- Delete Workout -->
 <div class="modal fade" id="deleteWorkout">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="formDeleteWorkout" name="formDeleteWorkout" action="index.php?page=workout">
+                    <input style="display:none;" type="text" class="form-control" 
+                    id="input-delete-workout-id" name="input-delete-workout-id" value="">
+                    <strong class="fs-6" id="strong-delete-workout"></strong>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="button" class="btn btn-danger"
+                onclick="sumbitForm('formDeleteWorkout');">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Delete Exercise -->
+<div class="modal fade" id="deleteExercise">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
