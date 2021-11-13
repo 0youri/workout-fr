@@ -113,7 +113,7 @@ function sumbitFormEditExercise()
     {
         rank++;
     }
-
+    alert(rank);
     if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
     Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && 
     ( Number(inputRank.value) !== 0) && inputRank.value <= rank )
