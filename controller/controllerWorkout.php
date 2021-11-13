@@ -53,7 +53,7 @@
         // Edit Exercise
         else if ( isset($_POST['input-formeditexercise-id']) )
         {
-            $id = $_POST['w'];
+            $id = $_POST['input-formeditexercise-id'];
             $tab = explode("-", $_POST['select-formeditexercise-muscle']);
             $rank = $tab[0];
             $muscle = $tab[1];
