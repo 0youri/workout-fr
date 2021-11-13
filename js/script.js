@@ -108,11 +108,12 @@ function sumbitFormEditExercise()
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
 
     let id = document.getElementById('input-formeditexercise-exercise-id').value;
-    let rank = 1;
+    let rank = 0;
     while ( document.getElementById(`td-rank-${id}-${rank}`) )
     {
         rank++;
     }
+
     if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
     Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && 
     ( Number(inputRank.value) !== 0 && inputRank.value <= rank ) )
@@ -210,6 +211,21 @@ function resetFormEditExercise()
     inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
     inputWeight.disabled = inputRank.disabled = inputTime.disabled =
     checkboxDS.disabled = checkboxDE.disabled = true;
+
+    // Drop red color and border on input
+    inputRank.classList.remove("border-danger");
+    inputRank.classList.remove("border-2");
+    inputSeries.classList.remove("border-danger");
+    inputSeries.classList.remove("border-2");
+    inputReps.classList.remove("border-danger");
+    inputReps.classList.remove("border-2");
+    inputExercise.classList.remove("border-danger");
+    inputExercise.classList.remove("border-2");
+    inputWeight.classList.remove("border-danger");
+    inputWeight.classList.remove("border-2");
+    inputTime.classList.remove("border-danger");
+    inputTime.classList.remove("border-2");
+
 }
 
 // Add Exercise
