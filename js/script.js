@@ -113,10 +113,9 @@ function sumbitFormEditExercise()
     {
         rank++;
     }
-    alert(rank);
     if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
     Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && 
-    ( Number(inputRank.value) !== 0) && inputRank.value <= rank )
+    ( Number(inputRank.value) !== 0 && inputRank.value <= rank ) )
         sumbitForm('formEditExercise');
     else
     {
@@ -157,7 +156,7 @@ function sumbitFormEditExercise()
         }
 
         // Verif input Rank
-        if ( Number(inputRank.value) === 0 )
+        if ( Number(inputRank.value) === 0 || inputRank.value <= rank )
         {
             inputRank.classList.add("border-danger");
             inputRank.classList.add("border-2");
