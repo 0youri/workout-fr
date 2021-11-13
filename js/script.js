@@ -107,7 +107,7 @@ function sumbitFormEditExercise()
     let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
 
-    let id = document.getElementById('input-formeditexercise-exercise-id');
+    let id = document.getElementById('input-formeditexercise-exercise-id').value;
     let rank = 1;
     while ( document.getElementById(`td-rank-${id}-${rank}`) )
     {
