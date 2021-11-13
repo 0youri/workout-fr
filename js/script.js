@@ -156,7 +156,7 @@ function sumbitFormEditExercise()
         }
 
         // Verif input Rank
-        if ( Number(inputRank.value) === 0 || inputRank.value <= rank )
+        if ( Number(inputRank.value) === 0 || inputRank.value > rank )
         {
             inputRank.classList.add("border-danger");
             inputRank.classList.add("border-2");
