@@ -134,11 +134,6 @@
                     <input style="display:none;" type="text" class="form-control" 
                     id="input-add-workout-id" name="input-add-workout-id" value="">
                     <div>
-                        <label>Rank</label>
-                        <input type="number" class="form-control"
-                        id="input-add-rank" name="input-add-rank" >
-                    </div>
-                    <div>
                         <label>Muscle</label>
                         <input type="text" class="form-control"
                         id="input-add-muscle" name="input-add-muscle" >
