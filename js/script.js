@@ -106,8 +106,17 @@ function sumbitFormEditExercise()
     let inputRank = document.getElementById('input-formeditexercise-rank');
     let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
+
+    let id = document.getElementById('input-formeditexercise-exercise-id');
+    let rank = 1;
+    while ( document.getElementById(`td-rank-${id}-${rank}`) )
+    {
+        rank++;
+    }
+
     if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
-    Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && Number(inputRank.value) !== 0)
+    Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && 
+    ( Number(inputRank.value) !== 0) && inputRank.value <= rank )
         sumbitForm('formEditExercise');
     else
     {
