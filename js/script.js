@@ -87,7 +87,7 @@ function changeFormEditExerciseSelect(id)
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNo = tdNo.split("x"); 
     inputExercise.disabled = inputSeries.disabled = inputReps.disabled 
-    = inputWeight.disabled = inputRank.disabled = inputTime.value =
+    = inputWeight.disabled = inputRank.disabled = inputTime.disabled =
     checkboxDE.disabled = checkboxDS.disabled = false;
     inputExercise.value = tdExercise;
     inputSeries.value = tdNo[0];
