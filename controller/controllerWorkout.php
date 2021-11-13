@@ -172,10 +172,23 @@
         }
     
         $workoutHTML = $workoutHTML.'</table>
-        <div class="container card-body bg-dark border rounded" style="text-align: center"
-        data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="resetFormAdd(`'.$id.'`);">
-            <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
+        <div class="row">
+            <div class="col">
+                <div class="container card-body bg-dark border rounded" style="text-align: center"
+                data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="resetFormAdd(`'.$id.'`);">
+                    <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
+                </div>
+            </div>
+            <div class="col">
+                <button class="btn btn-dark bi bi-gear-fill" type="button" 
+                data-bs-toggle="modal"  data-bs-target="#editModal"
+                onclick="resetWorkout(); editWorkout(`'.$id.'`);">
+                </button>
+            </div>
         </div>
+
+
+
         </div></p></div></div></div>';
     }
 ?>
