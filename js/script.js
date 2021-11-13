@@ -94,7 +94,7 @@ function changeFormEditExerciseSelect(id)
     inputReps.value = tdNo[1];
     inputWeight.value = tdWeight;
     inputRank.value = rank;
-    inputTime.rank = tdTime;
+    inputTime.value = tdTime;
 }
 
 function sumbitFormEditExercise()
