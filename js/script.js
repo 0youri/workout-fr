@@ -63,7 +63,7 @@ function initFormEditExercise(id)
         rank++;
     }
     document.getElementById(`select-edit-muscle`).
-    setAttribute('onchange',`editForm('${id}');`);
+    setAttribute('onchange',`changeFormEditExerciseSelect('${id}');`);
 }
 
 function changeFormEditExerciseSelect(id)
