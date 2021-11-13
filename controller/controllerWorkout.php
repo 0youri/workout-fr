@@ -90,6 +90,7 @@
                 weight='".$weight."', rank='".$newrank."'
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
+                echo $request;
                 if ( $_POST['checkbox-edit-delete-stats'] == "on" )
                 {
                     $request = "DELETE FROM public.stats 
