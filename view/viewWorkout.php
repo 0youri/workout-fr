@@ -76,7 +76,7 @@
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-edit-delete-exercise" name="checkbox-edit-delete-exercise" disabled>
-                        <label class="form-check-label btn btn-danger" for="flexCheckDefault">
+                        <label class="form-check-label text-danger" for="flexCheckDefault">
                             Delete exercise
                         </label>
                     </div>
