@@ -22,7 +22,7 @@
             <div class="modal-body">
                 <form method="POST" id="formEditExercise" action="index.php?page=workout">
                     <input style="display:none;"
-                    id="input-formeditexercise-exercise-id" name="input-formeditexercise-exercise-id" value="">
+                    id="input-formeditexercise-id" name="input-formeditexercise-id" value="">
                     <div>
                         <label>Muscle</label>
                         <select class="form-select" onchange="changeFormEditExerciseSelect(0);"

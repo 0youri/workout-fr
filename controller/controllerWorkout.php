@@ -51,20 +51,20 @@
         }
         */
         // Edit Exercise
-        else if ( isset($_POST['input-edit-workout-id']) )
+        else if ( isset($_POST['input-formeditexercise-id']) )
         {
             $id = $_POST['w'];
-            $tab = explode("-", $_POST['select-edit-muscle']);
+            $tab = explode("-", $_POST['select-formeditexercise-muscle']);
             $rank = $tab[0];
             $muscle = $tab[1];
-            $exercise = $_POST['input-edit-exercise'];
-            $series = $_POST['input-edit-series'];
-            $repetitions = $_POST['input-edit-repetitions'];
-            $weight = $_POST['input-edit-weight'];
-            $newrank = $_POST['input-edit-rank'];
+            $exercise = $_POST['input-formeditexercise-exercise'];
+            $series = $_POST['input-formeditexercise-series'];
+            $repetitions = $_POST['input-formeditexercise-repetitions'];
+            $weight = $_POST['input-formeditexercise-weight'];
+            $newrank = $_POST['input-formeditexercise-rank'];
 
             // Delete Exercise
-            if ( $_POST['checkbox-edit-delete-exercise'] == "on" )
+            if ( $_POST['checkbox-formeditexercise-delete-exercise'] == "on" )
             {
                 $request = "
                 DELETE FROM public.stats 
@@ -90,8 +90,7 @@
                 weight='".$weight."', rank='".$newrank."'
                 WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
                 requestDB($request,$connect);
-                echo $request;
-                if ( $_POST['checkbox-edit-delete-stats'] == "on" )
+                if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
                     $request = "DELETE FROM public.stats 
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";

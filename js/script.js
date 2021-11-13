@@ -45,7 +45,7 @@ function initFormEditExercise(id)
 {
     const type = document.getElementById(`span-workout-type-${id}`).innerHTML;
     
-    document.getElementById('input-formeditexercise-exercise-id').value = id;
+    document.getElementById('input-formeditexercise-id').value = id;
     // Entete du formulaire
     document.getElementById('h5-formeditexercise-workout-name').innerHTML = 
     `Edit workout #${id} - ${type}`;
@@ -107,7 +107,7 @@ function sumbitFormEditExercise()
     let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
 
-    let id = document.getElementById('input-formeditexercise-exercise-id').value;
+    let id = document.getElementById('input-formeditexercise-id').value;
     let rank = 0;
     while ( document.getElementById(`td-rank-${id}-${rank+1}`) )
     {
