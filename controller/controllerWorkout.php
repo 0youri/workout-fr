@@ -180,10 +180,10 @@
                 </div>
             </div>
             <div class="col">
-                <button class="btn btn-dark bi bi-gear-fill" type="button" 
-                data-bs-toggle="modal"  data-bs-target="#editModal"
-                onclick="resetWorkout(); editWorkout(`'.$id.'`);">
-                </button>
+                <div class="container card-body bg-dark border rounded" style="text-align: center"
+                data-bs-toggle="modal"  data-bs-target="#editModal" onclick="resetWorkout(); editWorkout(`'.$id.'`);">
+                    <a class="btn-dark bi bi-gear-fill" href="#"></a>
+                </div>
             </div>
         </div>
 
