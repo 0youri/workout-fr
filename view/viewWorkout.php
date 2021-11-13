@@ -25,7 +25,7 @@
                     <input style="display:none;" id="input-edit-exercise-id" name="input-edit-exercise-id" value="">
                     <div>
                         <label>Muscle</label>
-                        <select class="form-select" onchange="editFormExerciseSelect(0);"
+                        <select class="form-select" onchange="changeFormEditExerciseSelect(0);"
                         id="select-edit-muscle" name="select-edit-muscle">
                         </select>
                     </div>

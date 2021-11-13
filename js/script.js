@@ -41,7 +41,7 @@ function sumbitForm(id)
 
 // Edit Exercise
 
-function editFormExercise(id)
+function initFormEditExercise(id)
 {
     const type = document.getElementById(`span-workout-type-${id}`).innerHTML;
     
@@ -66,7 +66,7 @@ function editFormExercise(id)
     setAttribute('onchange',`editForm('${id}');`);
 }
 
-function editFormExerciseSelect(id)
+function changeFormEditExerciseSelect(id)
 {
     const rank = document.getElementById('select-edit-muscle').value
     .split("-")[0]; 
@@ -94,7 +94,7 @@ function editFormExerciseSelect(id)
     inputRank.value = rank;
 }
 
-function resetFormExercise()
+function resetFormEditExercise()
 {
     let h5 = document.getElementById('h5-workout-name');
     let selectMuscle = document.getElementById('select-edit-muscle');

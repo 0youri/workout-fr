@@ -136,7 +136,7 @@
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
                             href="index.php?page=addstats&w='.$id.'&state=-1"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" 
-                            data-bs-toggle="modal"  data-bs-target="#editExercise"
+                            data-bs-toggle="modal"  data-bs-target="#"
                             onclick="">
                             </button>
                             <button class="btn btn-dark bi bi-x-circle-fill" type="button" 
@@ -189,7 +189,7 @@
             </div>
             <div class="col">
                 <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal"  data-bs-target="#editExercise" onclick="resetFormExercise(); editExercise(`'.$id.'`);">
+                data-bs-toggle="modal"  data-bs-target="#editExercise" onclick="resetFormEditExercise(); initFormEditExercise(`'.$id.'`);">
                     <a class="btn-dark bi bi-gear-fill" href="#"></a>
                 </div>
             </div>
