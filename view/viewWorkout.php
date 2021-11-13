@@ -77,7 +77,7 @@
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-edit-delete-exercise" name="checkbox-edit-delete-exercise" disabled>
                         <label class="form-check-label text-danger" for="flexCheckDefault">
-                            Delete exercise
+                            Delete exercise <i class="bi bi-exclamation-circle-fill"></i>
                         </label>
                     </div>
                 </form>
