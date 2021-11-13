@@ -39,21 +39,18 @@ function sumbitForm(id)
 
 
 
-// Changement infos workout
+// Edit Exercise
 
-function editWorkout(id)
+function editFormExercise(id)
 {
     const type = document.getElementById(`span-workout-type-${id}`).innerHTML;
     
-    document.getElementById('formEditWorkout').innerHTML += 
-    `<input style="display:none;" name="w" value="${id}">`;
+    document.getElementById('input-edit-exercise-id').value = id;
     // Entete du formulaire
     document.getElementById('h5-edit-workout-name').innerHTML = 
     `Edit workout #${id} - ${type}`;
     
     // Input/Options select Muscle du formulaire
-    document.getElementById('input-edit-workout-id').value = id;
-    document.getElementById('input-edit-workout-type').value = type;
     let rank = 1;
     document.getElementById('select-edit-muscle').innerHTML = 
     '<option value="-1" selected disabled>Choose</option>';
@@ -69,7 +66,7 @@ function editWorkout(id)
     setAttribute('onchange',`editForm('${id}');`);
 }
 
-function editForm(id)
+function editFormExerciseSelect(id)
 {
     const rank = document.getElementById('select-edit-muscle').value
     .split("-")[0]; 
@@ -97,7 +94,7 @@ function editForm(id)
     inputRank.value = rank;
 }
 
-function resetWorkout()
+function resetFormExercise()
 {
     let h5 = document.getElementById('h5-workout-name');
     let selectMuscle = document.getElementById('select-edit-muscle');
@@ -113,7 +110,7 @@ function resetWorkout()
 }
 
 // Add Exercise
-function formAddExercise()
+function sumbitFormAddExercise()
 { 
     let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');
@@ -214,7 +211,7 @@ function formAddExercise()
     }
 }
 
-function resetFormAdd(id)
+function resetFormAddExercise(id)
 {
     let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');

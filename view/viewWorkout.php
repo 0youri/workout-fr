@@ -21,22 +21,11 @@
             </div>
             <div class="modal-body">
                 <form method="POST" id="formEditExercise" action="index.php?page=workout">
-                    <div style="display:none;">
-                    <div>
-                        <label>Workout ID</label>
-                        <input type="text" class="form-control"
-                        id="input-edit-workout-id" name="input-edit-workout-id">
-                    </div>
-                    <div style="display:none;">
-                        <label>Workout type</label>
-                        <input type="text" class="form-control"
-                        id="input-edit-workout-type" name="input-edit-workout-type">
-                    </div>
                     <br>
-                    </div>
+                    <input style="display:none;" id="input-edit-exercise-id" name="input-edit-exercise-id" value="">
                     <div>
                         <label>Muscle</label>
-                        <select class="form-select" onchange="editForm(0);"
+                        <select class="form-select" onchange="editFormExerciseSelect(0);"
                         id="select-edit-muscle" name="select-edit-muscle">
                         </select>
                     </div>
@@ -86,7 +75,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-primary" 
-                onclick="sumbitForm('formEditExercise');">Edit</button>
+                onclick="sumbitFormEditExercise('formEditExercise');">Edit</button>
             </div>
         </div>
     </div>
@@ -119,7 +108,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-success"
-                onclick="sumbitForm('formAddWorkout');">Add</button>
+                onclick="sumbitformAddWorkout('formAddWorkout');">Add</button>
             </div>
         </div>
     </div>
@@ -185,7 +174,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-success" 
-                onclick="formAddExercise();">Add</button>
+                onclick="sumbitFormAddExercise();">Add</button>
             </div>
         </div>
     </div>

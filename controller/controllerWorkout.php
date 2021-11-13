@@ -137,7 +137,7 @@
                             href="index.php?page=addstats&w='.$id.'&state=-1"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" 
                             data-bs-toggle="modal"  data-bs-target="#editExercise"
-                            onclick="resetWorkout(); editWorkout(`'.$id.'`);">
+                            onclick="">
                             </button>
                             <button class="btn btn-dark bi bi-x-circle-fill" type="button" 
                             data-bs-toggle="modal"  data-bs-target="#deleteWorkout"
@@ -183,13 +183,13 @@
         <div class="row">
             <div class="col">
                 <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="resetFormAdd(`'.$id.'`);">
+                data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="resetFormAddExercise(`'.$id.'`);">
                     <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
                 </div>
             </div>
             <div class="col">
                 <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal"  data-bs-target="#editExercise" onclick="resetWorkout(); editWorkout(`'.$id.'`);">
+                data-bs-toggle="modal"  data-bs-target="#editExercise" onclick="resetFormExercise(); editExercise(`'.$id.'`);">
                     <a class="btn-dark bi bi-gear-fill" href="#"></a>
                 </div>
             </div>
