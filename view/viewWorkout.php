@@ -41,12 +41,12 @@
                     </div>
                     <div>
                         <label>No. series</label>
-                        <input type="text" class="form-control" 
+                        <input type="number" class="form-control" 
                         id="input-formeditexercise-series" name="input-formeditexercise-series" disabled>
                     </div>
                     <div>
                         <label>No. repetitions</label>
-                        <input type="text" class="form-control"
+                        <input type="number" class="form-control"
                         id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
                     </div>
                     <div>
