@@ -34,8 +34,10 @@
             VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',
             ((select count(rank) from public.workout where id=".$id.")+1),'".$time."');
             ";
-            requestDB($request,$connect);
+            echo "here<br>";
             echo $request;
+
+            requestDB($request,$connect);
         }
         /*
         if ( isset($_POST['editP']) )
