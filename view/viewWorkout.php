@@ -21,7 +21,6 @@
             </div>
             <div class="modal-body">
                 <form method="POST" id="formEditExercise" action="index.php?page=workout">
-                    <br>
                     <input style="display:none;" id="input-edit-exercise-id" name="input-edit-exercise-id" value="">
                     <div>
                         <label>Muscle</label>

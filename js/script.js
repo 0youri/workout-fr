@@ -103,10 +103,13 @@ function resetFormEditExercise()
     let inputReps = document.getElementById('input-edit-repetitions');
     let inputWeight = document.getElementById('input-edit-weight');
     let inputRank = document.getElementById('input-edit-rank');
+    let checkboxDS = document.getElementById('checkbox-edit-delete-stats');
+    let checkboxDE = document.getElementById('checkbox-edit-delete-exercise');
     h5.innerHTML = selectMuscle.innerHTML = inputExercise.value = inputRank.value =
     inputSeries.value = inputReps.value = inputWeight.value = "";
     inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
-    inputWeight.disabled = inputRank.disabled = true;
+    inputWeight.disabled = inputRank.disabled =
+    checkboxDS.disabled = checkboxDE.disabled = true;
 }
 
 // Add Exercise
