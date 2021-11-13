@@ -16,54 +16,60 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="h5-edit-workout-name"></h5>
+                <h5 class="modal-title" id="h5-formeditexercise-workout-name"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form method="POST" id="formEditExercise" action="index.php?page=workout">
-                    <input style="display:none;" id="input-edit-exercise-id" name="input-edit-exercise-id" value="">
+                    <input style="display:none;"
+                    id="input-formeditexercise-exercise-id" name="input-formeditexercise-exercise-id" value="">
                     <div>
                         <label>Muscle</label>
                         <select class="form-select" onchange="changeFormEditExerciseSelect(0);"
-                        id="select-edit-muscle" name="select-edit-muscle">
+                        id="select-edit-muscle" name="select-formeditexercise-muscle">
                         </select>
                     </div>
                     <div>
                         <label>Rank</label>
-                        <input type="text" class="form-control"
-                        id="input-edit-rank" name="input-edit-rank" disabled>
+                        <input type="number" class="form-control"
+                        id="input-formeditexercise-rank" name="input-formeditexercise-rank" disabled>
                     </div>
                     <div>
                         <label>Exercise</label>
                         <input type="text" class="form-control"
-                        id="input-edit-exercise" name="input-edit-exercise" disabled>
+                        id="input-formeditexercise-exercise" name="input-formeditexercise-exercise" disabled>
                     </div>
                     <div>
                         <label>No. series</label>
                         <input type="text" class="form-control" 
-                        id="input-edit-series" name="input-edit-series" disabled>
+                        id="input-formeditexercise-series" name="input-formeditexercise-series" disabled>
                     </div>
                     <div>
                         <label>No. repetitions</label>
                         <input type="text" class="form-control"
-                        id="input-edit-repetitions" name="input-edit-repetitions" disabled>
+                        id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
                     </div>
                     <div>
                         <label>Weight</label>
                         <input type="text" class="form-control"
-                        id="input-edit-weight" name="input-edit-weight" disabled>
+                        id="input-formeditexercise-weight" name="input-formeditexercise-weight" disabled>
+                    </div>
+                    <div>
+                        <label>Rest period</label>
+                        <input type="text" class="form-control" 
+                        id="input-formeditexercise-time" name="input-formeditexercise-time" disabled>
                     </div>
                     <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
-                        id="checkbox-edit-delete-stats" name="checkbox-edit-delete-stats" disabled>
+                        id="checkbox-formeditexercise-delete-stats" name="checkbox-formeditexercise-delete-stats" disabled>
                         <label class="form-check-label" for="flexCheckDefault">
                             Delete stats
                         </label>
                     </div>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
-                        id="checkbox-edit-delete-exercise" name="checkbox-edit-delete-exercise" disabled>
+                        id="checkbox-formeditexercise-delete-exercise" name="checkbox-formeditexercise-delete-exercise" disabled>
                         <label class="form-check-label text-danger" for="flexCheckDefault">
                             Delete exercise <i class="bi bi-exclamation-circle-fill"></i>
                         </label>
@@ -74,7 +80,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-primary" 
-                onclick="sumbitFormEditExercise('formEditExercise');">Edit</button>
+                onclick="sumbitFormEditExercise();">Edit</button>
             </div>
         </div>
     </div>
@@ -107,7 +113,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-success"
-                onclick="sumbitformAddWorkout('formAddWorkout');">Add</button>
+                onclick="sumbitFormAddWorkout();">Add</button>
             </div>
         </div>
     </div>
@@ -205,8 +211,8 @@
     </div>
 </div>
 
-
-<!-- Delete Exercise -->
+<!--
+Delete Exercise 
 <div class="modal fade" id="deleteExercise">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -224,8 +230,10 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
                 <button type="button" class="btn btn-danger"
-                onclick="sumbitForm('formDeleteWorkout');">Delete</button>
+                onclick="sumbitForm();">Delete</button>
             </div>
         </div>
     </div>
 </div>
+
+-->
