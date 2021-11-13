@@ -230,7 +230,6 @@ function resetFormEditExercise()
 // Add Exercise
 function sumbitFormAddExercise()
 { 
-    let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');
     let inputReps = document.getElementById('input-add-repetitions');
     let inputMuscle = document.getElementById('input-add-muscle');
@@ -238,7 +237,7 @@ function sumbitFormAddExercise()
     let inputWeight = document.getElementById('input-add-weight');
     let inputTime = document.getElementById('input-add-time');
 
-    if ( Number(inputRank.value) !== 0 && Number(inputSeries.value) !== 0 && Number(inputReps.value) !== 0
+    if ( Number(inputSeries.value) !== 0 && Number(inputReps.value) !== 0
     && inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" )
         sumbitForm('formAddExercise');
     else
@@ -291,18 +290,6 @@ function sumbitFormAddExercise()
             inputTime.classList.remove("border-2");
         }
 
-        // Verif input Rank
-        if ( Number(inputRank.value) === 0 )
-        {
-            inputRank.classList.add("border-danger");
-            inputRank.classList.add("border-2");
-        }
-        else
-        {
-            inputRank.classList.remove("border-danger");
-            inputRank.classList.remove("border-2");
-        }
-
         // Verif input Series
         if ( Number(inputSeries.value)  === 0 )
         {
@@ -331,7 +318,6 @@ function sumbitFormAddExercise()
 
 function resetFormAddExercise(id)
 {
-    let inputRank = document.getElementById('input-add-rank');
     let inputSeries = document.getElementById('input-add-series');
     let inputReps = document.getElementById('input-add-repetitions');
     let inputMuscle = document.getElementById('input-add-muscle');
@@ -341,8 +327,6 @@ function resetFormAddExercise(id)
     let inputID = document.getElementById('input-add-workout-id');
 
     // Drop red color and border on input
-    inputRank.classList.remove("border-danger");
-    inputRank.classList.remove("border-2");
     inputSeries.classList.remove("border-danger");
     inputSeries.classList.remove("border-2");
     inputReps.classList.remove("border-danger");
@@ -357,7 +341,7 @@ function resetFormAddExercise(id)
     inputTime.classList.remove("border-2");
 
     // Drop input value 
-    inputRank.value = inputSeries.value = inputReps.value = inputMuscle.value = 
+    inputSeries.value = inputReps.value = inputMuscle.value = 
     inputExercise.value = inputWeight.value = inputTime.value = "";
 
     inputID.value = id;
