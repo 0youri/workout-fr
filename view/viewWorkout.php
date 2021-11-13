@@ -26,7 +26,7 @@
                     <div>
                         <label>Muscle</label>
                         <select class="form-select" onchange="changeFormEditExerciseSelect(0);"
-                        id="select-edit-muscle" name="select-formeditexercise-muscle">
+                        id="select-formeditexercise-muscle" name="select-formeditexercise-muscle">
                         </select>
                     </div>
                     <div>
