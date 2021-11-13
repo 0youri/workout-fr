@@ -76,22 +76,25 @@ function changeFormEditExerciseSelect(id)
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
     let inputWeight = document.getElementById('input-formeditexercise-weight');
     let inputRank = document.getElementById('input-formeditexercise-rank');
+    let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDS = document.getElementById('checkbox-formeditexercise-delete-stats');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
     // Recup infos
     let tdExercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
     let tdNo = document.getElementById(`td-no-${id}-${rank}`).innerHTML;
     let tdWeight = document.getElementById(`td-weight-${id}-${rank}`).innerHTML;
+    let tdTime = document.getElementById(`td-time-${id}-${rank}`).innerHTML;
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNo = tdNo.split("x"); 
     inputExercise.disabled = inputSeries.disabled = inputReps.disabled 
-    = inputWeight.disabled = inputRank.disabled = checkboxDE.disabled
-    = checkboxDS.disabled = false;
+    = inputWeight.disabled = inputRank.disabled = inputTime.value =
+    checkboxDE.disabled = checkboxDS.disabled = false;
     inputExercise.value = tdExercise;
     inputSeries.value = tdNo[0];
     inputReps.value = tdNo[1];
     inputWeight.value = tdWeight;
     inputRank.value = rank;
+    inputTime.rank = tdTime;
 }
 
 function sumbitFormEditExercise()
@@ -101,8 +104,9 @@ function sumbitFormEditExercise()
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
     let inputWeight = document.getElementById('input-formeditexercise-weight');
     let inputRank = document.getElementById('input-formeditexercise-rank');
+    let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
-    if ( inputExercise.value != "" && inputWeight.value != "" &&
+    if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
     Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && Number(inputRank.value) !== 0)
         sumbitForm('formEditExercise');
     else
@@ -190,12 +194,13 @@ function resetFormEditExercise()
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
     let inputWeight = document.getElementById('input-formeditexercise-weight');
     let inputRank = document.getElementById('input-formeditexercise-rank');
+    let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDS = document.getElementById('checkbox-formeditexercise-delete-stats');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
     h5.innerHTML = selectMuscle.innerHTML = inputExercise.value = inputRank.value =
-    inputSeries.value = inputReps.value = inputWeight.value = "";
+    inputSeries.value = inputReps.value = inputWeight.value = inputTime.value = "";
     inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
-    inputWeight.disabled = inputRank.disabled =
+    inputWeight.disabled = inputRank.disabled = inputTime.disabled =
     checkboxDS.disabled = checkboxDE.disabled = true;
 }
 
