@@ -21,7 +21,7 @@
         }
 
         // Add Exercise
-        else if ( isset($_POST['input-add-rank']) )
+        else if ( isset($_POST['input-add-workout-id']) )
         {
             $id = $_POST['input-add-workout-id'];
             $muscle = $_POST['input-add-muscle'];
@@ -32,11 +32,9 @@
             $time = $_POST['input-add-time'];
             $request = "INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
             VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',
-            ((select count(rank) from public.workout where id=".$id.")+1),'".$time."');
+            (select count(rank) from public.workout where id=".$id.")+1,'".$time."');
             ";
-            echo "here<br>";
             echo $request;
-
             requestDB($request,$connect);
         }
         /*
