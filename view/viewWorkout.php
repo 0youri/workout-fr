@@ -72,8 +72,8 @@
                     </div>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
-                        id="checkbox-formeditexercise-delete-exercise" name="checkbox-formeditexercise-delete-exercise" disabled
-                        onchange="alert(document.getElementById('checkbox-formeditexercise-delete-exercise').value);">
+                        id="checkbox-formeditexercise-delete-exercise" name="checkbox-formeditexercise-delete-exercise"
+                        disabled>
                         <label class="form-check-label text-danger" for="flexCheckDefault">
                             Delete exercise <i class="bi bi-exclamation-circle-fill"></i>
                         </label>
