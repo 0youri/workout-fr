@@ -58,7 +58,9 @@
             $repetitions = $_POST['input-formeditexercise-repetitions'];
             $weight = $_POST['input-formeditexercise-weight'];
             $newrank = $_POST['input-formeditexercise-rank'];
+            echo "--------------------------------------------<br>";
             echo $_POST['checkbox-formeditexercise-delete-exercise'];
+            echo "<br>--------------------------------------------";
             /*
             // Delete Exercise
             if ( $_POST['checkbox-formeditexercise-delete-exercise'] == "on" )
