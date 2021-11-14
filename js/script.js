@@ -233,7 +233,7 @@ document.getElementById('checkbox-formeditexercise-delete-exercise').onclick = (
     {
         alert(`Attention, you chose "Delete exercise"!`);
     }
-};
+}
 
 
 
