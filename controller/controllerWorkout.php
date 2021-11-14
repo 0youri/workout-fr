@@ -191,7 +191,7 @@
             <td id='td-muscle-$id-$rank'>$muscle</td>
             <td id='td-exercise-$id-$rank'>$exercice</td>
             <td id='td-no-$id-$rank'
-            >$seriesx$reps</td>
+            >$series x $reps</td>
             <td id='td-weight-$id-$rank'>$weight</td>
             <td id='td-time-$id-$rank'>$time</td>";
         }
