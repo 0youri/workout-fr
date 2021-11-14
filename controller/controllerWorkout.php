@@ -100,6 +100,7 @@
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
                 }
+                /*
                 echo "here";
                 else if ( $newrank == $rank )
                 {
