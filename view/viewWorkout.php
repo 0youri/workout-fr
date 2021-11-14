@@ -194,7 +194,7 @@
 </div>
 
 <!-- Delete Workout -->
-<div class="modal fade" id="deleteWorkout">
+<div class="modal fade" id="modalDeleteWorkout">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
