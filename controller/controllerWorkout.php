@@ -57,6 +57,7 @@
             $series = $_POST['input-formeditexercise-series'];
             $repetitions = $_POST['input-formeditexercise-repetitions'];
             $weight = $_POST['input-formeditexercise-weight'];
+            $time = $_POST['input-formeditexercise-time'];
             $newrank = $_POST['input-formeditexercise-rank'];
 
             // Delete Exercise
@@ -104,10 +105,18 @@
                 {
                     $request = "
                     UPDATE public.workout 
+                    SET exercise='$exercise', series=$series, repetitions=$repetitions, 
+                    weight='$weight', rank='$rank', time='$time'
+                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
+                    ";
+                    /*
+                        $request = "
+                    UPDATE public.workout 
                     SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
                     weight='".$weight."', rank='".$rank."', time='".$time."'
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
+                    */
                 }
                 echo "here $request";
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
