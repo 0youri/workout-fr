@@ -1,6 +1,7 @@
 <?php
     $workoutHTML = $id = "";
 
+    // After sumbit of POST form
     if ( $_SERVER["REQUEST_METHOD"] == "POST")
     {
         // Add Workout
@@ -14,37 +15,37 @@
             ";
             requestDB($request,$connect);
         }
+        // Delete Workout
+        else if ( isset($_POST['input-formdeleteworkout-info']) )
+        {
+            $info = explode("-", $_POST['input-formdeleteworkout-info']);
+            $id = $info[0];
+            $rank = $info[1];
+            $request = "
+            DELETE FROM public.stats WHERE id=".$id.";
+            DELETE FROM public.workout WHERE id=".$id.";
+            DELETE FROM public.allworkout WHERE id=".$id.";
+            UPDATE public.allworkout SET rank=rank-1 WHERE rank>".$rank.";
+            ";
+            requestDB($request,$connect);
+        }
 
         // Add Exercise
-        else if ( isset($_POST['input-add-workout-id']) )
+        else if ( isset($_POST['input-formaddexercise-id']) )
         {
-            $id = $_POST['input-add-workout-id'];
-            $muscle = $_POST['input-add-muscle'];
-            $exercise = $_POST['input-add-exercise'];
-            $series = $_POST['input-add-series'];
-            $reps = $_POST['input-add-repetitions'];
-            $weight = $_POST['input-add-weight'];
-            $time = $_POST['input-add-time'];
+            $id = $_POST['input-formaddexercise-id'];
+            $muscle = $_POST['input-formaddexercise-muscle'];
+            $exercise = $_POST['input-formaddexercise-exercise'];
+            $series = $_POST['input-formaddexercise-series'];
+            $reps = $_POST['input-formaddexercise-repetitions'];
+            $weight = $_POST['input-formaddexercise-weight'];
+            $time = $_POST['input-formaddexercise-time'];
             $request = "INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
             VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',
             (select count(rank) from public.workout where id=".$id.")+1,'".$time."');
             ";
             requestDB($request,$connect);
         }
-        /*
-        if ( isset($_POST['editP']) )
-        {
-            $editP = $_POST['editP'];
-            $id = $_POST['w'];
-            $rank = $_POST['rank'];
-            $muscle = $_POST['muscle'];
-            $request = "UPDATE public.workout 
-            SET weight='".$editP."' 
-            WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';";
-            requestDB($request,$connect);
-        }
-        */
-
         // Edit Exercise
         else if ( isset($_POST['input-formeditexercise-id']) )
         {
@@ -111,21 +112,13 @@
                     requestDB($request,$connect);
             }
         }
-
-        // Delete Workout
-        else if ( isset($_POST['input-delete-workout-id']) )
-        {
-            $id = $_POST['input-delete-workout-id'];
-            
-            $request = "DELETE FROM public.stats WHERE id=".$id.";
-            DELETE FROM public.workout WHERE id=".$id.";
-            DELETE FROM public.allworkout WHERE id=".$id.";";
-            requestDB($request,$connect);
-        }
     }
+
+
 
     $request = "SELECT * FROM public.allworkout ORDER BY rank;";
     $allworkoutSQL = requestDB($request,$connect);
+
     // Display all workout
     while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
     {
@@ -153,8 +146,8 @@
                             onclick="">
                             </button>
                             <button class="btn btn-dark bi bi-x-circle-fill" type="button" 
-                            data-bs-toggle="modal"  data-bs-target="#deleteWorkout"
-                            onclick="deleteWorkout(`'.$id.'`);">
+                            data-bs-toggle="modal"  data-bs-target="#modalDeleteWorkout"
+                            onclick="initFormDeleteWorkout(`'.$id.'`);">
                             </button>
                         </span>
                     </div>
@@ -202,7 +195,7 @@
             </div>
             <div class="col">
                 <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal"  data-bs-target="#editExercise" onclick="resetFormEditExercise(); initFormEditExercise(`'.$id.'`);">
+                data-bs-toggle="modal"  data-bs-target="#modalEditExercise" onclick="resetFormEditExercise(); initFormEditExercise(`'.$id.'`);">
                     <a class="btn-dark bi bi-gear-fill" href="#"></a>
                 </div>
             </div>

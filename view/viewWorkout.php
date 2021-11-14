@@ -15,7 +15,7 @@
 
 
 <!-- Edit Exercise -->
-<div class="modal fade" id="editExercise">
+<div class="modal fade" id="modalEditExercise">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -101,41 +101,41 @@
             <div class="modal-body">
                 <form method="POST" id="formAddExercise" action="index.php?page=workout">
                     <input style="display:none;" type="text" class="form-control" 
-                    id="input-add-workout-id" name="input-add-workout-id" value="">
+                    id="input-formaddexercise-id" name="input-formaddexercise-id" value="">
                     <div>
                         <label>Muscle</label>
                         <input type="text" class="form-control"
-                        id="input-add-muscle" name="input-add-muscle" >
+                        id="input-formaddexercise-muscle" name="input-formaddexercise-muscle" >
                     </div>
                     <br>
                     <div>
                         <label>Exercise</label>
                         <input type="text" class="form-control"
-                        id="input-add-exercise" name="input-add-exercise">
+                        id="input-formaddexercise-exercise" name="input-formaddexercise-exercise">
                     </div>
                     <br>
                     <div>
                         <label>No series</label>
                         <input type="number" class="form-control" 
-                        id="input-add-series" name="input-add-series" >
+                        id="input-formaddexercise-series" name="input-formaddexercise-series" >
                     </div>
                     <br>
                     <div>
                         <label>No repetitions</label>
                         <input type="number" class="form-control"
-                        id="input-add-repetitions" name="input-add-repetitions">
+                        id="input-formaddexercise-repetitions" name="input-formaddexercise-repetitions">
                     </div>
                     <br>
                     <div>
                         <label>Weight (kg)</label>
                         <input type="text" class="form-control"
-                        id="input-add-weight" name="input-add-weight">
+                        id="input-formaddexercise-weight" name="input-formaddexercise-weight">
                     </div>
                     <br>
                     <div>
                         <label>Rest period (min)</label>
                         <input type="text" class="form-control"
-                        id="input-add-time" name="input-add-time">
+                        id="input-formaddexercise-time" name="input-formaddexercise-time">
                     </div>
                 </form>
             </div>
@@ -203,7 +203,7 @@
             <div class="modal-body">
                 <form method="POST" id="formDeleteWorkout" name="formDeleteWorkout" action="index.php?page=workout">
                     <input style="display:none;" type="text" class="form-control" 
-                    id="input-delete-workout-id" name="input-delete-workout-id" value="">
+                    id="input-formdeleteworkout-info" name="input-formdeleteworkout-info" value="">
                     <strong class="fs-6" id="strong-delete-workout"></strong>
                 </form>
             </div>

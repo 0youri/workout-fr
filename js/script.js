@@ -230,12 +230,12 @@ function resetFormEditExercise()
 // Add Exercise
 function sumbitFormAddExercise()
 { 
-    let inputSeries = document.getElementById('input-add-series');
-    let inputReps = document.getElementById('input-add-repetitions');
-    let inputMuscle = document.getElementById('input-add-muscle');
-    let inputExercise = document.getElementById('input-add-exercise');
-    let inputWeight = document.getElementById('input-add-weight');
-    let inputTime = document.getElementById('input-add-time');
+    let inputSeries = document.getElementById('input-formaddexercise-series');
+    let inputReps = document.getElementById('input-formaddexercise-repetitions');
+    let inputMuscle = document.getElementById('input-formaddexercise-muscle');
+    let inputExercise = document.getElementById('input-formaddexercise-exercise');
+    let inputWeight = document.getElementById('input-formaddexercise-weight');
+    let inputTime = document.getElementById('input-formaddexercise-time');
 
     if ( Number(inputSeries.value) > 0 && Number(inputReps.value) > 0
     && inputMuscle.value != "" && inputExercise.value != "" 
@@ -319,13 +319,13 @@ function sumbitFormAddExercise()
 
 function resetFormAddExercise(id)
 {
-    let inputSeries = document.getElementById('input-add-series');
-    let inputReps = document.getElementById('input-add-repetitions');
-    let inputMuscle = document.getElementById('input-add-muscle');
-    let inputExercise = document.getElementById('input-add-exercise');
-    let inputWeight = document.getElementById('input-add-weight');
-    let inputTime = document.getElementById('input-add-time');
-    let inputID = document.getElementById('input-add-workout-id');
+    let inputSeries = document.getElementById('input-formaddexercise-series');
+    let inputReps = document.getElementById('input-formaddexercise-repetitions');
+    let inputMuscle = document.getElementById('input-formaddexercise-muscle');
+    let inputExercise = document.getElementById('input-formaddexercise-exercise');
+    let inputWeight = document.getElementById('input-formaddexercise-weight');
+    let inputTime = document.getElementById('input-formaddexercise-time');
+    let inputID = document.getElementById('input-formaddexercise-id');
 
     // Drop red color and border on input
     inputSeries.classList.remove("border-danger");
@@ -406,14 +406,14 @@ function resetFormAddWorkout()
 
 // Delete Workout
 
-function deleteWorkout(id)
+function initFormDeleteWorkout(id)
 {
     let strongDW = document.getElementById('strong-delete-workout');
-    let inputDW = document.getElementById('input-delete-workout-id');
+    let inputDW = document.getElementById('input-formdeleteworkout-info');
     let type = document.getElementById(`span-workout-type-${id}`).innerHTML;
     let rank = document.getElementById(`span-workout-rank-${id}`).innerHTML;
     strongDW.innerHTML = `Are you sure you want to delete workout #${rank} ${type} ?`;
-    inputDW.value = id;
+    inputDW.value = `${id}-${rank}`;
 }
 
 // Selected page 
