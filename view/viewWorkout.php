@@ -4,11 +4,14 @@
     ?>
     <br>
     <div class="container card-body bg-dark border rounded" style="text-align: center"
-        data-bs-toggle="modal" data-bs-target="#modalAddWorkout">
+        data-bs-toggle="modal" data-bs-target="#modalAddWorkout" onclick="resetFormAddWorkout();">
         <a class="container btn-dark bi bi-plus-circle-fill"  href="#"></a>
     </div>
 </div>
 
+<!--
+    Form Exercise begin
+-->
 
 
 <!-- Edit Exercise -->
@@ -86,40 +89,6 @@
     </div>
 </div>
 
-<!-- Add Workout -->
-<div class="modal fade" id="modalAddWorkout">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="h5-workout-name">Add Workout</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" id="formAddWorkout" name="formAddWorkout" action="index.php?page=workout">
-                    <div>
-                        <label>Workout type</label>
-                        <input type="text" class="form-control"
-                        id="input-add-workout-type" name="input-add-workout-type">
-                    </div>
-                    <div>
-                        <label>Rank</label>
-                        <input type="text" class="form-control"
-                        id="input-add-workout-rank" name="input-add-workout-rank">
-                    </div>
-                    <br>
-                </form>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
-                <button type="button" class="btn btn-success"
-                onclick="sumbitFormAddWorkout();">Add</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!-- Add Exercise -->
 <div class="modal fade" id="modalAddExercise">
     <div class="modal-dialog">
@@ -181,6 +150,48 @@
 </div>
 
 
+<!--
+    Form Exercise end
+-->
+
+
+<!-- 
+    Form Workout begin 
+-->
+
+
+<!-- Add Workout -->
+<div class="modal fade" id="modalAddWorkout">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="h5-workout-name">Add Workout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="formAddWorkout" name="formAddWorkout" action="index.php?page=workout">
+                    <div>
+                        <label>Workout type</label>
+                        <input type="text" class="form-control"
+                        id="input-formaddworkout-type" name="input-formaddworkout-type">
+                    </div>
+                    <div>
+                        <label>Rank</label>
+                        <input type="number" class="form-control"
+                        id="input-formaddworkout-rank" name="input-formaddworkout-rank">
+                    </div>
+                    <br>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Reset</button>
+                <button type="button" class="btn btn-success"
+                onclick="sumbitFormAddWorkout();">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Delete Workout -->
 <div class="modal fade" id="deleteWorkout">
@@ -205,6 +216,11 @@
         </div>
     </div>
 </div>
+
+
+<!--
+    Form Workout end
+-->
 
 <!--
 Delete Exercise 

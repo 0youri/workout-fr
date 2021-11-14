@@ -114,8 +114,8 @@ function sumbitFormEditExercise()
         rank++;
     }
     if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
-    Number(inputSeries.value) !== 0  && Number(inputReps.value) !== 0 && 
-    ( Number(inputRank.value) !== 0 && inputRank.value <= rank ) )
+    Number(inputSeries.value) >= 0  && Number(inputReps.value) >= 0 && 
+    ( Number(inputRank.value) >= 0 && inputRank.value <= rank ) )
         sumbitForm('formEditExercise');
     else
     {
@@ -156,7 +156,7 @@ function sumbitFormEditExercise()
         }
 
         // Verif input Rank
-        if ( Number(inputRank.value) === 0 || inputRank.value > rank )
+        if ( Number(inputRank.value) <= 0 || inputRank.value > rank )
         {
             inputRank.classList.add("border-danger");
             inputRank.classList.add("border-2");
@@ -237,8 +237,9 @@ function sumbitFormAddExercise()
     let inputWeight = document.getElementById('input-add-weight');
     let inputTime = document.getElementById('input-add-time');
 
-    if ( Number(inputSeries.value) !== 0 && Number(inputReps.value) !== 0
-    && inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" )
+    if ( Number(inputSeries.value) > 0 && Number(inputReps.value) > 0
+    && inputMuscle.value != "" && inputExercise.value != "" 
+    && inputWeight.value != "" && inputTime.value != "" )
         sumbitForm('formAddExercise');
     else
     {
@@ -291,7 +292,7 @@ function sumbitFormAddExercise()
         }
 
         // Verif input Series
-        if ( Number(inputSeries.value)  === 0 )
+        if ( Number(inputSeries.value) <= 0 )
         {
             inputSeries.classList.add("border-danger");
             inputSeries.classList.add("border-2");
@@ -303,7 +304,7 @@ function sumbitFormAddExercise()
         }
 
         // Verif input Repetitions
-        if ( Number(inputReps.value) === 0  )
+        if ( Number(inputReps.value) <= 0  )
         {
             inputReps.classList.add("border-danger");
             inputReps.classList.add("border-2");
@@ -353,6 +354,55 @@ function selectMeal(id)
 {
 
 }
+
+
+// Add Workout
+function sumbitFormAddWorkout()
+{
+    let inputType = document.getElementById('input-formaddworkout-type');
+    let inputRank = document.getElementById('input-formaddworkout-rank');
+
+    if ( inputType.value !== "" && Number(inputRank.value) > 0 )
+        sumbitForm('formAddWorkout');
+    else
+    {
+        if ( inputType.value == "" )
+        {
+            inputType.classList.add("border-danger");
+            inputType.classList.add("border-2");
+        }
+        else
+        {
+            inputType.classList.remove("border-danger");
+            inputType.classList.remove("border-2");
+        }
+
+        if ( Number(inputRank.value) <= 0  )
+        {
+            inputRank.classList.add("border-danger");
+            inputRank.classList.add("border-2");
+        }
+        else
+        {
+            inputRank.classList.remove("border-danger");
+            inputRank.classList.remove("border-2");
+        }
+    }
+}
+
+function resetFormAddWorkout()
+{
+    let inputType = document.getElementById('input-formaddworkout-type');
+    let inputRank = document.getElementById('input-formaddworkout-rank');
+
+    inputType.value = inputRank.value = "";
+
+    inputRank.classList.remove("border-danger");
+    inputRank.classList.remove("border-2");
+    inputType.classList.remove("border-danger");
+    inputType.classList.remove("border-2");
+}
+
 
 // Delete Workout
 
