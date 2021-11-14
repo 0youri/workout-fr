@@ -48,7 +48,7 @@ function initFormEditExercise(id)
     document.getElementById('input-formeditexercise-id').value = id;
     // Entete du formulaire
     document.getElementById('h5-formeditexercise-workout-name').innerHTML = 
-    `Edit workout #${id} - ${type}`;
+    `Edit exercise #${id} - ${type}`;
     
     // Input/Options select Muscle du formulaire
     let rank = 1;
@@ -114,8 +114,8 @@ function sumbitFormEditExercise()
         rank++;
     }
     if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
-    Number(inputSeries.value) >= 0  && Number(inputReps.value) >= 0 && 
-    ( Number(inputRank.value) >= 0 && inputRank.value <= rank ) )
+    Number(inputSeries.value) > 0  && Number(inputReps.value) > 0 && 
+    ( Number(inputRank.value) > 0 && inputRank.value <= rank ) )
         sumbitForm('formEditExercise');
     else
     {
@@ -168,7 +168,7 @@ function sumbitFormEditExercise()
         }
 
         // Verif input Series
-        if ( Number(inputSeries.value)  === 0 )
+        if ( Number(inputSeries.value)  <= 0 )
         {
             inputSeries.classList.add("border-danger");
             inputSeries.classList.add("border-2");
@@ -180,7 +180,7 @@ function sumbitFormEditExercise()
         }
 
         // Verif input Repetitions
-        if ( Number(inputReps.value) === 0  )
+        if ( Number(inputReps.value) <= 0  )
         {
             inputReps.classList.add("border-danger");
             inputReps.classList.add("border-2");
