@@ -111,6 +111,7 @@
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
                 }
+                */
 
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
