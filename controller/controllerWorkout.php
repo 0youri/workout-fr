@@ -100,6 +100,15 @@
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
                 }
+                else if ( $newrank == $rank )
+                {
+                    $request = "
+                    UPDATE public.workout 
+                    SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
+                    weight='".$weight."', rank='".$rank."'
+                    WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                    ";
+                }
 
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
