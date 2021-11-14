@@ -136,7 +136,7 @@
         $id = $dataAllWorkout['id'];
         $rankW = $dataAllWorkout['rank'];
         $type = $dataAllWorkout['type'];
-        $workoutHTML = '$workoutHTML<div id="w'.$id.'">
+        $workoutHTML = $workoutHTML.'<div id="w'.$id.'">
             <br>
             <div class="card-body bg-light border rounded">
                 <div class="position-relative">
