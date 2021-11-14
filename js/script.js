@@ -227,14 +227,15 @@ function resetFormEditExercise()
 
 }
 
-document.getElementById('checkbox-formeditexercise-delete-exercise').onclick = () => 
+document.getElementById('checkbox-formeditexercise-delete-exercise').onchange = () => checkBox();
+
+function checkBox()
 {
     if ( document.getElementById('checkbox-formeditexercise-delete-exercise').checked === true  )
     {
         alert(`Attention, you chose "Delete exercise"!`);
     }
 }
-
 
 
 
