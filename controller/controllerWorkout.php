@@ -10,8 +10,8 @@
             $type = $_POST['input-formaddworkout-type'];
             $rank = $_POST['input-formaddworkout-rank'];
             $request = "
-            UPDATE public.allworkout SET rank=rank+1 WHERE rank >= ".$rank.";
-            INSERT INTO public.allworkout (type,rank) VALUES ('".$type."',".$rank.");
+            UPDATE public.allworkout SET rank=rank+1 WHERE rank >= $rank;
+            INSERT INTO public.allworkout (type,rank) VALUES ('$type',$rank);
             ";
             requestDB($request,$connect);
         }
@@ -22,10 +22,10 @@
             $id = $info[0];
             $rank = $info[1];
             $request = "
-            DELETE FROM public.stats WHERE id=".$id.";
-            DELETE FROM public.workout WHERE id=".$id.";
-            DELETE FROM public.allworkout WHERE id=".$id.";
-            UPDATE public.allworkout SET rank=rank-1 WHERE rank>".$rank.";
+            DELETE FROM public.stats WHERE id=$id;
+            DELETE FROM public.workout WHERE id=$id;
+            DELETE FROM public.allworkout WHERE id=$id;
+            UPDATE public.allworkout SET rank=rank-1 WHERE rank>$rank;
             ";
             requestDB($request,$connect);
         }
@@ -41,8 +41,8 @@
             $weight = $_POST['input-formaddexercise-weight'];
             $time = $_POST['input-formaddexercise-time'];
             $request = "INSERT INTO public.workout (id,muscle,exercise,series,repetitions,weight,rank,time)
-            VALUES (".$id.",'".$muscle."','".$exercise."',".$series.",".$reps.",'".$weight."',
-            (select count(rank) from public.workout where id=".$id.")+1,'".$time."');
+            VALUES ($id,'$muscle','$exercise',$series,$reps,'$weight',
+            (select count(rank) from public.workout where id=$id)+1,'$time');
             ";
             requestDB($request,$connect);
         }
@@ -65,14 +65,14 @@
             {
                 $request = "
                 DELETE FROM public.stats 
-                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                WHERE id=$id AND rank=$rank AND muscle='$muscle';
 
                 DELETE FROM public.workout 
-                WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                WHERE id=$id AND rank=$rank AND muscle='$muscle';
 
                 UPDATE public.workout
                 SET rank=rank-1
-                WHERE id=".$id." AND rank>".$rank.";
+                WHERE id=$id AND rank>$rank;
                 ";
                 requestDB($request,$connect);
             }
@@ -83,22 +83,22 @@
                 {
                     $request = "
                     UPDATE public.workout SET rank=rank-1 
-                    WHERE id=".$id." AND rank > ".$rank." AND rank <= ".$newrank.";
+                    WHERE id=$id AND rank > $rank AND rank <= $newrank;
                     UPDATE public.workout 
-                    SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-                    weight='".$weight."', rank='".$newrank."', time='".$time."'
-                    WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                    SET exercise='$exercise', series=$series, repetitions=$repetitions, 
+                    weight='$weight', rank='$newrank', time='$time'
+                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
                 }
                 else if ( $newrank < $rank )
                 {
                     $request = "
                     UPDATE public.workout SET rank=rank+1 
-                    WHERE id=".$id." AND rank < ".$rank." AND rank >= ".$newrank.";
+                    WHERE id=$id AND rank < $rank AND rank >= $newrank;
                     UPDATE public.workout 
-                    SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-                    weight='".$weight."', rank='".$newrank."', time='".$time."'
-                    WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                    SET exercise='$exercise', series=$series, repetitions=$repetitions, 
+                    weight='$weight', rank='$newrank', time='$time'
+                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
                 }
                 else if ( $newrank == $rank )
@@ -109,21 +109,13 @@
                     weight='$weight', rank='$rank', time='$time'
                     WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
-                    /*
-                        $request = "
-                    UPDATE public.workout 
-                    SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-                    weight='".$weight."', rank='".$rank."', time='".$time."'
-                    WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
-                    ";
-                    */
                 }
                 echo "here $request";
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
                     $request += "
                     DELETE FROM public.stats 
-                    WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
+                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
                 }
 
@@ -144,7 +136,7 @@
         $id = $dataAllWorkout['id'];
         $rankW = $dataAllWorkout['rank'];
         $type = $dataAllWorkout['type'];
-        $workoutHTML = $workoutHTML.'<div id="w'.$id.'">
+        $workoutHTML = '$workoutHTML<div id="w'.$id.'">
             <br>
             <div class="card-body bg-light border rounded">
                 <div class="position-relative">
@@ -182,7 +174,7 @@
                         <th style="display:none;">Rank</th><th>Muscle</th><th>Exercise</th>
                         <th>No. series x No. reps</th><th>Weight (kg)</th><th>Rest period</th>
         ';
-        $request = "SELECT * FROM public.workout WHERE id=".$id." ORDER BY rank;";
+        $request = "SELECT * FROM public.workout WHERE id=$id ORDER BY rank;";
         $infoSQL = requestDB($request,$connect);
         // Display exercise by workout
         while ( $dataInfo = pg_fetch_assoc($infoSQL) )
@@ -194,34 +186,33 @@
             $reps = $dataInfo['repetitions'];
             $weight = $dataInfo['weight'];
             $time = $dataInfo['time'];
-            $workoutHTML = $workoutHTML."<tr>
-            <td id='td-rank-".$id."-".$rank."' style='display:none;'>".$rank."</td>
-            <td id='td-muscle-".$id."-".$rank."'>".$muscle."</td>
-            <td id='td-exercise-".$id."-".$rank."'>".$exercice."</td>
-            <td id='td-no-".$id."-".$rank."'
-            >".$series."x".$reps."</td>
-            <td id='td-weight-".$id."-".$rank."'>".$weight."</td>
-            <td id='td-time-".$id."-".$rank."'>".$time."</td>";
+            $workoutHTML = "$workoutHTML<tr>
+            <td id='td-rank-$id-$rank' style='display:none;'>$rank</td>
+            <td id='td-muscle-$id-$rank'>$muscle</td>
+            <td id='td-exercise-$id-$rank'>$exercice</td>
+            <td id='td-no-$id-$rank'
+            >$seriesx$reps</td>
+            <td id='td-weight-$id-$rank'>$weight</td>
+            <td id='td-time-$id-$rank'>$time</td>";
         }
-    
-        $workoutHTML = $workoutHTML.'</table>
-        <div class="row">
-            <div class="col">
-                <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal" data-bs-target="#modalAddExercise" onclick="resetFormAddExercise(`'.$id.'`);">
-                    <a class="btn-dark bi bi-plus-circle-fill" href="#"></a>
+        $workoutHTML = "$workoutHTML</table>
+        <div class='row'>
+            <div class='col'>
+                <div class='container card-body bg-dark border rounded' style='text-align: center'
+                data-bs-toggle='modal' data-bs-target='#modalAddExercise' onclick='resetFormAddExercise(`$id`);'>
+                    <a class='btn-dark bi bi-plus-circle-fill' href='#'></a>
                 </div>
             </div>
-            <div class="col">
-                <div class="container card-body bg-dark border rounded" style="text-align: center"
-                data-bs-toggle="modal"  data-bs-target="#modalEditExercise" onclick="resetFormEditExercise(); initFormEditExercise(`'.$id.'`);">
-                    <a class="btn-dark bi bi-gear-fill" href="#"></a>
+            <div class='col'>
+                <div class='container card-body bg-dark border rounded' style='text-align: center'
+                data-bs-toggle='modal'  data-bs-target='#modalEditExercise' onclick='resetFormEditExercise(); initFormEditExercise(`$id`);'>
+                    <a class='btn-dark bi bi-gear-fill' href='#'></a>
                 </div>
             </div>
         </div>
 
 
 
-        </div></p></div></div></div>';
+        </div></p></div></div></div>";
     }
 ?>
