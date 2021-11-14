@@ -227,7 +227,7 @@ function resetFormEditExercise()
 
 }
 
-document.getElementById('checkbox-formeditexercise-delete-exercise').onchange = () => 
+document.getElementById('checkbox-formeditexercise-delete-exercise').onclick = () => 
 {
     if ( document.getElementById('checkbox-formeditexercise-delete-exercise').checked === true  )
     {
