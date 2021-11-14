@@ -85,7 +85,7 @@
                     WHERE id=".$id." AND rank > ".$rank." AND rank <= ".$newrank.";
                     UPDATE public.workout 
                     SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-                    weight='".$weight."', rank='".$newrank."'
+                    weight='".$weight."', rank='".$newrank."', time='".$time."'
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
                 }
@@ -96,22 +96,20 @@
                     WHERE id=".$id." AND rank < ".$rank." AND rank >= ".$newrank.";
                     UPDATE public.workout 
                     SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-                    weight='".$weight."', rank='".$newrank."'
+                    weight='".$weight."', rank='".$newrank."', time='".$time."'
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
                 }
                 else if ( $newrank == $rank )
                 {
-                    echo "here $request";
                     $request = "
                     UPDATE public.workout 
                     SET exercise='".$exercise."', series=".$series.", repetitions=".$repetitions.", 
-                    weight='".$weight."', rank='".$rank."'
+                    weight='".$weight."', rank='".$rank."', time='".$time."'
                     WHERE id=".$id." AND rank=".$rank." AND muscle='".$muscle."';
                     ";
                 }
-                echo "<br>here";
-
+                echo "here $request";
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
                     $request += "
