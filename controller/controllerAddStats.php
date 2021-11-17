@@ -15,13 +15,14 @@
             $rank = $_POST['rank'];
             $today = date("Y-m-d");
             $series = "";
-            echo "here1";
+            echo "here1<br>";
             for ($i = 1; $_POST['serie'.$i]; $i++)
             {
-                echo "here2";
-                echo $_POST['serie'.$i];
+                echo "here1.1<br>";
                 $series += $_POST['serie'.$i];
+                echo "here1.2<br>";
                 $series += ",";
+                echo "here1.3<br>";
             }
             echo $series;
             $weight = $_POST['weight'];
