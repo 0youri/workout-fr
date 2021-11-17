@@ -17,12 +17,14 @@
             $series = "";
             for ($i = 1; $_POST["serie$i"]; $i++)
             {
-                $serie += $_POST["serie$i"].",";
+                $series += $_POST["serie$i"].",";
             }
-            echo $serie;
+            echo $series;
             $weight = $_POST['weight'];
-            $values = "'$today',$serie'$weight','$muscle',$rank";
-            addTableDataDB($id,$values,$connect);
+            $request = "
+            INSERT INTO public.stats VALUES ($id,$series'$weight','$muscle',$rank);
+            ";
+            requestDB($request,$connect);
         }
     }
     
