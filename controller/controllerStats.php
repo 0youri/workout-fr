@@ -21,10 +21,12 @@
         {
             $date = $dataStats['date'];
             $statsweight = $dataStats['weight'];
-            for ( $i = 1; $dataStats["serie$i"]; $i++)
+            for ( $i = 1; $dataStats["serie$i+1"]; $i++)
             {
                 $statsnorepstext .= $dataStats["serie$i"].":";
             }
+            $statsnorepstext .= $dataStats["serie$i"];
+
             $statsHTML = $statsHTML.'
             <tr>
             <td>'.$date.'</td>
