@@ -14,8 +14,8 @@
             $rank = $_POST['rank'];
             $date = date("Y-m-d");
             $reps = '';
-            $i = 1;
-            for (; $_POST["serie".($i+1)]; $i++)
+            
+            for ($i = 1; $_POST["serie".($i+1)]; $i++)
             {
                 $reps .= $_POST["serie$i"].":";
             }
