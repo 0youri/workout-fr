@@ -23,6 +23,7 @@
             $request = "
             INSERT INTO public.stats VALUES ($id,$series'$weight','$muscle',$rank);
             ";
+            echo $request;
             requestDB($request,$connect);
         }
     }
