@@ -110,10 +110,9 @@
                     WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
                 }
-                echo "here $request";
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
-                    $request += "
+                    $request .= "
                     DELETE FROM public.stats 
                     WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
