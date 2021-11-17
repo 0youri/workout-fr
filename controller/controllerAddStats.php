@@ -19,7 +19,7 @@
             for ($i = 1; $_POST['serie'.$i]; $i++)
             {
                 echo "here1.1<br>";
-                $series += $_POST['serie'.$i];
+                $series = $_POST['serie'.$i];
                 echo "here1.2<br>";
                 $series += ",";
                 echo "here1.3<br>";
