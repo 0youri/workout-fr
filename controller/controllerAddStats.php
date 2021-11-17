@@ -20,7 +20,7 @@
             {
                 echo "here1.1<br>";
                 $series += $_POST['serie'.$i].',';
-                echo "here1.3<br>";
+                echo "here1.2<br>";
             }
             echo $series;
             $weight = $_POST['weight'];
