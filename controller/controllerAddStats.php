@@ -9,21 +9,21 @@
     {
         if ( !empty($_POST['muscle']) )
         {
-            /*
+            
             $id = $_GET['w'];
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
             $today = date("Y-m-d");
             $series = "";
-            for (let i = 1; $_POST["serie$i"]; i++)
+            for ($i = 1; $_POST["serie$i"]; $i++)
             {
-                $serie += "$_POST['serie$i'],";
+                $serie += $_POST["serie$i"].",";
             }
             echo $serie;
             $weight = $_POST['weight'];
             $values = "'$today',$serie'$weight','$muscle',$rank";
             addTableDataDB($id,$values,$connect);
-            */
+            
         }
     }
     
