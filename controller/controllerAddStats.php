@@ -14,12 +14,12 @@
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
             $today = date("Y-m-d");
-            $series = "";
+            $series = '';
             echo "here1<br>";
             for ($i = 1; $_POST['serie'.$i]; $i++)
             {
                 echo "here1.1<br>";
-                $series += $_POST['serie'.$i].',';
+                $series += ''.$_POST['serie'.$i].',';
                 echo "here1.2<br>";
             }
             echo $series;
