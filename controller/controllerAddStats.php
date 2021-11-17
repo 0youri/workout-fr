@@ -14,9 +14,9 @@
             $rank = $_POST['rank'];
             $today = date("Y-m-d");
             $series = '';
-            for ($i = 1; $_POST['serie'.$i]; $i++)
+            for ($i = 1; $_POST["serie$i"]; $i++)
             {
-                $series .= $_POST['serie'.$i].",";
+                $series .= $_POST["serie$i"].",";
             }
             echo "dsq";
             $weight = $_POST['weight'];
