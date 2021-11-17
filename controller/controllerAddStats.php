@@ -12,16 +12,15 @@
             $id = $_GET['w'];
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
-            $today = date("Y-m-d");
+            $date = date("Y-m-d");
             $series = '';
             for ($i = 1; $_POST["serie$i"]; $i++)
             {
                 $series .= $_POST["serie$i"].",";
             }
-            echo "dsq";
             $weight = $_POST['weight'];
             $request = "
-            INSERT INTO public.stats VALUES ($id,$series'$weight','$muscle',$rank);
+            INSERT INTO public.stats VALUES ($id,$date,$series'$weight','$muscle',$rank);
             ";
             echo $request;
             requestDB($request,$connect);
