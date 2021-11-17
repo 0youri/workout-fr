@@ -20,6 +20,7 @@
             {
                 $series += $_POST["serie$i"].",";
             }
+            echo "here2";
             echo $series;
             $weight = $_POST['weight'];
             $request = "
