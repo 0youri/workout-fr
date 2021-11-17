@@ -13,7 +13,6 @@
         
     <body >
         <?php
-            echo "here";
             require('model/constantes.php');
             require('model/includes.php');
             require('model/routes.php');
