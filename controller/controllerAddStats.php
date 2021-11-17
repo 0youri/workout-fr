@@ -15,14 +15,10 @@
             $rank = $_POST['rank'];
             $today = date("Y-m-d");
             $series = '';
-            echo "here1<br>";
             for ($i = 1; $_POST['serie'.$i]; $i++)
             {
-                echo "here1.1<br>";
-                $series .= $_POST['serie'.$i];
-                echo "here1.2<br>";
+                $series .= $_POST['serie'.$i].",";
             }
-            echo $series;
             $weight = $_POST['weight'];
             $request = "
             INSERT INTO public.stats VALUES ($id,$series'$weight','$muscle',$rank);
