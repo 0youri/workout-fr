@@ -12,13 +12,15 @@
             $id = $_GET['w'];
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
-            $today = date("Y-m-d");   
-            $serie1 = $_POST['serie1'];
-            $serie2 = $_POST['serie2'];
-            $serie3 = $_POST['serie3'];
-            $serie4 = $_POST['serie4'];
+            $today = date("Y-m-d");
+            $series = "";
+            for (let i = 1; $_POST["serie$i"]; i++)
+            {
+                $serie += "$_POST['serie$i'],";
+            }
+            echo $serie;
             $weight = $_POST['weight'];
-            $values = "'".$today."',".$serie1.",".$serie2.",".$serie3.",".$serie4.",'".$weight."','".$muscle."',".$rank."";
+            $values = "'$today',$serie'$weight','$muscle',$rank";
             addTableDataDB($id,$values,$connect);
         }
     }
