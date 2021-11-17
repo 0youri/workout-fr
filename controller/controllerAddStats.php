@@ -19,6 +19,7 @@
             {
                 $series .= $_POST['serie'.$i].",";
             }
+            echo "dsq";
             $weight = $_POST['weight'];
             $request = "
             INSERT INTO public.stats VALUES ($id,$series'$weight','$muscle',$rank);
