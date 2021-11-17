@@ -9,6 +9,7 @@
     {
         if ( !empty($_POST['muscle']) )
         {
+            /*
             $id = $_GET['w'];
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
@@ -22,6 +23,7 @@
             $weight = $_POST['weight'];
             $values = "'$today',$serie'$weight','$muscle',$rank";
             addTableDataDB($id,$values,$connect);
+            */
         }
     }
     
