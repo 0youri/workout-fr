@@ -23,7 +23,6 @@
             $weight = $_POST['weight'];
             $values = "'$today',$serie'$weight','$muscle',$rank";
             addTableDataDB($id,$values,$connect);
-            
         }
     }
     
