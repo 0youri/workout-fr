@@ -24,7 +24,6 @@
             $request = "
             INSERT INTO public.stats VALUES ($id,'$date','$reps','$weight','$muscle',$rank);
             ";
-            echo $request;
             requestDB($request,$connect);
         }
     }
