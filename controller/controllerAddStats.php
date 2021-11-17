@@ -15,6 +15,7 @@
             $rank = $_POST['rank'];
             $today = date("Y-m-d");
             $series = "";
+            echo "here1";
             for ($i = 1; $_POST["serie$i"]; $i++)
             {
                 $series += $_POST["serie$i"].",";
