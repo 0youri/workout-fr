@@ -18,7 +18,8 @@
             echo "here1";
             for ($i = 1; $_POST['serie'.$i]; $i++)
             {
-                $series += $_POST['serie'.$i].",";
+                $series += $_POST['serie'.$i];
+                $series += ",";
             }
             echo "here2";
             echo $series;
