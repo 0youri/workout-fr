@@ -10,8 +10,9 @@
         $noseries = $dataWorkout['series'];
         $noreps = $dataWorkout['repetitions'];
         $weight = $dataWorkout['weight'];
+        $rank = $dataWorkout['rank'];
 
-        $request = "SELECT * FROM public.stats WHERE id=".$idW." AND muscle='".$muscle."' ORDER by date;";
+        $request = "SELECT * FROM public.stats WHERE id=$idW AND rank=$rank AND muscle='$muscle' ORDER by date;";
         $statsSQL = requestDB($request,$connect);
         $statsHTML =  $statsHTML.'<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercise.' - '.$noseries.'x'.$noreps.'</div>
         <div class="table-responsive">    
