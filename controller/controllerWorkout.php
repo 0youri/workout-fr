@@ -149,17 +149,18 @@
                             onclick="AfficherCollapse(`collapsew'.$id.'`);"></button>
 
                             <a class="dropdown">
-                                <a class="dropdown-toggle btn btn-dark" data-bs-toggle="dropdown"
+                                <a class="dropdown-toggle btn btn-dark bi bi-bar-chart-fill" data-bs-toggle="dropdown"
                                 href="#" role="button" aria-expanded="false"></a>
                                 <ul class="dropdown-menu">
-                                    <div>
-                                        <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
-                                        href="index.php?page=stats&w='.$id.'"></a>
-                                    </div>
-                                    <div>
-                                        <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
-                                        href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
-                                    </div>
+                                    <li>
+                                        <a class="btn btn-dark" id="statsw'.$id.'" 
+                                        href="index.php?page=stats&w='.$id.'">Look stats</a>
+                                    </li>
+                                    <li>
+                                        <a class="btn btn-dark" id="addw'.$id.'" 
+                                        href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1">
+                                        Add stats</a>
+                                    </li>
                                 </ul>
                             </a>
 
