@@ -148,7 +148,7 @@
                             type="button" id="infow'.$id.'" 
                             onclick="AfficherCollapse(`collapsew'.$id.'`);"></button>
 
-                            <li class="nav-item dropdown">
+                            <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                 href="#" role="button" aria-expanded="false">Stats</a>
                                 <ul class="dropdown-menu">
@@ -161,7 +161,7 @@
                                     href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
                                 </li>
                                 </ul>
-                            </li>
+                            </div>
 
 
 
