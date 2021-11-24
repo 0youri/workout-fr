@@ -149,7 +149,7 @@
                             onclick="AfficherCollapse(`collapsew'.$id.'`);"></button>
 
                             <a class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                <a class="dropdown-toggle" data-bs-toggle="dropdown"
                                 href="#" role="button" aria-expanded="false">Stats</a>
                                 <ul class="dropdown-menu">
                                 <li>
