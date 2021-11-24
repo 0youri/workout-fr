@@ -164,21 +164,24 @@
                                 </ul>
                             </a>
 
-
-
-
-                            <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
-                            href="index.php?page=stats&w='.$id.'"></a>
-                            <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
-                            href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
-                            <button class="btn btn-dark bi bi-gear-fill" type="button" 
-                            data-bs-toggle="modal"  data-bs-target="#"
-                            onclick="">
-                            </button>
-                            <button class="btn btn-dark bi bi-x-circle-fill" type="button" 
-                            data-bs-toggle="modal"  data-bs-target="#modalDeleteWorkout"
-                            onclick="initFormDeleteWorkout(`'.$id.'`);">
-                            </button>
+                            <a class="dropdown">
+                                <a class="btn btn-dark bi bi-gear-fill" data-bs-toggle="dropdown"
+                                href="#" role="button" aria-expanded="false"></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button class="dropdown-item" type="button" 
+                                        data-bs-toggle="modal"  data-bs-target="#"
+                                        onclick="">Edit Workout</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button" 
+                                        data-bs-toggle="modal"  data-bs-target="#modalDeleteWorkout"
+                                        onclick="initFormDeleteWorkout(`'.$id.'`);">Delete Workout</button>
+                                    </li>
+                                </ul>
+                            </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
