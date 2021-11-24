@@ -148,9 +148,9 @@
                             type="button" id="infow'.$id.'" 
                             onclick="AfficherCollapse(`collapsew'.$id.'`);"></button>
 
-                            <div class="dropdown">
-                                <a class="dropdown-toggle" data-bs-toggle="dropdown"
-                                href="#" role="button" aria-expanded="false">Stats</a>
+                            <a class="dropdown">
+                                <a class="dropdown-toggle btn btn-dark bi bi-bar-chart-fill" data-bs-toggle="dropdown"
+                                href="#" role="button" aria-expanded="false"></a>
                                 <ul class="dropdown-menu">
                                 <li>
                                     <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
@@ -161,7 +161,7 @@
                                     href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
                                 </li>
                                 </ul>
-                            </div>
+                            </a>
 
 
 
