@@ -153,8 +153,8 @@
                                 href="#" role="button" aria-expanded="false"></a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" id="statsw'.$id.'" 
-                                        href="index.php?page=stats&w='.$id.'">Look stats</a>
+                                        <a class="dropdown-item btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
+                                        href="index.php?page=stats&w='.$id.'"></a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item btn btn-dark" id="addw'.$id.'" 
