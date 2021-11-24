@@ -152,14 +152,14 @@
                                 <a class="dropdown-toggle btn btn-dark bi bi-bar-chart-fill" data-bs-toggle="dropdown"
                                 href="#" role="button" aria-expanded="false"></a>
                                 <ul class="dropdown-menu">
-                                <li>
-                                    <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
-                                    href="index.php?page=stats&w='.$id.'"></a>
-                                </li>
-                                <li>
-                                    <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
-                                    href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
-                                </li>
+                                    <div>
+                                        <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
+                                        href="index.php?page=stats&w='.$id.'"></a>
+                                    </div>
+                                    <div>
+                                        <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
+                                        href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
+                                    </div>
                                 </ul>
                             </a>
 
