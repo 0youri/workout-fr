@@ -147,6 +147,25 @@
                             <button class="btn btn-dark bi bi-info-circle-fill" 
                             type="button" id="infow'.$id.'" 
                             onclick="AfficherCollapse(`collapsew'.$id.'`);"></button>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                href="#" role="button" aria-expanded="false">Stats</a>
+                                <ul class="dropdown-menu">
+                                <li>
+                                    <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
+                                    href="index.php?page=stats&w='.$id.'"></a>
+                                </li>
+                                <li>
+                                    <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
+                                    href="index.php?page=addstats&id='.$id.'&rankW='.$rankW.'&state=-1"></a>
+                                </li>
+                                </ul>
+                            </li>
+
+
+
+
                             <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
                             href="index.php?page=stats&w='.$id.'"></a>
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
