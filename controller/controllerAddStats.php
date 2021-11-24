@@ -1,5 +1,5 @@
 <?php
-    $noW = $typeW = $muscle = $exercise = $noseries = $noreps = $weight = "";
+    $noW = $typeW = $rankW = $muscle = $exercise = $noseries = $noreps = $weight = "";
     $viewCard = $titleCard = $textCard = $buttonCard = $link = "";
     $tab = array();
 
@@ -43,6 +43,7 @@
             {
                 $noW = $dataAllWorkout['id'];
                 $typeW = $dataAllWorkout['type'];
+                $rankW = $_GET['rankW'];
                 break;
             }
         }
@@ -50,7 +51,7 @@
         $stateF = requestDB($request,$connect);
         $stateF = pg_fetch_assoc($stateF)['count'];
         $viewCard = '
-                <a href="index.php?page=addstats&id='.$noW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0" 
+                <a href="index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0" 
                 class="btn btn-dark">Start workout</a>';
     }
     // Finish workout
@@ -64,6 +65,7 @@
     {   
         $noW = $_GET['id'];
         $typeW = $_GET['typeW'];
+        $rankW = $_GET['rankW'];
         $tab = getExercise($noW,$_GET['state'],$connect);
         $muscle = $tab[0];
         $exercise = $tab[1];
@@ -71,7 +73,8 @@
         $noreps = $tab[3];
         $weight = $tab[4];
         $time = $tab[5];
-        $link = 'index.php?page=addstats&id='.$noW.'&typeW='.$typeW.'&stateF='.$_GET['stateF'].'&state='.($_GET['state']+1);
+        $link = 'index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'
+        &stateF='.$_GET['stateF'].'&state='.($_GET['state']+1);
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$link.'">
             <input style="display:none;" name="weight" value="'.$weight.'">
