@@ -150,7 +150,7 @@
                             <a class="btn btn-dark bi bi-bar-chart-fill" id="statsw'.$id.'" 
                             href="index.php?page=stats&w='.$id.'"></a>
                             <a class="btn btn-dark bi bi-plus-circle-fill" id="addw'.$id.'" 
-                            href="index.php?page=addstats&w='.$id.'&state=-1"></a>
+                            href="index.php?page=addstats&id='.$id.'state=-1"></a>
                             <button class="btn btn-dark bi bi-gear-fill" type="button" 
                             data-bs-toggle="modal"  data-bs-target="#"
                             onclick="">

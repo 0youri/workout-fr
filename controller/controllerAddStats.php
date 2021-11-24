@@ -9,7 +9,7 @@
     {
         if ( !empty($_POST['muscle']) )
         {
-            $id = $_GET['w'];
+            $id = $_GET['id'];
             $muscle = $_POST['muscle'];
             $rank = $_POST['rank'];
             $date = date("Y-m-d");
@@ -39,7 +39,7 @@
         // Searching from $allworkoutSQL id and type of workout 
         while ( $dataAllWorkout = pg_fetch_assoc($allworkoutSQL) )
         {
-            if ($dataAllWorkout['id'] == $_GET['w'])
+            if ($dataAllWorkout['id'] == $_GET['id'])
             {
                 $noW = $dataAllWorkout['id'];
                 $typeW = $dataAllWorkout['type'];
@@ -50,7 +50,7 @@
         $stateF = requestDB($request,$connect);
         $stateF = pg_fetch_assoc($stateF)['count'];
         $viewCard = '
-                <a href="index.php?page=addstats&w='.$noW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0" 
+                <a href="index.php?page=addstats&id='.$noW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0" 
                 class="btn btn-dark">Start workout</a>';
     }
     // Finish workout
@@ -62,7 +62,7 @@
     // During workout
     else
     {   
-        $noW = $_GET['w'];
+        $noW = $_GET['id'];
         $typeW = $_GET['typeW'];
         $tab = getExercise($noW,$_GET['state'],$connect);
         $muscle = $tab[0];
@@ -70,13 +70,15 @@
         $noseries = $tab[2];
         $noreps = $tab[3];
         $weight = $tab[4];
-        $link = 'index.php?page=addstats&w='.$noW.'&typeW='.$typeW.'&stateF='.$_GET['stateF'].'&state='.($_GET['state']+1);
+        $time = $tab[5];
+        $link = 'index.php?page=addstats&id='.$noW.'&typeW='.$typeW.'&stateF='.$_GET['stateF'].'&state='.($_GET['state']+1);
 
         $titleCard = '<form method="POST" id="formAdd" enctype="multipart/form-data" action="'.$link.'">
             <input style="display:none;" name="weight" value="'.$weight.'">
             <input style="display:none;" name="rank" value="'.($_GET['state']+1).'">
             <input style="display:none;" name="muscle" value="'.$muscle.'">
-            <h5 class="card-title">#'.($_GET['state']+1).' ['.$muscle.'] '.$exercise.' | '.$noseries.'x'.$noreps.' | '.$weight.'kg</h5>';
+            <h5 class="card-title">['.$muscle.'] #'.($_GET['state']+1).' '.$exercise.' | '.$noseries.'x'.$noreps.' 
+            | '.$weight.'kg | '.$time.'min</h5>';
         $textCard = '<p class="card-text"><div class="row">';
         for ($i = 1; $i <= $noseries; $i++)
         {
@@ -106,6 +108,7 @@
         $tab[2] = $infoSQL['series'];
         $tab[3] = $infoSQL['repetitions'];
         $tab[4] = $infoSQL['weight'];
+        $tab[5] = $infoSQL['time'];
         return $tab;
     }
 
