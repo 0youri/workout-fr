@@ -84,6 +84,7 @@
                     $request = "
                     UPDATE public.workout SET rank=rank-1 
                     WHERE id=$id AND rank > $rank AND rank <= $newrank;
+
                     UPDATE public.stats SET rank=rank-1 
                     WHERE id=$id AND rank > $rank AND rank <= $newrank;
                     UPDATE public.stats
@@ -103,7 +104,7 @@
                     UPDATE public.workout SET rank=rank+1 
                     WHERE id=$id AND rank < $rank AND rank >= $newrank;
 
-                    UPDATE public.stats SET rank=rank-1 
+                    UPDATE public.stats SET rank=rank+1 
                     WHERE id=$id AND rank < $rank AND rank >= $newrank;
                     UPDATE public.stats
                     SET rank=$newrank
