@@ -84,10 +84,17 @@
                     $request = "
                     UPDATE public.workout SET rank=rank-1 
                     WHERE id=$id AND rank > $rank AND rank <= $newrank;
+                    UPDATE public.stats SET rank=rank-1 
+                    WHERE id=$id AND rank > $rank AND rank <= $newrank;
+                    UPDATE public.stats
+                    SET rank=$newrank
+                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
+
                     UPDATE public.workout 
                     SET exercise='$exercise', series=$series, repetitions=$repetitions, 
                     weight='$weight', rank='$newrank', time='$time'
                     WHERE id=$id AND rank=$rank AND muscle='$muscle';
+                    
                     ";
                 }
                 else if ( $newrank < $rank )
@@ -95,6 +102,13 @@
                     $request = "
                     UPDATE public.workout SET rank=rank+1 
                     WHERE id=$id AND rank < $rank AND rank >= $newrank;
+
+                    UPDATE public.stats SET rank=rank-1 
+                    WHERE id=$id AND rank < $rank AND rank >= $newrank;
+                    UPDATE public.stats
+                    SET rank=$newrank
+                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
+
                     UPDATE public.workout 
                     SET exercise='$exercise', series=$series, repetitions=$repetitions, 
                     weight='$weight', rank='$newrank', time='$time'
