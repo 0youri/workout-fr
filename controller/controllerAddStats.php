@@ -55,7 +55,7 @@
                 class="btn btn-dark">Start workout</a>';
 
         $link = 'Location : index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0';
-        echo 
+        echo $link;
         header($link);
         exit();
     }
