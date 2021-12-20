@@ -54,8 +54,9 @@
                 <a href="index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0" 
                 class="btn btn-dark">Start workout</a>';
 
-        echo $link = 'index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0';
-        //header("Location : $link");
+        $link = 'index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0';
+        header("Location : index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0");
+        exit();
     }
     // Finish workout
     else if ( $_GET['state'] == $_GET['stateF'])
