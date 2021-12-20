@@ -80,7 +80,7 @@
             <input style="display:none;" name="weight" value="'.$weight.'">
             <input style="display:none;" name="rank" value="'.($_GET['state']+1).'">
             <input style="display:none;" name="muscle" value="'.$muscle.'">
-            <h5 class="card-title">#'.($_GET['state']+1).' - '.$muscle.' | '.$exercise.'<br>
+            <h5 class="card-title" style="left:auto;">#'.($_GET['state']+1).' - '.$muscle.' | '.$exercise.'<br>
             Series: '.$noseries.'<br>
             Repetitions: '.$noreps.'<br>
             Weight: '.$weight.'kg<br>
