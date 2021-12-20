@@ -56,8 +56,8 @@
 
         $link = 'Location : index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0';
         echo $link;
-        header($link);
-        exit();
+        //header($link);
+        //exit();
     }
     // Finish workout
     else if ( $_GET['state'] == $_GET['stateF'])
