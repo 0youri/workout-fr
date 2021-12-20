@@ -55,7 +55,7 @@
                 class="btn btn-dark">Start workout</a>';
 
         echo $link = 'index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0';
-        header("Location : $link");
+        //header("Location : $link");
     }
     // Finish workout
     else if ( $_GET['state'] == $_GET['stateF'])
