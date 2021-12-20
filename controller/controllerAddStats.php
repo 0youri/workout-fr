@@ -50,9 +50,9 @@
         $request = "SELECT count(*) FROM public.workout WHERE id=".$noW.";";
         $stateF = requestDB($request,$connect);
         $stateF = pg_fetch_assoc($stateF)['count'];
-        $viewCard = '
-                <a href="index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0" 
-                class="btn btn-dark">Start workout</a>';
+
+        $link = 'index.php?page=addstats&id='.$noW.'&rankW='.$rankW.'&typeW='.$typeW.'&stateF='.$stateF.'&state=0';
+        header("Location : $link");
     }
     // Finish workout
     else if ( $_GET['state'] == $_GET['stateF'])
