@@ -81,10 +81,8 @@
             <input style="display:none;" name="rank" value="'.($_GET['state']+1).'">
             <input style="display:none;" name="muscle" value="'.$muscle.'">
             <h5 class="card-title text-start">#'.($_GET['state']+1).' - '.$muscle.' - '.$exercise.'<br>
-            Series: '.$noseries.'<br>
-            Repetitions: '.$noreps.'<br>
-            Weight: '.$weight.'kg<br>
-            Rest period: '.$time.'min</h5>';
+            Series: '.$noseries.'<br> | Repetitions: '.$noreps.'
+            Weight: '.$weight.'kg<br> | Rest period: '.$time.'min</h5>';
         $textCard = '<p class="card-text"><div class="row">';
         for ($i = 1; $i <= $noseries; $i++)
         {
