@@ -58,33 +58,33 @@
                             id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
                         </div>
                     </div>
-                    <div>
+                <div class="row">
+                    <div class="col">
                         <label>Weight</label>
                         <input type="text" class="form-control"
                         id="input-formeditexercise-weight" name="input-formeditexercise-weight" disabled>
                     </div>
-                    <div>
+                    <div class="col">
                         <label>Rest period</label>
                         <input type="text" class="form-control" 
                         id="input-formeditexercise-time" name="input-formeditexercise-time" disabled>
                     </div>
+                </div>
                     <br>
-                    <div class="row">
-                    <div class="col form-check form-switch">
+                    <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-formeditexercise-delete-stats" name="checkbox-formeditexercise-delete-stats" disabled>
                         <label class="form-check-label" for="flexCheckDefault">
                             Delete stats
                         </label>
                     </div>
-                    <div class="col form-check form-switch">
+                    <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
                         id="checkbox-formeditexercise-delete-exercise" name="checkbox-formeditexercise-delete-exercise"
                         disabled>
                         <label class="form-check-label text-danger" for="flexCheckDefault">
                             Delete exercise <i class="bi bi-exclamation-circle-fill"></i>
                         </label>
-                    </div>
                     </div>
                 </form>
             </div>
