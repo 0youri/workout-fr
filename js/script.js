@@ -71,6 +71,7 @@ function changeFormEditExerciseSelect(id)
     const rank = document.getElementById('select-formeditexercise-choose').value
     .split("-")[0]; 
     // Pointeur sur input
+    let inputMuscle = document.getElementById('input-formeditexercise-muscle');
     let inputExercise = document.getElementById('input-formeditexercise-exercise');
     let inputSeries = document.getElementById('input-formeditexercise-series');
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
@@ -80,15 +81,18 @@ function changeFormEditExerciseSelect(id)
     let checkboxDS = document.getElementById('checkbox-formeditexercise-delete-stats');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
     // Recup infos
+    let tdMuscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
     let tdExercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
     let tdNo = document.getElementById(`td-no-${id}-${rank}`).innerHTML;
     let tdWeight = document.getElementById(`td-weight-${id}-${rank}`).innerHTML;
     let tdTime = document.getElementById(`td-time-${id}-${rank}`).innerHTML;
     // Séparation séries et répétitions ( [0] = séries [1] = répétitions )
     tdNo = tdNo.split("x"); 
-    inputExercise.disabled = inputSeries.disabled = inputReps.disabled 
+    inputMuscle.disabled = inputExercise.disabled = inputSeries.disabled = inputReps.disabled 
     = inputWeight.disabled = inputRank.disabled = inputTime.disabled =
-    checkboxDE.disabled = checkboxDS.disabled = false;
+    checkboxDE.disabled = checkboxDS.disabled = checkboxDE.checked = checkboxDS.checked = false;
+
+    inputMuscle.value = tdMuscle;
     inputExercise.value = tdExercise;
     inputSeries.value = tdNo[0];
     inputReps.value = tdNo[1];
@@ -99,13 +103,13 @@ function changeFormEditExerciseSelect(id)
 
 function sumbitFormEditExercise()
 {
+    let inputMuscle = document.getElementById('input-formeditexercise-muscle');
     let inputExercise = document.getElementById('input-formeditexercise-exercise');
     let inputSeries = document.getElementById('input-formeditexercise-series');
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
     let inputWeight = document.getElementById('input-formeditexercise-weight');
     let inputRank = document.getElementById('input-formeditexercise-rank');
     let inputTime = document.getElementById('input-formeditexercise-time');
-    let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
 
     let id = document.getElementById('input-formeditexercise-id').value;
     let rank = 0;
@@ -113,12 +117,25 @@ function sumbitFormEditExercise()
     {
         rank++;
     }
-    if ( inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
+
+    if ( inputMuscle.value != "" && inputExercise.value != "" && inputWeight.value != "" && inputTime.value != "" &&
     Number(inputSeries.value) > 0  && Number(inputReps.value) > 0 && 
     ( Number(inputRank.value) > 0 && inputRank.value <= rank ) )
         sumbitForm('formEditExercise');
     else
     {
+        // Verif input Muscle
+        if ( inputMuscle.value == "" )
+        {
+            inputMuscle.classList.add("border-danger");
+            inputMuscle.classList.add("border-2");
+        }
+        else
+        {
+            inputMuscle.classList.remove("border-danger");
+            inputMuscle.classList.remove("border-2");
+        }
+
         // Verif input Exercise
         if ( inputExercise.value == "" )
         {
@@ -196,7 +213,8 @@ function sumbitFormEditExercise()
 function resetFormEditExercise()
 {
     let h5 = document.getElementById('h5-formeditexercise-workout-name');
-    let selectMuscle = document.getElementById('select-formeditexercise-choose');
+    let selectEdit = document.getElementById('select-formeditexercise-choose');
+    let inputMuscle = document.getElementById('input-formeditexercise-muscle');
     let inputExercise = document.getElementById('input-formeditexercise-exercise');
     let inputSeries = document.getElementById('input-formeditexercise-series');
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
@@ -205,13 +223,18 @@ function resetFormEditExercise()
     let inputTime = document.getElementById('input-formeditexercise-time');
     let checkboxDS = document.getElementById('checkbox-formeditexercise-delete-stats');
     let checkboxDE = document.getElementById('checkbox-formeditexercise-delete-exercise');
-    h5.innerHTML = selectMuscle.innerHTML = inputExercise.value = inputRank.value =
+    h5.innerHTML = selectEdit.innerHTML = inputMuscle.value = inputExercise.value = inputRank.value =
     inputSeries.value = inputReps.value = inputWeight.value = inputTime.value = "";
-    inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
+
+    inputMuscle.disabled = inputExercise.disabled = inputSeries.disabled = inputReps.disabled = 
     inputWeight.disabled = inputRank.disabled = inputTime.disabled =
     checkboxDS.disabled = checkboxDE.disabled = true;
 
+    checkboxDE.checked = checkboxDS.checked = false;
+
     // Drop red color and border on input
+    inputMuscle.classList.remove("border-danger");
+    inputMuscle.classList.remove("border-2");
     inputRank.classList.remove("border-danger");
     inputRank.classList.remove("border-2");
     inputSeries.classList.remove("border-danger");

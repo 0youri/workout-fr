@@ -53,6 +53,7 @@
             $tab = explode("-", $_POST['select-formeditexercise-choose']);
             $rank = $tab[0];
             $muscle = $tab[1];
+            $newmuscle = $_POST['input-formeditexercise-muscle'];
             $exercise = $_POST['input-formeditexercise-exercise'];
             $series = $_POST['input-formeditexercise-series'];
             $repetitions = $_POST['input-formeditexercise-repetitions'];
@@ -87,15 +88,6 @@
 
                     UPDATE public.stats SET rank=rank-1 
                     WHERE id=$id AND rank > $rank AND rank <= $newrank;
-                    UPDATE public.stats
-                    SET rank=$newrank
-                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
-
-                    UPDATE public.workout 
-                    SET exercise='$exercise', series=$series, repetitions=$repetitions, 
-                    weight='$weight', rank='$newrank', time='$time'
-                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
-                    
                     ";
                 }
                 else if ( $newrank < $rank )
@@ -106,25 +98,9 @@
 
                     UPDATE public.stats SET rank=rank+1 
                     WHERE id=$id AND rank < $rank AND rank >= $newrank;
-                    UPDATE public.stats
-                    SET rank=$newrank
-                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
+                    ";
+                }
 
-                    UPDATE public.workout 
-                    SET exercise='$exercise', series=$series, repetitions=$repetitions, 
-                    weight='$weight', rank='$newrank', time='$time'
-                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
-                    ";
-                }
-                else if ( $newrank == $rank )
-                {
-                    $request = "
-                    UPDATE public.workout 
-                    SET exercise='$exercise', series=$series, repetitions=$repetitions, 
-                    weight='$weight', rank='$rank', time='$time'
-                    WHERE id=$id AND rank=$rank AND muscle='$muscle';
-                    ";
-                }
                 if ( $_POST['checkbox-formeditexercise-delete-stats'] == "on" )
                 {
                     $request .= "
@@ -132,7 +108,16 @@
                     WHERE id=$id AND rank=$rank AND muscle='$muscle';
                     ";
                 }
-
+                
+                $request .= "
+                UPDATE public.stats
+                SET rank=$newrank, muscle='$newmuscle'
+                WHERE id=$id AND rank=$rank AND muscle='$muscle';
+                UPDATE public.workout 
+                SET muscle='$newmuscle', exercise='$exercise', series=$series, repetitions=$repetitions, 
+                weight='$weight', rank='$newrank', time='$time'
+                WHERE id=$id AND rank=$rank AND muscle='$muscle';
+                ";
                 if ( $request != "" )
                     requestDB($request,$connect);
             }

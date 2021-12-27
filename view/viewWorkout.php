@@ -34,7 +34,7 @@
                     <div>
                         <label>Muscle</label>
                         <input type="text" class="form-control"
-                        id="input-formeditexercise-exercise" name="input-formeditexercise-exercise" disabled>
+                        id="input-formeditexercise-muscle" name="input-formeditexercise-muscle" disabled>
                     </div>
                     <div>
                         <label>Rank</label>
@@ -46,6 +46,7 @@
                         <input type="text" class="form-control"
                         id="input-formeditexercise-exercise" name="input-formeditexercise-exercise" disabled>
                     </div>
+                <div class="row">
                     <div>
                         <label>No. series</label>
                         <input type="number" class="form-control" 
@@ -56,6 +57,7 @@
                         <input type="number" class="form-control"
                         id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
                     </div>
+                </div>
                     <div>
                         <label>Weight</label>
                         <input type="text" class="form-control"
