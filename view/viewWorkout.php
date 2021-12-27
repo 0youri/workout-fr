@@ -27,10 +27,14 @@
                     <input style="display:none;"
                     id="input-formeditexercise-id" name="input-formeditexercise-id" value="">
                     <div>
-                        <label>Muscle</label>
                         <select class="form-select" onchange="changeFormEditExerciseSelect(0);"
-                        id="select-formeditexercise-muscle" name="select-formeditexercise-muscle">
+                        id="select-formeditexercise-choose" name="select-formeditexercise-choose">
                         </select>
+                    </div>
+                    <div>
+                        <label>Muscle</label>
+                        <input type="text" class="form-control"
+                        id="input-formeditexercise-exercise" name="input-formeditexercise-exercise" disabled>
                     </div>
                     <div>
                         <label>Rank</label>

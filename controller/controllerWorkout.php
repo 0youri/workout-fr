@@ -50,7 +50,7 @@
         else if ( isset($_POST['input-formeditexercise-id']) )
         {
             $id = $_POST['input-formeditexercise-id'];
-            $tab = explode("-", $_POST['select-formeditexercise-muscle']);
+            $tab = explode("-", $_POST['select-formeditexercise-choose']);
             $rank = $tab[0];
             $muscle = $tab[1];
             $exercise = $_POST['input-formeditexercise-exercise'];

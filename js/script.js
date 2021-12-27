@@ -52,23 +52,23 @@ function initFormEditExercise(id)
     
     // Input/Options select Muscle du formulaire
     let rank = 1;
-    document.getElementById('select-formeditexercise-muscle').innerHTML = 
+    document.getElementById('select-formeditexercise-choose').innerHTML = 
     '<option value="-1" selected disabled>Choose</option>';
     while ( document.getElementById(`td-rank-${id}-${rank}`) )
     {
         const muscle = document.getElementById(`td-muscle-${id}-${rank}`).innerHTML;
         const exercise = document.getElementById(`td-exercise-${id}-${rank}`).innerHTML;
-        document.getElementById('select-formeditexercise-muscle').innerHTML +=
+        document.getElementById('select-formeditexercise-choose').innerHTML +=
         `<option value="${rank}-${muscle}">#${rank} - ${muscle} - ${exercise}</option>`;
         rank++;
     }
-    document.getElementById(`select-formeditexercise-muscle`).
+    document.getElementById(`select-formeditexercise-choose`).
     setAttribute('onchange',`changeFormEditExerciseSelect('${id}');`);
 }
 
 function changeFormEditExerciseSelect(id)
 {
-    const rank = document.getElementById('select-formeditexercise-muscle').value
+    const rank = document.getElementById('select-formeditexercise-choose').value
     .split("-")[0]; 
     // Pointeur sur input
     let inputExercise = document.getElementById('input-formeditexercise-exercise');
@@ -196,7 +196,7 @@ function sumbitFormEditExercise()
 function resetFormEditExercise()
 {
     let h5 = document.getElementById('h5-formeditexercise-workout-name');
-    let selectMuscle = document.getElementById('select-formeditexercise-muscle');
+    let selectMuscle = document.getElementById('select-formeditexercise-choose');
     let inputExercise = document.getElementById('input-formeditexercise-exercise');
     let inputSeries = document.getElementById('input-formeditexercise-series');
     let inputReps = document.getElementById('input-formeditexercise-repetitions');
