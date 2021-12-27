@@ -58,18 +58,18 @@
                             id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
                         </div>
                     </div>
-                <div class="row">
-                    <div class="col">
-                        <label>Weight</label>
-                        <input type="text" class="form-control"
-                        id="input-formeditexercise-weight" name="input-formeditexercise-weight" disabled>
+                    <div class="row">
+                        <div class="col">
+                            <label>Weight</label>
+                            <input type="text" class="form-control"
+                            id="input-formeditexercise-weight" name="input-formeditexercise-weight" disabled>
+                        </div>
+                        <div class="col">
+                            <label>Rest period</label>
+                            <input type="text" class="form-control" 
+                            id="input-formeditexercise-time" name="input-formeditexercise-time" disabled>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label>Rest period</label>
-                        <input type="text" class="form-control" 
-                        id="input-formeditexercise-time" name="input-formeditexercise-time" disabled>
-                    </div>
-                </div>
                     <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
