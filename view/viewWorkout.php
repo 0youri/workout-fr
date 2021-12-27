@@ -47,12 +47,12 @@
                         id="input-formeditexercise-exercise" name="input-formeditexercise-exercise" disabled>
                     </div>
                 <div class="row">
-                    <div>
+                    <div class="col">
                         <label>No. series</label>
                         <input type="number" class="form-control" 
                         id="input-formeditexercise-series" name="input-formeditexercise-series" disabled>
                     </div>
-                    <div>
+                    <div class="col">
                         <label>No. repetitions</label>
                         <input type="number" class="form-control"
                         id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
