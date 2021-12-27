@@ -44,7 +44,8 @@ function sumbitForm(id)
 function initFormEditExercise(id)
 {
     const type = document.getElementById(`span-workout-type-${id}`).innerHTML;
-    
+   // const rank = document.getElementById(`td-rank-${id}-${rank}`).innerHTML;
+
     document.getElementById('input-formeditexercise-id').value = id;
     // Entete du formulaire
     document.getElementById('h5-formeditexercise-workout-name').innerHTML = 
