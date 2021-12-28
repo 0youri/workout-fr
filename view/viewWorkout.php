@@ -7,6 +7,7 @@
         data-bs-toggle="modal" data-bs-target="#modalAddWorkout" onclick="resetFormAddWorkout();">
         <a class="container btn-dark bi bi-plus-circle-fill"  href="#"></a>
     </div>
+    <br>
 </div>
 
 <!--
