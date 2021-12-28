@@ -243,7 +243,7 @@
 
 
     // Add option filter by section
-    $sectionHTML = "<option value='-1' selected disabled>All</option>";
+    $sectionHTML = "<option value='-1' selected>All</option>";
     $arraySECTION = array_unique($arraySECTION);
     foreach ( $arraySECTION as $value )
     {
