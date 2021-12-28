@@ -31,6 +31,7 @@
                         id="select-formeditexercise-choose" name="select-formeditexercise-choose">
                         </select>
                     </div>
+                    <br>
                     <div>
                         <label>Rank</label>
                         <input type="number" class="form-control"
@@ -58,18 +59,16 @@
                             id="input-formeditexercise-repetitions" name="input-formeditexercise-repetitions" disabled>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                        <div>
                             <label>Weight</label>
                             <input type="text" class="form-control"
                             id="input-formeditexercise-weight" name="input-formeditexercise-weight" disabled>
                         </div>
-                        <div class="col">
+                        <div>
                             <label>Rest period</label>
                             <input type="text" class="form-control" 
                             id="input-formeditexercise-time" name="input-formeditexercise-time" disabled>
                         </div>
-                    </div>
                     <br>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox"
@@ -123,16 +122,17 @@
                         id="input-formaddexercise-exercise" name="input-formaddexercise-exercise">
                     </div>
                     <br>
-                    <div>
-                        <label>No series</label>
-                        <input type="number" class="form-control" 
-                        id="input-formaddexercise-series" name="input-formaddexercise-series" >
-                    </div>
-                    <br>
-                    <div>
-                        <label>No repetitions</label>
-                        <input type="number" class="form-control"
-                        id="input-formaddexercise-repetitions" name="input-formaddexercise-repetitions">
+                    <div class="row">
+                        <div class="col">
+                            <label>No series</label>
+                            <input type="number" class="form-control" 
+                            id="input-formaddexercise-series" name="input-formaddexercise-series" >
+                        </div>
+                        <div class="col">
+                            <label>No repetitions</label>
+                            <input type="number" class="form-control"
+                            id="input-formaddexercise-repetitions" name="input-formaddexercise-repetitions">
+                        </div>
                     </div>
                     <br>
                     <div>
