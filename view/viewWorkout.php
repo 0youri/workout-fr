@@ -1,10 +1,7 @@
 <div class="container" id="blockworkout">
-<?php
-    var_dump(array_unique($arraySECTION));
-?>
     <select class="form-select" id="select-section-allworkout" name="select-section-allworkout">
         <?php
-            //var_dump(array_unique($arraySECTION));
+            echo $sectionHTML;
         ?>
     </select>
     <?php

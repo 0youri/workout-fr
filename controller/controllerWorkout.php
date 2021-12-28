@@ -1,5 +1,5 @@
 <?php
-    $workoutHTML = $selectHTML = $id = "";
+    $workoutHTML = $sectionHTML = $id = "";
     $arraySECTION = array();
     // After sumbit of POST form
     if ( $_SERVER["REQUEST_METHOD"] == "POST")
@@ -238,4 +238,14 @@
 
         </div></p></div></div></div>";
     }
+
+
+    // Add option filter by section
+    $sectionHTML = "<option value='-1' selected disabled>All</option>";
+    $arraySECTION = array_unique($arraySECTION);
+    foreach ( $arraySECTION as $value )
+    {
+        $sectionHTML .= "<option value='$value'>$value</option>";
+    }
+
 ?>
