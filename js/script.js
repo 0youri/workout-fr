@@ -43,13 +43,13 @@ function sumbitForm(id)
 
 function initFormEditExercise(id)
 {
-    const typeW = document.getElementById(`span-workout-type-${id}`).innerHTML;
-    const rankW = document.getElementById(`span-workout-rank-${id}`).innerHTML;
+    //const typeW = document.getElementById(`span-workout-type-${id}`).innerHTML;
+    //const rankW = document.getElementById(`span-workout-rank-${id}`).innerHTML;
 
     document.getElementById('input-formeditexercise-id').value = id;
     // Entete du formulaire
-    document.getElementById('h5-formeditexercise-workout-name').innerHTML = 
-    `Edit exercise #${rankW} ${typeW}`;
+    //document.getElementById('h5-formeditexercise-workout-name').innerHTML = 
+    //`Edit exercise #${rankW} ${typeW}`;
     
     // Input/Options select Muscle du formulaire
     let rank = 1;

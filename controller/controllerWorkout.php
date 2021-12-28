@@ -1,6 +1,6 @@
 <?php
-    $workoutHTML = $id = "";
-
+    $workoutHTML = $selectHTML = $id = "";
+    $arraySECTION = array();
     // After sumbit of POST form
     if ( $_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -135,6 +135,7 @@
         $id = $dataAllWorkout['id'];
         $rankW = $dataAllWorkout['rank'];
         $type = $dataAllWorkout['type'];
+        array_push($arraySECTION,$dataAllWorkout['section']);
         $workoutHTML = $workoutHTML.'<div id="w'.$id.'">
             <br>
             <div class="card-body bg-light border rounded">
