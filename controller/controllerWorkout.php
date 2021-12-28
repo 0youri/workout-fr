@@ -135,9 +135,11 @@
         $id = $dataAllWorkout['id'];
         $rankW = $dataAllWorkout['rank'];
         $type = $dataAllWorkout['type'];
-        array_push($arraySECTION,$dataAllWorkout['section']);
-        $workoutHTML = $workoutHTML.'<div id="w'.$id.'">
-            <br>
+        $section = $dataAllWorkout['section'];
+        array_push($arraySECTION,$section);
+        $workoutHTML = $workoutHTML.'<div id="workout-'.$rankW.'">
+        <input id="section-'.$rankW.'" style="display:none;" value="'.$section.'">
+        <br>
             <div class="card-body bg-light border rounded">
                 <div class="position-relative">
                     <div class="text-black fs-5">

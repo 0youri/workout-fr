@@ -1,6 +1,7 @@
 <div class="container" id="blockworkout">
     <br>
-    <select class="form-select" id="select-section-allworkout" name="select-section-allworkout">
+    <select class="form-select" id="select-section-allworkout" name="select-section-allworkout"
+    onchange="filterbysection();">
         <?php
             echo $sectionHTML;
         ?>
