@@ -44,7 +44,7 @@ function filterbysection()
     for ( let rank = 1; document.getElementById(`workout-${rank}`); rank++)
     {
         const section = document.getElementById(`section-${rank}`).value;
-        if ( section == value || section == "-1" ) document.getElementById(`workout-${rank}`).style.display = "block";
+        if ( value == section || value == "-1" ) document.getElementById(`workout-${rank}`).style.display = "block";
         else document.getElementById(`workout-${rank}`).style.display = "none";
     }
 }
