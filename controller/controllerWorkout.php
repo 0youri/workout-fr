@@ -122,13 +122,14 @@
                     requestDB($request,$connect);
             }
         }
-
-
-        // Choose Section
-        if ( isset($_POST['select-section-allworkout']))
-            $requestSection = $_POST['select-section-allworkout'];
     }
 
+    if ( $_SERVER["REQUEST_METHOD"] == "GET")
+    {
+        // Choose Section
+        if ( isset($_GET['select-section-allworkout']))
+            $requestSection = $_GET['select-section-allworkout'];
+    }
 
     if ( $requestSection == "" ) 
         $request = "SELECT * FROM public.allworkout ORDER BY rank;";

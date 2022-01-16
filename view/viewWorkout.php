@@ -1,6 +1,6 @@
 <div class="container" id="blockworkout">
     <br>
-<form method="POST" id="formSection" action="index.php?page=workout">
+<form method="GET" id="formSection" action="index.php?page=workout">
     <select class="form-select" id="select-section-allworkout" name="select-section-allworkout"
     onchange="filterbysection();">
         <?php
