@@ -12,7 +12,7 @@
         $weight = $dataWorkout['weight'];
         $rank = $dataWorkout['rank'];
 
-        $request = "SELECT * FROM public.stats WHERE id=$idW AND rank=$rank AND muscle='$muscle' ORDER by date DESC LIMIT 5;";
+        $request = "SELECT DISTINCT(*) FROM public.stats WHERE id=$idW AND rank=$rank AND muscle='$muscle' ORDER by date DESC LIMIT 5;";
         $statsSQL = requestDB($request,$connect);
         $statsHTML =  $statsHTML.'<div class="badge bg-dark text-wrap">'.$muscle.' - '.$exercise.' - '.$noseries.'x'.$noreps.'</div>
         <div class="table-responsive">    
