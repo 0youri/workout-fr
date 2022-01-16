@@ -255,7 +255,7 @@
 
     while ( $dataSection = pg_fetch_assoc($sectionSQL) )
     {
-        $section = $dataAllWorkout['section'];
+        $section = $dataSection['section'];
         array_push($arraySECTION,$section);
     }
     $sectionHTML = "<option value='' selected>All</option>";
