@@ -144,7 +144,6 @@
         $rankW = $dataAllWorkout['rank'];
         $type = $dataAllWorkout['type'];
         $section = $dataAllWorkout['section'];
-        array_push($arraySECTION,$section);
         $workoutHTML = $workoutHTML.'<div id="workout-'.$rankW.'">
         <input id="section-'.$rankW.'" style="display:none;" value="'.$section.'">
         <br>
@@ -251,6 +250,14 @@
 
 
     // Add option filter by section
+    $request = "SELECT section FROM public.allworkout ORDER BY rank;";
+    $sectionSQL = requestDB($request,$connect);
+
+    while ( $dataSection = pg_fetch_assoc($sectionSQL) )
+    {
+        $section = $dataAllWorkout['section'];
+        array_push($arraySECTION,$section);
+    }
     $sectionHTML = "<option value='' selected>All</option>";
     $arraySECTION = array_unique($arraySECTION);
     foreach ( $arraySECTION as $value )
