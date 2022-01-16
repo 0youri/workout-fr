@@ -258,11 +258,20 @@
         $section = $dataSection['section'];
         array_push($arraySECTION,$section);
     }
-    $sectionHTML = "<option value='' selected>All</option>";
+    
+    if ($requestSection == "" ) 
+        $sectionHTML = "<option value='' selected>All</option>";
+    else
+        $sectionHTML = "<option value=''>All</option>";
+
+
     $arraySECTION = array_unique($arraySECTION);
     foreach ( $arraySECTION as $value )
     {
-        $sectionHTML .= "<option value='$value'>$value</option>";
+        if ( $requestSection == $value )
+            $sectionHTML .= "<option value='$value' selected>$value</option>";
+        else
+            $sectionHTML .= "<option value='$value'>$value</option>";
     }
 
 ?>
