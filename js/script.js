@@ -40,6 +40,8 @@ function sumbitForm(id)
 
 function filterbysection()
 {
+    sumbitForm('formSection');
+    /*
     const value = document.getElementById('select-section-allworkout').value;
     for ( let rank = 1; document.getElementById(`workout-${rank}`); rank++)
     {
@@ -47,6 +49,7 @@ function filterbysection()
         if ( value == section || value == "-1" ) document.getElementById(`workout-${rank}`).style.display = "block";
         else document.getElementById(`workout-${rank}`).style.display = "none";
     }
+    */
 }
 
 

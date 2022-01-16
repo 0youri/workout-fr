@@ -1,5 +1,5 @@
 <?php
-    $workoutHTML = $sectionHTML = $id = "";
+    $workoutHTML = $sectionHTML = $id = $requestSection = "";
     $arraySECTION = array();
     // After sumbit of POST form
     if ( $_SERVER["REQUEST_METHOD"] == "POST")
@@ -122,11 +122,18 @@
                     requestDB($request,$connect);
             }
         }
+
+
+        // Choose Section
+        if ( isset($_POST['select-section-allworkout']))
+            $requestSection = $_POST['select-section-allworkout'];
     }
 
 
-
-    $request = "SELECT * FROM public.allworkout ORDER BY rank;";
+    if ( $requestSection == "" ) 
+        $request = "SELECT * FROM public.allworkout ORDER BY rank;";
+    else
+        $request = "SELECT * FROM public.allworkout WHERE section='$requestSection' ORDER BY rank;";
     $allworkoutSQL = requestDB($request,$connect);
 
     // Display all workout
@@ -243,7 +250,7 @@
 
 
     // Add option filter by section
-    $sectionHTML = "<option value='-1' selected>All</option>";
+    $sectionHTML = "<option value='' selected>All</option>";
     $arraySECTION = array_unique($arraySECTION);
     foreach ( $arraySECTION as $value )
     {
