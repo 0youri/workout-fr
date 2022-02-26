@@ -22,10 +22,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="nav-food" href="index.php?page=food">Food</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="nav-food" data-bs-toggle="modal"  
-                                data-bs-target="#modalRequestSql" href="#">Request SQL</a>
-                            </li>
                             <!--
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?page=test">Test</a>
