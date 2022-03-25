@@ -74,6 +74,10 @@
                 UPDATE public.workout
                 SET rank=rank-1
                 WHERE id=$id AND rank>$rank;
+
+                UPDATE public.stats
+                SET rank=rank-1
+                WHERE id=$id AND rank>$rank;
                 ";
                 requestDB($request,$connect);
             }
